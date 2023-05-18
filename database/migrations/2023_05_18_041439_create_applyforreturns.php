@@ -15,13 +15,13 @@ class CreateApplyforreturns extends Migration
     {
         Schema::create('applyforreturns', function (Blueprint $table) {
             $table->id('apply_id');
-            $table->varchar(25)('shipping_methods');
-            $table->varchar(25)('name_kurir');
-            $table->varchar(12)('no_resi');
-            $table->varchar(100)('vendor_storeaddress');
-            $table->varchar(100)('reason');
-            $table->varchar(255)('product_image');
-            $table->varchar(10)('order_id');
+            $table->String('shipping_methods', 25);
+            $table->String('name_kurir', 25);
+            $table->String('no_resi', 12);
+            $table->String('vendor_storeaddress', 100);
+            $table->String('reason', 100);
+            $table->String('product_image', 255);
+            $table->String('order_id', 10);
             $table->timestamps('updated_at');
             $table->timestamps('created_at');
         });
