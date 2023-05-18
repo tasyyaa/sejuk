@@ -14,12 +14,15 @@ class Createvendorcatalogs extends Migration
     public function up()
     {
         Schema::create('vendorcatalogs', function (Blueprint $table) {
-            $table->text('catalog_id');
-            $table->text('item_name');
+            $table->id('catalog_id');
+            $table->varchar(100)('item_name');
             $table->integer('item_price');
-            $table->text('size');
-            $table->text('store');
-            $table->text('category_id');
+            $table->varchar(5)('size');
+            $table->int('stock');
+            $table->varchar(100)('category_id');
+            $table->varchar(255)('catalog_image');
+            $table->timestamps('updated_at');
+            $table->timestamps('created_at');
         });
     }
 

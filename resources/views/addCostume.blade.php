@@ -61,37 +61,45 @@
     <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;
-            </a>
-            <a href="#Home">Home</a>
-            <a href="#Promotion">Promotion</a>
-            <a href="#Our Service">Our Services</a>
-            <a href="#Contact">Contact</a>
+        <div class="container-fluid">
+            <div class="leftitem" style="display: flex; justify-content: center;">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;
+                </a>
+                <a href="#Home">Home</a>
+                <a href="#Promotion">Promotion</a>
+                <a href="#Our Service">Our Services</a>
+                <a href="#Contact">Contact</a>
+            </div>
+                <div id="main" style="margin:0px 20px 0px 0px">
+                    <span style="font-size:20px;cursor:pointer" onclick="openNav()"> &#9776;
+                    </span>
+                </div>
+
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('storage/buatapp/sejuk1.png') }}" width="24" height="30"
+                        class="d-inline-block align-text-">
+                </a>
+            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search Catalog</button>
+            </form>
+
+            <div class="sideitem" style="display: flex; justify-content: center;margin-left: 10px;">
+                <a class="navbar-brand" href="#" >
+                    <img src="{{ asset('storage/buatapp/Cart owner.png') }}" width="30" height="24">
+                </a>
+                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
+                    <img src="{{ asset('storage/buatapp/Notifications owner.png') }}" width="30" height="24">
+                </a>
+                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
+                    <img src="{{ asset('storage/buatapp/3.png') }}" width="30" height="24">
+                </a>
+            </div>
         </div>
-        <div id="main">
-            <span style="font-size:20px;cursor:pointer" onclick="openNav()"> &#9776;
-            </span>
-        </div>
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('storage/buatapp/sejuk1.png') }}"  width="24" height="30" class="d-inline-block align-text-">
-        </a>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search Catalog</button>
-        </form>
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('storage/buatapp/Cart owner.png') }}" width="30" height="24">
-        </a>
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('storage/buatapp/Notifications owner.png') }}"  width="30" height="24">
-        </a>
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('storage/buatapp/3.png') }}"  width="30" height="24">
-        </a>
-    </div>
     </nav>
+
     <!-- Title -->
 	<h3>Add New Catalog</h3>
 
@@ -102,6 +110,7 @@
     <!-- Form  -->
 	<form action="/vendorCatalog/store" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
+        <div class="col-sm-6">
         <div class = "form-group row">
             <label for="item_name" class="form-label">Costume Name</label>
             <div class = "col-sm-6">
@@ -161,7 +170,9 @@
 					<input type="file" value="" name="fileup" id="fileup">
                 </div>
         </div> -->
-        <div class="mb-3">
+         </div>
+        </div>
+        <div class="col-md-6 justify-content:right margin-right: 10px">
             <label for="catalogimage" class="form-label">Add Your Photos Here</label>
             <input class="form-control" type="file" id="catalogimage" name="catalogimage">
         </div>
