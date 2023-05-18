@@ -15,8 +15,8 @@ class CreateShippingMethods extends Migration
     {
         Schema::create('shipping_methods', function (Blueprint $table) {
             $table->id('shippingmethods_id');
-            $table->int('shipping_price');
-            $table->varchar(25)('shippingmethods_type');
+            $table->integer('shipping_price');
+            $table->String('shippingmethods_type', 25);
         });
     }
 
