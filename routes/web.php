@@ -1,12 +1,16 @@
 <?php
 
+use App\Models\addaddress;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\testingHelperController;
+use App\Http\Controllers\CheckController;
 use App\Http\Controllers\addCostumeController;
-use App\Http\Controllers\returnPackageController;
-use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\acceptPaymentController;
+use App\Http\Controllers\returnPackageController;
 use App\Http\Controllers\returnPaymentController;
+use App\Http\Controllers\testingHelperController;
+use App\Http\Controllers\applyForReturnController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -58,4 +62,11 @@ Route::controller(returnPaymentController::class)->group(function(){
     Route::get('/returnpayment','create');
     Route::post('/returnpayment/store','store');
     Route::get('/returncomplete', 'complete');
+});
+
+Route::controller(CheckController::class)->group(function(){
+    // Route::get('/ordersummary', 'index');
+    Route::get('/addaddress','create');
+    Route::post('/addaddress/store','store');
+    Route::get('/address', 'complete');
 });
