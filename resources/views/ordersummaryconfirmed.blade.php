@@ -441,7 +441,7 @@
                         class="d-inline-block align-text-">
                 </a>
                 <a class="navbar-brand">
-                    <h4 class="d-inline-block align-text- mt-4">Order Summary</h4>
+                    <h4 class="d-inline-block align-text- mt-4">Order Summary (Confirmed)</h4>
                 </a>
             </div>
             <div class="sideitem" style="display: flex; justify-content: center;">
@@ -524,10 +524,10 @@
         </div>
     </div>
     <div class="flex justify-center gap-[50px] ml-[710px] mt-[75px] mb-[55px]">
-        <a href="/applyforreturn"
-            class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Apply For Return</a>
+        <a href="/returnpackage"
+            class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Return Package</a>
 
-        <input type="Submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md "
+        <input type="Submit" class="bg-[#C4C4C4] text-[#565656] font-bold w-[196px] h-[51px] rounded-md "
             value="Confirm Package">
 
     </div>

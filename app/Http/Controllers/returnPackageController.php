@@ -21,11 +21,21 @@ class returnPackageController extends Controller
     public function complete()
     {
     	// mengambil data dari table pegawai
-        $vendorCatalog = DB::table('vendorcatalogs')->get();
     	$returnpackages = DB::table('returnpackages')->get();
 
     	// mengirim data pegawai ke view index
     	return view('returnpackagecomplete',['returnpackages' => $returnpackages]);
+    }
+
+    public function view(){
+        // $orders = DB::table('orders')->get();
+        // DB::table('returnpackages')->where('return_id',$id)->view();
+        return view('ordersummary');
+    }
+
+    public function viewconf(){
+
+        return view('ordersummaryconfirmed');
     }
 
     public function create()

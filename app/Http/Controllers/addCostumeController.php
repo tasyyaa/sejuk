@@ -54,4 +54,10 @@ class addCostumeController extends Controller
 	// alihkan halaman ke halaman pegawai
 	return redirect('/vendorCatalog');
     }
+
+    public function view()
+    {
+
+	return view('addCostumeInvalid');
+    }
 }
