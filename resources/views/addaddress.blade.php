@@ -1,5 +1,6 @@
 @extends('layout.main')
 @section('title', 'address-page')
+@section('urlbfr','address')
 @section('content')
     <style>
         body {

@@ -1,11 +1,11 @@
 <nav class="">
     <div class="max-w-screen-xl flex items-center ">
         <div class="flex flex-row items-center" style=";">
-            <a class="" href="#">
+            <a class="" href=@yield("urlbfr")>
                 <img src="{{ asset('images/backarrowcust.svg') }}" width="60" height="65"
                     class="d-inline-block align-text-">
             </a>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="@yield("urlbfr")">
                 <img src="{{ asset('images/sejukcust2.svg') }}" width="60" height="65"
                     class="d-inline-block align-text-">
             </a>

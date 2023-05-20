@@ -12,7 +12,7 @@
             </div>
             <hr class="h-[4px] bg-gray-200">
             @endforeach
-    <a href="{{ url('addad') }}">
+    <a href="{{ url('addaddress') }}">
 <div href="" class="flex flex-row justify-between py-2 mx-[76px]">
     <h1 class="text-lg text-[#675959]">Add Address</h1>
     <h1 class="text-xl text-[#497174] font-bold">+</h1>
