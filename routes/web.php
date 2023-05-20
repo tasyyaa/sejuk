@@ -28,6 +28,7 @@ Route::controller(addCostumeController::class)->group(function(){
     Route::get('/vendorCatalog/addCostume','create');
     Route::post('/vendorCatalog/store','store');
     Route::get('/vendorCatalog/delete/{id}','hapus');
+    Route::get('/vendorCatalog/addCostumeInvalid','view');
     // Route::get('/pegawai/cari','cari');
     // Route::get('/pegawai/view/{id}','view');
 });
@@ -37,6 +38,8 @@ Route::controller(returnPackageController::class)->group(function(){
     Route::get('/returnpackage','create');
     Route::post('/returnpackage/store','store');
     Route::get('/returnpackagecomplete', 'complete');
+    Route::get('/orderSummary', 'view');
+    Route::get('/orderSummaryConfirmed', 'viewconf');
 });
 
 Route::controller(applyForReturnController::class)->group(function(){
