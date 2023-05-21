@@ -97,8 +97,8 @@
         </div>
         <div class="flex justify-center gap-[119px] mt-12 mb-[85px]">
             <input type="Submit" class="bg-[#497174] text-[#d6e4e5] w-[196px] h-[51px] font-semibold rounded-md "
-                value="Simpan Data">
-            <a href="{}"
+                value="Submit">
+            <a href="/homepageVendor"
                 class="bg-[#bfb9b9] text-black w-[196px] h-[51px] font-semibold rounded-md flex justify-center items-center">Cancel</a>
         </div>
     </form>
