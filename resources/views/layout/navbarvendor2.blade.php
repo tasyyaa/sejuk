@@ -94,11 +94,7 @@
                                 <a href="/faq"
                                     class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">FAQ</a>
                             </div>
-                            <div class="flex flex-row ml-[80px] mt-[6px]">
-                                <a href="/vendorAccount"
-                                    class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">My Account</a>
-                            </div>
-                            <div class="flex justify-center items-center">
+                            <div class="flex justify-center items-center mt-[45px]">
                                 <a href="/signinvendor"
                                     class="bg-[#497174] text-white w-[196px] h-[51px] font-bold rounded-md flex justify-center items-center ">SIGN
                                     IN</a>
@@ -127,14 +123,14 @@
                         placeholder="Cari Baju">
                 </div>
             </div>
-            <div class="sideitem" style="display: flex; justify-content: center;margin-left: 10px;">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('storage/buatapp/Cart owner.png') }}" width="30" height="24">
+            <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
+                <a class="navbar-brand" href="/orderList">
+                    <img src="{{ asset('images/cart.svg') }}" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
-                    <img src="{{ asset('storage/buatapp/Notifications owner.png') }}" width="30" height="24">
+                <a class="navbar-brand" href="/notifications" style="margin:0px 0px 0px 20px;">
+                    <img src="{{ asset('images/notifications.svg') }}" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
+                <a class="navbar-brand" href="/vendorAccount" style="margin:0px 0px 0px 20px;">
                     <img src="{{ asset('storage/buatapp/3.png') }}" width="30" height="24">
                 </a>
             </div>
