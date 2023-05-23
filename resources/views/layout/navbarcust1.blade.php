@@ -31,9 +31,9 @@
     <nav class="">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="leftitem" style="display: flex; justify-content: center;">
-                <div id="main" style="margin:0px 20px 0px 0px">
-                    <span style="font-size:20px;cursor:pointer" data-drawer-target="drawer-navigation"
-                        data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"> &#9776;
+                <div id="main" style="margin:6px 2px 0px 0px">
+                    <span style="font-size:30px;cursor:pointer" data-drawer-target="drawer-navigation"
+                        data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" > &#9776;
                     </span>
                 </div>
                 <div id="drawer-navigation"
@@ -101,7 +101,7 @@
 
                 {{-- navbar --}}
                 <a class="navbar-brand" href="/homepagecustomer">
-                    <img src="{{ asset('images/sejukcust2.svg') }}" width="24" height="30"
+                    <img src="{{ asset('images/sejukcust2.svg') }}" width="40" height="45"
                         class="d-inline-block align-text-">
                 </a>
             </div>

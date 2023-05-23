@@ -92,7 +92,7 @@
 
             <div class="w-[735px] mt-7 h-[455px] bg-white after:">
                 <img class="flex justify-center items-center" src="{{ asset('images/phimage.svg') }}" alt="">
-                <input hidden class="appearance-none" type="file" id="catalogimage" name="catalogimage">
+                <input class="appearance-none" type="file" id="catalogimage" name="catalogimage">
             </div>
         </div>
         <div class="flex justify-center gap-[119px] mt-12 mb-[85px]">
