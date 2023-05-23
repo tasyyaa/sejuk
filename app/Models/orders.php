@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,5 +15,16 @@ class orders extends Model
     public function returnpackage(){
         return $this->hasOne('App\returnpackage', 'return_id', 'id');
     }
-    use HasFactory;
+    protected $fillable = [
+        'order_id',
+        'shipping_destination',
+        'quantity',
+        'total_price',
+        'product_type',
+        'date_start',
+        'date_end',
+        'item_name',
+        'order_status',
+        'shipping_id'
+     ];
 }

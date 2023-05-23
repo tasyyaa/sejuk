@@ -6,8 +6,8 @@ use App\Http\Controllers\addCostumeController;
 use App\Http\Controllers\acceptPaymentController;
 use App\Http\Controllers\returnPackageController;
 use App\Http\Controllers\returnPaymentController;
-use App\Http\Controllers\testingHelperController;
 use App\Http\Controllers\applyForReturnController;
+use App\Http\Controllers\chooseController;
 
 
 /*
@@ -76,4 +76,9 @@ Route::controller(CheckController::class)->group(function(){
     Route::get('/addaddress','create');
     Route::post('/addaddress/store','store');
     Route::get('/address', 'complete');
+});
+
+Route::controller(chooseController::class)->group(function(){
+    Route::get('/costumepage', 'index');
+    Route::get('/clothespreview/{id}', 'preview');
 });
