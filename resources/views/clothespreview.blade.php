@@ -22,7 +22,7 @@
                 <div class="flex flex-col ml-[99px]">
                     <img src="{{ asset('storage/' . $c->catalog_image) }}" class="mt-[80px]" width="550px" height="800px">
                 </div>
-                <div class="flex flex-col rounded-sm bg-[#F9F5F2] w-[500px] h-[460px] ml-[45px] mt-[200px] w-[400px] h-[100px] ">
+                <div class="flex flex-col rounded-sm bg-[#F9F5F2] w-[500px] h-[460px] ml-[45px] mt-[200px]">
                     <div class="flex flex-row ml-[25px] mt-[32px]">
                         <p class="d-inline-block  font-bold text-[#050505] text-[46px]">{{ $c->item_name }}</p>
                     </div>
