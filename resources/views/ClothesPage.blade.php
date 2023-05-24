@@ -18,7 +18,7 @@
     <body>
         <!-- Title -->
         <div class="font-semibold text-2xl text-[#565656] ml-[99px] mt-12 mb-[46px]">
-            <h3>Costume</h3>
+            <h3>Clothes</h3>
         </div>
         <!-- Form  -->
         @foreach ($vendorcatalogs as $c)

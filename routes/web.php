@@ -58,10 +58,10 @@ Route::controller(applyForReturnController::class)->group(function(){
 });
 
 Route::controller(acceptPaymentController::class)->group(function(){
-    // Route::get('/ordersummary', 'index');
     Route::get('/acceptpayment','create');
     Route::post('/acceptpayment/store','store');
     Route::get('/returncomplete', 'complete');
+    Route::get('/transferinprocess','tip');
 });
 
 Route::controller(returnPaymentController::class)->group(function(){
@@ -79,6 +79,7 @@ Route::controller(CheckController::class)->group(function(){
 });
 
 Route::controller(chooseController::class)->group(function(){
-    Route::get('/costumepage', 'index');
+    Route::get('/costumepage', 'indexcostume');
+    Route::get('/clothespage', 'indexclothes');
     Route::get('/clothespreview/{id}', 'preview');
 });
