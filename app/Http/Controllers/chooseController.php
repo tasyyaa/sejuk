@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class chooseController extends Controller
 {
+    // public function __construct(){
+    //     $this->middleware('Auth');
+    // }
+
     public function index()
     {
     	// mengambil data dari table pegawai
