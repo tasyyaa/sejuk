@@ -29,7 +29,7 @@
     <nav class="">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="leftitem" style="display: flex; justify-content: center;">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/orderSummaryConfirmed">
                     <img src="{{ asset('images/backarrowcust.svg') }}" width="60" height="65"
                         class="d-inline-block align-text-">
                 </a>
@@ -43,7 +43,7 @@
             </div>
             <div class="sideitem" style="display: flex; justify-content: center;">
                 <a class="navbar-brand" href="#">
-                    <h4 class="d-inline-block align-text- text-[#675959]"> Afanda </h4>
+                    <h4 class="d-inline-block align-text- text-[#675959]"> {{ __('Dashboard') }} </h4>
                 </a>
             </div>
         </div>
@@ -95,8 +95,8 @@
                     <div class="flex flex-row ml-[28px] mt-[12px]">
                         <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Reguler</p>
                     </div>
-                    <div class="flex flex-row ml-[28px]">
-                        <select class="w-[475px] rounded-md h-[33px] focus:outline-0"
+                    <div class="flex flex-row ml-[24px]">
+                        <select class="w-[475px] rounded-md h-[33px] focus:outline-0 text-[14px] text-[#675959]"
                             aria-label="Default select example" for="shipping_methods" id="shipping_methods"
                             name="shipping_methods" required="required">
                             <option>Choose your shipping methods</option>
@@ -106,6 +106,10 @@
                             <option value="AnterAja">AnterAja</option>
                             <option value="GoSend">GoSend</option>
                         </select>
+                    </div>
+                    <div class="flex flex-row ml-[28px] mt-[6px]">
+                        <input type="text" id="name_kurir" class=" w-[450px] rounded-md h-[33px] focus:outline-0 text-[14px]"
+                        aria-labelledby="required" name="name_kurir" placeholder="Input The Courrier Name (Optional)">
                     </div>
                 </div>
                 <div class="flex flex-col ml-[575px]">
@@ -119,17 +123,12 @@
                 </div>
             </div>
             <div class="border-t-4"></div>
-            <div class="flex flex-row ml-[28px]">
+            <div class="flex flex-row ml-[28px] mt-[20px]">
                 <p class="d-inline-block align-text- font-bold text-[#675959] text-[18px]">Shop Address</p>
             </div>
-            <div class="flex flex-row ml-[28px]">
+            <div class="flex flex-row ml-[28px] mb-[15px]">
                 <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Jl. Mulyorejo</p>
             </div>
-            Courrier Name <input type="text" name="name_kurir" required="required"> <br />
-            No. Resi <input type="text" name="no_resi" required="required"> <br />
-            Address <input type="text" name="vendor_storeaddress" required="required"><br />
-            Order <input type="text" name="order_id" required="required"> <br />
-            <input type="Submit" value="Simpan Data">
         </div>
     </form>
     <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">

@@ -43,4 +43,8 @@ class acceptPaymentController extends Controller
 
     }
 
+    public function tip(){
+        return view('transferinprocess');
+    }
+
 }
