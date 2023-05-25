@@ -19,12 +19,26 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
-            <!-- Email Address -->
+            <!-- City -->
+            <div>
+                <x-label for="city" :value="__('City')" />
+
+                <x-input id="City" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required autofocus />
+            </div>
+
+            <!-- Telephone -->
+            <div>
+                <x-label for="phone_number" :value="__('Phone Number')" />
+
+                <x-input id="phone_number" class="block mt-1 w-full" type="tel" name="phone_number" :value="old('phone_number')" required autofocus />
+            </div>
+
+            <!-- Email Address
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+            </div> -->
 
             <!-- Password -->
             <div class="mt-4">
@@ -53,6 +67,7 @@
                 <x-button class="ml-4">
                     {{ __('Register') }}
                 </x-button>
+
             </div>
         </form>
     </x-auth-card>
