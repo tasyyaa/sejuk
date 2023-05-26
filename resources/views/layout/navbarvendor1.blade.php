@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col">
-                            <img src="{{ asset('storage/buatapp/sidebar.jpg') }}" class="w-[650px] h-screen">
+                            <img src="{{ asset('images/sidebar.jpg') }}" class="w-[650px] h-screen">
                         </div>
                     </div>
                 </div>

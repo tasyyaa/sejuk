@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Return Package</title>
+    <title>Return Payment</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
         integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Transfer in process</title>
+    <title>Return in process</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
                         class="d-inline-block align-text-">
                 </a>
                 <a class="navbar-brand">
-                    <h4 class="d-inline-block align-text- mt-4 text-white ml-[8px]"> Transfer In Process</h4>
+                    <h4 class="d-inline-block align-text- mt-4 text-white ml-[8px]"> Return In Process</h4>
                 </a>
             </div>
             <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
@@ -59,7 +59,7 @@
                 </div>
                 <div class="justify-center bg-[#FFFFFF] rounded-sm pt-[15px] pl-[25px] pr-[25px] w-[350px]">
                     <div class="flex flex-row">
-                        <p class="d-inline-block align-text- font-bold text-[#675959] text-[18px]">Transfer Payment</p>
+                        <p class="d-inline-block align-text- font-bold text-[#675959] text-[18px]">Return Payment in Process</p>
                     </div>
                     <div class="flex flex-row mb-[25px]">
                         <div class="flex flex-col">
@@ -83,15 +83,15 @@
                 </div>
             </div>
             <div class="flex flex-col items-center">
-                <div class="bg-[#FFFFFF] w-[850px] h-[85px] mt-[20px] border-black pt-[25px] pb-[25px] pl-[30px] rounded-sm">
-                    <p class="d-inline-block align-text- font-extrabold text-[#000000] text-[26px]">Transfer in process
+                <div class="bg-[#FFFFFF] w-[850px] h-[75px] mt-[20px] border-black pt-[20px] pb-[20px] pl-[30px] rounded-sm">
+                    <p class="d-inline-block align-text- font-extrabold text-[#000000] text-[26px]">Return in process
                     </p>
                 </div>
             </div>
         </div>
     </div>
     <div class="flex flex-col items-center justify-center mb-[45px]">
-        <a href="/transfersuccess"
+        <a href="/returnpaymentsuccess"
             class="bg-[#000000] text-[#FFFFFF] font-bold w-[500px] h-[45px] rounded-md flex justify-center items-center">Confirm</a>
     </div>
     </div>
