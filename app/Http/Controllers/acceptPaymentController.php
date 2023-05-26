@@ -47,4 +47,8 @@ class acceptPaymentController extends Controller
         return view('transferinprocess');
     }
 
+    public function ts(){
+        return view('transfersuccess');
+    }
+
 }

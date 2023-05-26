@@ -62,6 +62,7 @@ Route::controller(acceptPaymentController::class)->group(function(){
     Route::post('/acceptpayment/store','store');
     Route::get('/returncomplete', 'complete');
     Route::get('/transferinprocess','tip');
+    Route::get('/transfersuccess','ts');
 });
 
 Route::controller(returnPaymentController::class)->group(function(){
@@ -69,6 +70,8 @@ Route::controller(returnPaymentController::class)->group(function(){
     Route::get('/returnpayment','create');
     Route::post('/returnpayment/store','store');
     Route::get('/returncomplete', 'complete');
+    Route::get('/returnpaymentprocess', 'rip');
+    Route::get('/returnpaymentsuccess', 'rps');
 });
 
 Route::controller(CheckController::class)->group(function(){

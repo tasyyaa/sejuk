@@ -44,4 +44,12 @@ class returnPaymentController extends Controller
 
     }
 
+    public function rip(){
+        return view('/returnpaymentprocess');
+    }
+
+    public function rps(){
+        return view('/returnpaymentsuccess');
+    }
+
 }

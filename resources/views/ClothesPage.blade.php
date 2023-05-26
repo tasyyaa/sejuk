@@ -24,7 +24,7 @@
         @foreach ($vendorcatalogs as $c)
             <div class="flex flex-row">
                 <div class="flex flex-col ml-[99px] w-[200px] h-[250px] rounded-sm">
-                    <img src="{{ asset('storage/' . $c->catalog_image) }}" class="img-fluid h-[100px] rounded-sm">
+                    <img src="{{ asset('storage/' . $c->catalog_image) }}" class="img-fluid h-[150px] rounded-sm">
                     <div class="flex flex-col bg-[#FFFFFF] pb-[10px]">
                         <div class="flex-flex row ml-[10px]">
                             <p class="d-inline-block  font-semibold text-[#050505] text-[18px]">{{ $c->item_name }}</p>

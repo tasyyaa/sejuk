@@ -2,6 +2,10 @@
 @section('title', 'Add Costume')
 @section('urlbfr','addCostume')
 @section('content')
+<head>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
 <style>
     body {
             background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
@@ -32,7 +36,7 @@
                     <select class="w-[475px] rounded-md h-[33px] focus:ring-0 focus:border-transparent" aria-label="Default select example"
                         for="category_id" id="category_id" name="category_id">
                         <option value="CST">Costume</option>
-                        <option value="ACS">Accessories</option>
+                        <option value="ACS">Clothes</option>
                     </select>
 
                 </div>
@@ -91,8 +95,9 @@
             </div>
 
             <div class="w-[735px] mt-7 h-[455px] bg-white after:">
-                <img class="flex justify-center items-center" src="{{ asset('images/phimage.svg') }}" alt="">
-                <input class="appearance-none" type="file" id="catalogimage" name="catalogimage">
+                <img id="img-preview" class="h-[425px] w-[735px]" src="{{ asset('images/inputimg.svg') }}" alt="">
+                <input id='catalogimage' type='file' name='catalogimage' onchange="loadFile(event)" hidden/>
+                <input class="text-black font-bold ml-[150px]" id='buttonid' type='button' value='Add your photos here' />
             </div>
         </div>
         <div class="flex justify-center gap-[119px] mt-12 mb-[85px]">
@@ -102,6 +107,22 @@
                 class="bg-[#bfb9b9] text-black w-[196px] h-[51px] font-semibold rounded-md flex justify-center items-center">Cancel</a>
         </div>
     </form>
+    <script>
+        document.getElementById('buttonid').addEventListener('click', openDialog);
+
+        function openDialog() {
+        document.getElementById('catalogimage').click();
+        }
+
+
+
+        let loadFile = function(e) {
+            let image = document.getElementById('img-preview');
+            image.src = URL.createObjectURL(e.target.files[0]);
+        }
+
+    </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 </body>
 @endsection
 

@@ -20,7 +20,7 @@
         @foreach ($vendorcatalogs as $c)
             <div class="flex flex-row">
                 <div class="flex flex-col ml-[99px]">
-                    <img src="{{ asset('storage/' . $c->catalog_image) }}" class="mt-[80px]" width="550px" height="800px">
+                    <img  src="{{ asset('storage/' . $c->catalog_image) }}" class="mt-[80px] w-[550px] h-[700px]">
                 </div>
                 <div class="flex flex-col rounded-sm bg-[#F9F5F2] w-[500px] h-[460px] ml-[45px] mt-[200px]">
                     <div class="flex flex-row ml-[25px] mt-[32px]">
@@ -54,9 +54,9 @@
                     <div class="flex flex-row ml-[25px] mt-[20px]">
                         <img src="{{ asset('storage/' . $c->catalog_image) }}"  width="100px" height="150px">
                     </div>
-                    <div class="flex flex-row ml-[40px] mt-[15px] justify-center">
+                    <div class="flex flex-row ml-[40px] mt-[15px] mb-[15px] justify-center">
                         <input type="Submit" class="bg-[#497174] text-[#d6e4e5] w-[196px] h-[51px] font-semibold rounded-md"
-                        value="Submit">
+                        value="Add to cart">
                     </div>
                 </div>
             </div>
