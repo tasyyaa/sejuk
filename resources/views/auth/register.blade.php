@@ -64,8 +64,12 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
-                    {{ __('Register') }}
+                <x-button class="ml-4" href="{{ route('login') }}">
+                    {{ __('Customer') }}
+                </x-button>
+
+                <x-button class="ml-4" type="button" onclick="window.location.href = '{{ route('registervendor') }}'">
+                    {{ __('Rental') }}
                 </x-button>
 
             </div>
