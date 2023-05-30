@@ -99,7 +99,7 @@
                             Customer.id
                         </h1>
                         <a
-                            href="/editcustsunting"
+                            href="/editcustsunting/{id}"
                             class="flex flex-row items-center gap-2"
                         >
                             <img
@@ -121,7 +121,7 @@
                 <div class="flex flex-col gap-3">
                     <div class="flex flex-row text-xl">
                         <p class="w-48 font-semibold">Full Name</p>
-                        <p class="text-lg">{{ $u->cuts_nama }}</p>
+                        <p class="text-lg">{{ $u->name }}</p>
                     </div>
                     <div class="flex flex-row text-xl">
                         <p class="w-48 font-semibold">Email</p>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="flex flex-row text-xl">
                         <p class="w-48 font-semibold">Phone Number</p>
-                        <p class="text-lg">{{ $u->cust_phonenumber }}</p>
+                        <p class="text-lg">{{ $u->phone_number }}</p>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@
             <div class="flex flex-col pt-10 pb-6 gap-1">
                 <h2 class="text-3xl font-semibold">Address</h2>
                 <p class="text-lg">
-                    <span class="font-bold">{{ $u->cuts_nama }} | </span>{{ $u->cust_homephone }}
+                    <span class="font-bold">{{ $u->name }} | </span>{{ $u->cust_homephone }}
                 </p>
                 <p class="text-lg">
                     {{ $u->cust_address }}
