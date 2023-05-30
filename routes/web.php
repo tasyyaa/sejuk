@@ -8,6 +8,7 @@ use App\Http\Controllers\returnPackageController;
 use App\Http\Controllers\returnPaymentController;
 use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\chooseController;
+use App\Http\Controllers\SuntController;
 
 
 /*
@@ -82,3 +83,11 @@ Route::controller(chooseController::class)->group(function(){
     Route::get('/costumepage', 'index');
     Route::get('/clothespreview/{id}', 'preview');
 });
+
+Route::controller(SuntController::class)->group(function(){
+    Route::get('/custsunting/{id}', 'complete');
+    Route::get('/editcustsunting/{id}', 'create');
+    Route::post('/editcustsunting/store', 'store');
+});
+
+
