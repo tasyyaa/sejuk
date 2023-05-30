@@ -90,7 +90,7 @@ Route::controller(chooseController::class)->group(function(){
 
 Route::controller(SuntController::class)->group(function(){
     Route::get('/custsunting/{id}', 'complete');
-    Route::get('/editcustsunting/{id}', 'create');
+    Route::get('/editcustsunting', 'create');
     Route::post('/editcustsunting/store', 'store');
 });
 
