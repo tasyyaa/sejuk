@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Return Payment</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 
@@ -36,7 +35,7 @@
                         class="d-inline-block align-text-">
                 </a>
                 <a class="navbar-brand">
-                    <h4 class="d-inline-block align-text- mt-4 text-white ml-[8px]"> Return Payment</h4>
+                    <h4 class="d-inline-block align-text- mt-4 text-white ml-[8px]"> Accept Payment</h4>
                 </a>
             </div>
             <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
@@ -49,7 +48,6 @@
             </div>
         </div>
     </nav>
-
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -59,10 +57,9 @@
             </ul>
         </div>
     @endif
-
-    <form action="/returnpayment/store" method="post" enctype="multipart/form-data">
+    <form action="/acceptpayment/store" method="post">
         {{ csrf_field() }}
-        <div class="flex  bg-[#FFFFFF] w-[950px] h-[800px] ml-[150px] mr-[150px] mt-[60px] rounded-sm">
+        <div class="flex  bg-[#FFFFFF] w-[950px] h-[675px] ml-[150px] mr-[150px] mt-[60px] rounded-sm">
             <div class="flex flex-col">
                 <div class="flex flex-row mt-[15px]">
                     <div class="flex flex-col">
@@ -155,56 +152,15 @@
                                 class="border-black w-[200px] h-[25px] ml-[42px]" value="{{ old('amount') }}">
                         </div>
                     </div>
-                    <div class="flex flex-row mt-[15px]">
-                        <p class="d-inline-block font-bold text-[#675959] text-[16px]">Other Payments</p>
-                    </div>
-                    <div class="flex flex-row items-center mt-[30px] mb-[30px]">
-                        <input id="default-radio-9" type="radio" value="GPY" name="bank_id"
-                            class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] ">
-                        <img src="{{ asset('images/gopay.png') }}" class="ml-[20px]" width="25px" height="25px">
-
-                        <label for="default-radio-9" class="ml-2 text-sm font-medium text-black">GoPay</label>
-                    </div>
-                    <div class="flex flex-row items-center mb-[30px]">
-                        <input checked id="default-radio-10" type="radio" value="OVO" name="bank_id"
-                            class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] ">
-                        <img src="{{ asset('images/ovo.jpg') }}" class="ml-[20px]" width="25px" height="25px">
-                        <label for="default-radio-10"
-                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">OVO</label>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <div class="w-[475px] mt-7 h-[300px] ml-[60px] border border-black bg-white after:">
-                    <img id="img-preview" class="h-[250px] w-[475px]" src="{{ asset('images/returnpay.svg') }}"
-                        alt="">
-                    <input id='returnpayment' type='file' name='returnpayment' onchange="loadFile(event)"
-                        hidden />
-                    <input class="text-black font-bold ml-[150px]" id='buttonid' type='button'
-                        value='Add your photos here' />
                 </div>
             </div>
         </div>
         <div class="bg-[#FFFFFF] w-[950px] ml-[150px] mr-[150px] mb-[60px] rounded-sm">
-            <input type="Submit" class="bg-[#497174] text-[#d6e4e5] w-[196px] h-[40px] ml-[350px] mb-[30px] font-semibold rounded-sm"
-            value="Submit">
+            <input type="Submit"
+                class="bg-[#497174] text-[#d6e4e5] w-[196px] h-[40px] ml-[375px] mb-[30px] font-semibold rounded-sm"
+                value="Submit">
         </div>
     </form>
-    <script>
-        document.getElementById('buttonid').addEventListener('click', openDialog);
-
-        function openDialog() {
-            document.getElementById('returnpayment').click();
-        }
-
-
-
-        let loadFile = function(e) {
-            let image = document.getElementById('img-preview');
-            image.src = URL.createObjectURL(e.target.files[0]);
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
 </body>
 

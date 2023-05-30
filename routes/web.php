@@ -71,7 +71,7 @@ Route::controller(returnPaymentController::class)->group(function(){
     Route::get('/returnpayment','create');
     Route::post('/returnpayment/store','store');
     Route::get('/returncomplete', 'complete');
-    Route::get('/returnpaymentprocess', 'rip');
+    Route::get('/returnpaymentprocess/{id}', 'rip');
     Route::get('/returnpaymentsuccess', 'rps');
 });
 
