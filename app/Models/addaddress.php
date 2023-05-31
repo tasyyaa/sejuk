@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class addAddress extends Model
 {
+    public function customer(){
+        return $this->belongsTo('App\customer', 'id', 'id');
+    }
+    
     protected $fillable = [
         'custaddress_id',
         'custaddress_name',

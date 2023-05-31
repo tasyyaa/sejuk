@@ -432,7 +432,7 @@
     <nav class="">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="leftitem" style="display: flex; justify-content: center;">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/orderSummary">
                     <img src="{{ asset('images/backarrowcust.svg') }}" width="60" height="65"
                         class="d-inline-block align-text-">
                 </a>

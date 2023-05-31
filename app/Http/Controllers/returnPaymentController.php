@@ -35,13 +35,33 @@ class returnPaymentController extends Controller
         $accept->outcome_id = $id;
         $accept->bank_id = $request -> bank_id;
         $accept->bank_account = $request -> bank_account;
-        $accept->amount= $request -> amount;
+        $accept->amount= (int)$request -> amount;
+        $accept->returnpay_img= $request -> file('returnpayment')->store('returnpayment');
         $accept->order_id = $request->order_id;
         $accept->save();
 
-	// alihkan halaman ke halaman pegawai
-	return redirect('/returncomplete');
+        $messages = [
+            'min' => ':attribute must be at least :min digit',
+            'max' => ':attribute cannot be at greater than :max digit'
+        ];
 
+        $this->validate($request,[
+            'bank_account' => 'integer|digits_between:10,16',
+            'amount' => 'integer',
+        ]);
+	// alihkan halaman ke halaman pegawai
+	return redirect('/returnpaymentprocess');
+
+    }
+
+    public function rip($id){
+        $payment= DB::table('sejuk_bank_account_outcomes')->where('outcome_id', $id)->get();
+
+        return view('returnpaymentprocess',['sejuk_bank_account_outcomes' => $payment]);
+    }
+
+    public function rps(){
+        return view('/returnpaymentsuccess');
     }
 
 }

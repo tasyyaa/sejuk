@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class returnpackage extends Model
 {
+    public function orders(){
+        return $this->belongsTo('App\orders', 'order_id', 'id');
+    }
     protected $fillable = [
         'return_id',
         'shipping_methods',

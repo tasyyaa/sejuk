@@ -1,15 +1,23 @@
 <?php
 
-use App\Models\addaddress;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\addCostumeController;
 use App\Http\Controllers\acceptPaymentController;
 use App\Http\Controllers\returnPackageController;
 use App\Http\Controllers\returnPaymentController;
-use App\Http\Controllers\testingHelperController;
 use App\Http\Controllers\applyForReturnController;
+use App\Http\Controllers\chooseController;
+use App\Http\Controllers\SuntController;
+use App\Http\Controllers\SigninController;
+use App\Http\Controllers\rentalsController;
 
+use App\Http\Controllers\rentalnewpassController;
+use App\Http\Controllers\rentalresetController;
+use App\Http\Controllers\rentalconfirmpassController;
+use App\Http\Controllers\rentalsemailverifnotifController;
+use App\Http\Controllers\rentalsemailverifpromptController;
+use App\Http\Controllers\rentalsverifyController;
 
 
 /*
@@ -26,6 +34,12 @@ use App\Http\Controllers\applyForReturnController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 Route::controller(addCostumeController::class)->group(function(){
     Route::get('/vendorCatalog', 'index');
@@ -54,10 +68,11 @@ Route::controller(applyForReturnController::class)->group(function(){
 });
 
 Route::controller(acceptPaymentController::class)->group(function(){
-    // Route::get('/ordersummary', 'index');
     Route::get('/acceptpayment','create');
     Route::post('/acceptpayment/store','store');
     Route::get('/returncomplete', 'complete');
+    Route::get('/transferinprocess','tip');
+    Route::get('/transfersuccess','ts');
 });
 
 Route::controller(returnPaymentController::class)->group(function(){
@@ -65,6 +80,8 @@ Route::controller(returnPaymentController::class)->group(function(){
     Route::get('/returnpayment','create');
     Route::post('/returnpayment/store','store');
     Route::get('/returncomplete', 'complete');
+    Route::get('/returnpaymentprocess/{id}', 'rip');
+    Route::get('/returnpaymentsuccess', 'rps');
 });
 
 Route::controller(CheckController::class)->group(function(){
@@ -74,16 +91,3 @@ Route::controller(CheckController::class)->group(function(){
     Route::get('/address', 'complete');
 });
 
-//development
-Route::get('/dev', function () {
-    return view('cartOwnerPage');
-});
-Route::get('/dev2', function () {
-    return view('cartDetailsOwnerPage');
-});
-Route::get('/dev3', function () {
-    return view('cartDetailsOwner2Page');
-});
-Route::get('/dev4', function () {
-    return view('cartDetailsOwnerPageSuccess');
-});
