@@ -73,3 +73,17 @@ Route::controller(CheckController::class)->group(function(){
     Route::post('/addaddress/store','store');
     Route::get('/address', 'complete');
 });
+
+//development
+Route::get('/dev', function () {
+    return view('cartOwnerPage');
+});
+Route::get('/dev2', function () {
+    return view('cartDetailsOwnerPage');
+});
+Route::get('/dev3', function () {
+    return view('cartDetailsOwner2Page');
+});
+Route::get('/dev4', function () {
+    return view('cartDetailsOwnerPageSuccess');
+});
