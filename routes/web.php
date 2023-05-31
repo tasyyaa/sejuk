@@ -91,32 +91,3 @@ Route::controller(CheckController::class)->group(function(){
     Route::get('/address', 'complete');
 });
 
-Route::controller(chooseController::class)->group(function(){
-    Route::get('/costumepage', 'indexcostume');
-    Route::get('/clothespage', 'indexclothes');
-    Route::get('/clothespreview/{id}', 'preview');
-});
-
-Route::controller(SuntController::class)->group(function(){
-    Route::get('/custsunting/{id}', 'complete');
-    Route::get('/editcustsunting/{id}', 'create');
-    Route::post('/editcustsunting/store', 'store');
-});
-
-route::prefix('rentals')->group(function(){
-    Route::get('/loginvendor', [rentalsController::class, 'Index'])
-    ->name('loginvendor');
-
-    Route::get('/loginvendor/owner', [LoginVendorController::class, 'Login'])
-    ->name('rentals.login');
-
-    Route::get('/dashboard', [LoginVendorController::class, 'Index'])
-    ->name('rentals.dashboard');
-
-});
-
-Route::get('FAQ', function () {
-    return view('FAQ');
-});
-
-
