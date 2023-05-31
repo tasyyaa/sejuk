@@ -9,6 +9,15 @@ use App\Http\Controllers\returnPaymentController;
 use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\chooseController;
 use App\Http\Controllers\SuntController;
+use App\Http\Controllers\SigninController;
+use App\Http\Controllers\rentalsController;
+
+use App\Http\Controllers\rentalnewpassController;
+use App\Http\Controllers\rentalresetController;
+use App\Http\Controllers\rentalconfirmpassController;
+use App\Http\Controllers\rentalsemailverifnotifController;
+use App\Http\Controllers\rentalsemailverifpromptController;
+use App\Http\Controllers\rentalsverifyController;
 
 
 /*
@@ -92,6 +101,22 @@ Route::controller(SuntController::class)->group(function(){
     Route::get('/custsunting/{id}', 'complete');
     Route::get('/editcustsunting/{id}', 'create');
     Route::post('/editcustsunting/store', 'store');
+});
+
+route::prefix('rentals')->group(function(){
+    Route::get('/loginvendor', [rentalsController::class, 'Index'])
+    ->name('loginvendor');
+
+    Route::get('/loginvendor/owner', [LoginVendorController::class, 'Login'])
+    ->name('rentals.login');
+
+    Route::get('/dashboard', [LoginVendorController::class, 'Index'])
+    ->name('rentals.dashboard');
+
+});
+
+Route::get('FAQ', function () {
+    return view('FAQ');
 });
 
 

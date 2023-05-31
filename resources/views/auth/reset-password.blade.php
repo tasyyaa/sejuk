@@ -12,7 +12,8 @@
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Reset Password</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Forgot Password</title>
     <style>
         body {
             width: 100%;
@@ -236,6 +237,7 @@
                     <h1 class="text-3xl font-semibold  text-[#050505]">
                         Forget Password?
                     </h1>
+
 
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />

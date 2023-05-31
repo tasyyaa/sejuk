@@ -201,10 +201,16 @@
                                             <h1>Home</h1>
                                         </div>
                                         <div>
-                                            <h1>My Purchases</h1>
+                                            <h1>Your Catalogue</h1>
+                                        </div>
+                                        <div>
+                                            <h1>My Order List</h1>
                                         </div>
                                         <div>
                                             <h1>FAQ</h1>
+                                        </div>
+                                        <div>
+                                            <h1>My Account</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -244,7 +250,7 @@
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('loginvendor') }}">
                         @csrf
                         <div style="font-family: 'Montserrat', sans-serif;" class="flex flex-col gap-[39px]">
                             <!-- Email Address -->
@@ -285,8 +291,7 @@
                                     href=""class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign
                                     In</button>
                             </div>
-                            <a class="underline text-sm text-gray-600 hover:text-gray-900"
-                                href="{{ route('register') }}">
+                            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
                                 {{ __('Haven’t made an account?Create an account here!') }}
                             </a>
 
@@ -299,26 +304,26 @@
                                                 class="w3-button w3-black"></button>
                                         {{-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button> --}}
 
-                                        <div id="id01" class="w3-modal">
-                                            <div class="w3-modal-content w3-animate-right"
-                                                style="width: 600px; height: 300px; margin-left: 780px; margin-top: 300px;">
-                                                <header class="w3-container">
-                                                    <img src="images/faq.png" alt="" style="width: 70px;">
-                                                    <span
-                                                        onclick="document.getElementById('id01').style.display='none'"
-                                                        class="w3-button w3-display-topright">&times;</span>
+                                            <div id="id01" class="w3-modal" >
+                                                <div class="w3-modal-content w3-animate-right" style="width: 600px; height: 300px; margin-left: 780px; margin-top: 300px;">
+                                                    <header class="w3-container" style="color:#497174">
+                                                        <img src="images/faq.png" alt=""
+                                                            style="width: 70px;">
+                                                        <span
+                                                            onclick="document.getElementById('id01').style.display='none'"
+                                                            class="w3-button w3-display-topright">&times;</span>
 
-                                                </header>
-                                                <div class="w3-container">
+                                                    </header>
+                                                    <div class="w3-container">
 
-                                                    <p>FAQs</p>
-                                                    <p>General</p>
-                                                    <p>Shipping</p>
-                                                    <p>Payment</p>
-                                                    <p>Return</p>
+                                                        <p>FAQs</p>
+                                                        <p>General</p>
+                                                        <p>Shipping</p>
+                                                        <p>Payment</p>
+                                                        <p>Return</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
                                 </div>
 

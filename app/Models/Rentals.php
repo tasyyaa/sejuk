@@ -17,12 +17,20 @@ class Rentals extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $guard = 'rentals';
     protected $fillable = [
-
+        'name',
+        'email',
+        'city',
+        'phone_number',
+        'vendor_Creditcardtype1',
+        'vendor_Creditcardtype2',
         'vendor_store',
         'vendor_type',
         'vendor_oprhours',
         'vendor_storeaddress',
+        'vendor_homepage',
+        'vendor_address',
     ];
 
     /**

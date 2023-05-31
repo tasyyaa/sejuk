@@ -29,10 +29,10 @@ class SuntController extends Controller
     {
         //insert data ke tabel users
         DB::table('users')->insert([
-            'cuts_nama' => $request->fullname,
+            'name' => $request->fullname,
             'cust_Creditcardtype1' => $request->mastercard,
             'cust_Creditcardtype2' => $request->visa,
-            'cust_phonenumber' => $request->phone,
+            'phone_number' => $request->phone,
             'cust_homephone' => $request->homephone,
             'cust_address' => $request->address,
             'email' => $request->email,

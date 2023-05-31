@@ -12,8 +12,7 @@
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Sign In</title>
+    <title>Reset Password</title>
     <style>
         body {
             width: 100%;
@@ -234,103 +233,54 @@
         <div class="w-full h-screen bg-[#fbf8f6]">
             <div class=" h-screen ml-[71px]  ">
                 <div class="flex gap-[30px] z-0  h-screen justify-center flex-col pb-1">
-                    <h1 class="text-4xl font-semibold  text-[#050505]">
-                        Welcome Back!
+                    <h1 class="text-3xl font-semibold  text-[#050505]">
+                        Forget Password?
                     </h1>
-
-                    <!-- Session Status -->
-                    <x-auth-session-status class="mb-4" :status="session('status')" />
 
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('password.update') }}">
                         @csrf
-                        <div style="font-family: 'Montserrat', sans-serif;" class="flex flex-col gap-[39px]">
-                            <!-- Email Address -->
-                            <div>
-                                <input type="email" name="email" :value="old('email')" id="email"
-                                    placeholder="EMAIL"
-                                    class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0">
-                            </div>
 
+                    <div style="font-family: 'Montserrat', sans-serif;" class="flex flex-col gap-[39px]">
+                        <!-- Password Reset Token -->
+                        <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-                            <!-- Password -->
-                            <div class="mt-4">
-                                <input type="password" name="password" id="password" placeholder="PASSWORD" required
-                                    autocomplete="current-password"
-                                    class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0">
-                            </div>
-
-                            <!-- Remember Me -->
-                            <div class="flex items-center mt-4 justify-between flex-row">
-                                <label for="remember_me" class="inline-flex items-center">
-                                    <input id="remember_me" type="checkbox"
-                                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        name="remember">
-                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                                </label>
-
-                                @if (Route::has('password.request'))
-                                    <a class="underline text-sm text-gray-400 hover:text-black-900"
-                                        href="{{ route('password.request') }}">
-                                        <div>
-                                            <a href="forgot-password" class="text-[#000000] mr-16">Forgot Password</a>
-                                        </div>
-                                    </a>
-                                @endif
-                            </div>
-                            <div class="flex justify-center">
-                                <button
-                                    href=""class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign
-                                    In</button>
-                            </div>
-                            <a class="underline text-sm text-gray-600 hover:text-gray-900"
-                                href="{{ route('register') }}">
-                                {{ __('Haven’t made an account?Create an account here!') }}
-                            </a>
-
-                            <div class="text-[#565656] text-[15px]">
-
-                                <div class="flex flex-row justify-end absolute right-14 z-0 ">
-                                    <a href="">
-                                        <button><img class="w-[80px]" src="images/bubble-chat.svg" alt=""
-                                                onclick="document.getElementById('id01').style.display='block'"
-                                                class="w3-button w3-black"></button>
-                                        {{-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button> --}}
-
-                                        <div id="id01" class="w3-modal">
-                                            <div class="w3-modal-content w3-animate-right"
-                                                style="width: 600px; height: 300px; margin-left: 780px; margin-top: 300px;">
-                                                <header class="w3-container">
-                                                    <img src="images/faq.png" alt="" style="width: 70px;">
-                                                    <span
-                                                        onclick="document.getElementById('id01').style.display='none'"
-                                                        class="w3-button w3-display-topright">&times;</span>
-
-                                                </header>
-                                                <div class="w3-container">
-
-                                                    <p>FAQs</p>
-                                                    <p>General</p>
-                                                    <p>Shipping</p>
-                                                    <p>Payment</p>
-                                                    <p>Return</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </div>
-
-
-                                </a>
+                        <!-- Email Address -->
+                        <div>
+                            <label for="helper-text"
+                                class="mb-8 text-lg flex justify-start font-light text-[#023A15] ">Please re-enter
+                                your registered email to reset your password!</label>
+                            <div class=" w-[518px] h-83px[]">
+                                <input id="email" type="text" name="email"
+                                :value="old('email', $request->email)" required autofocus class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0"
+                                placeholder="EMAIL" />
                             </div>
                         </div>
+
+                        <!-- Password -->
+                        <div class="mt-4">
+                            <input id="password" type="password" name="password"
+                                required class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0"
+                                placeholder="PASSWORD"/>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mt-4">
+                            <input id="password_confirmation" class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0"
+                            placeholder="CONFIRM PASSWORD" type="password"
+                                name="password_confirmation" required />
+                        </div>
+
+                        <div class="flex justify-center">
+                            <button class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">
+                                {{ __('Reset Password') }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 </body>

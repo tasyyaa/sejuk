@@ -60,6 +60,8 @@
                     {{ __('Sign Up') }}
                 </x-button>
 
+                
+
             </div>
         </form>
     </x-auth-card>
