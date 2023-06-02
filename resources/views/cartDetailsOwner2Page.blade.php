@@ -80,43 +80,21 @@
     <nav class="">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="leftitem" style="display: flex; justify-content: center;">
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;
-                    </a>
-                    <a href="#Home">Home</a>
-                    <a href="#Promotion">Promotion</a>
-                    <a href="#Our Service">Our Services</a>
-                    <a href="#Contact">Contact</a>
-                </div>
-                <div id="main" style="margin:0px 20px 0px 0px">
-                    <span style="font-size:20px;cursor:pointer" onclick="openNav()"> &#9776;
-                    </span>
-                </div>
-
+                <a class="navbar-brand" href="">
+                    <img src="{{ asset('images/backarrowvendor.svg') }}" width="60" height="65"
+                        class="d-inline-block align-text-">
+                </a>
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('storage/buatapp/sejuk1.png') }}" width="24" height="30"
+                    <img src="{{ asset('images/sejuk1.png') }}" width="40" height="45"
                         class="d-inline-block align-text-">
                 </a>
             </div>
-            <div class="">
-                <div class="relative">
-                    <div
-                        class="flex justify-center  w-[104px] absolute right-0 items-center h-[40px] bg-[#497174] rounded-md">
-                        <i class="fas fa-search text-xl font-medium text-white"></i>
-                    </div>
-                    <input type="text" class="w-[508px] h-[40px] pl-3 rounded-lg  focus:outline-0"
-                        placeholder="Cari Baju">
-                </div>
-            </div>
-            <div class="sideitem" style="display: flex; justify-content: center;margin-left: 10px;">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('storage/buatapp/Cart owner.png') }}" width="30" height="24">
+            <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
+                <a class="navbar-brand" href="/notifications" style="margin:0px 0px 0px 20px;">
+                    <img src="{{ asset('images/notifications.svg') }}" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
-                    <img src="{{ asset('storage/buatapp/Notifications owner.png') }}" width="30" height="24">
-                </a>
-                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
-                    <img src="{{ asset('storage/buatapp/3.png') }}" width="30" height="24">
+                <a class="navbar-brand" href="/vendorAccount" style="margin:0px 0px 0px 20px;">
+                    <img src="{{ asset('images/3.png') }}" width="30" height="24">
                 </a>
             </div>
         </div>
@@ -244,17 +222,6 @@
             </a>
         </div>
     </div>
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
 </body>
 
 </html>

@@ -52,7 +52,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
+        // bikin ke homepageuser
         return redirect(RouteServiceProvider::HOME);
     }
 }

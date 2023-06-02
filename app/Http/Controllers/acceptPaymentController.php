@@ -10,6 +10,22 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class acceptPaymentController extends Controller
 {
+
+    public function confpack1(){
+
+        return view ('returnvendor');
+    }
+
+    public function confpack2(){
+
+        return view('returnvendorconfirmed');
+    }
+
+    public function completed(){
+
+        return view('returnvendorcompleted');
+    }
+
     public function complete()
     {
     	// mengambil data dari table pegawai

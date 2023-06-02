@@ -11,12 +11,14 @@
     <title>Order Summary</title>
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: linear-gradient(rgba(214, 228, 229, 1),  rgba(249, 245, 242, 1));
             background-attachment: fixed;
         }
@@ -446,7 +448,7 @@
             </div>
             <div class="sideitem" style="display: flex; justify-content: center;">
                 <a class="navbar-brand" href="#">
-                    <h4 class="d-inline-block align-text- text-[#675959]"> Afanda </h4>
+                    <h4 class="d-inline-block align-text- text-[#675959]"> Name </h4>
                 </a>
             </div>
         </div>

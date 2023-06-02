@@ -41,9 +41,10 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+
 Route::controller(addCostumeController::class)->group(function(){
-    Route::get('/vendorCatalog', 'index');
-    Route::get('/vendorCatalog/addCostume','create');
+    Route::get('/homepageVendor', 'index');
+    Route::get('/homepageVendor/addCostume','create');
     Route::post('/vendorCatalog/store','store');
     Route::get('/vendorCatalog/delete/{id}','hapus');
     Route::get('/vendorCatalog/addCostumeInvalid','view');
@@ -73,6 +74,9 @@ Route::controller(acceptPaymentController::class)->group(function(){
     Route::get('/returncomplete', 'complete');
     Route::get('/transferinprocess','tip');
     Route::get('/transfersuccess','ts');
+    Route::get('/ordershippedvendor','confpack1');
+    Route::get('/orderreturnedvendor','confpack2');
+    Route::get('/ordercompletedvendor','completed');
 });
 
 Route::controller(returnPaymentController::class)->group(function(){
@@ -89,6 +93,22 @@ Route::controller(CheckController::class)->group(function(){
     Route::get('/addaddress','create');
     Route::post('/addaddress/store','store');
     Route::get('/address', 'complete');
+    Route::get('/myOrderList', 'myorderlist');
+});
+
+Route::controller(SuntController::class)->group(function(){
+    Route::get('/custsunting/{id}', 'complete');
+    Route::get('/editcustsunting/{id}', 'create');
+    Route::post('/editcustsunting/store', 'store');
+});
+
+Route::controller(chooseController::class)->group(function(){
+    Route::get('/costumepage', 'indexcostume');
+    Route::get('/clothespage', 'indexclothes');
+    Route::get('/clothespreview/{id}', 'preview');
+    Route::get('/homepageGuest', 'homepageguest');
+    Route::get('/homepageCustomer', 'homepagecust');
+    Route::get('/myPurchases', 'mypurchases');
 });
 
 //development
@@ -102,5 +122,17 @@ Route::get('/cartDetailsVendor2', function () {
     return view('cartDetailsOwner2Page');
 });
 Route::get('/cartDetailsVendorSuccess', function () {
+    return view('cartDetailsOwnerPageSuccess');
+});
+Route::get('/dev', function () {
+    return view('cartOwnerPage');
+});
+Route::get('/dev2', function () {
+    return view('cartDetailsOwnerPage');
+});
+Route::get('/dev3', function () {
+    return view('cartDetailsOwner2Page');
+});
+Route::get('/dev4', function () {
     return view('cartDetailsOwnerPageSuccess');
 });

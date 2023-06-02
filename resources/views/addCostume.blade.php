@@ -5,9 +5,12 @@
 <head>
     <script src="js/script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <style>
     body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
             background-attachment: fixed;
         }

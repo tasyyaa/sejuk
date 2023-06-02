@@ -8,6 +8,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
         integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
     <title>Order Summary</title>
 
     <!-- Fonts -->
@@ -16,7 +17,7 @@
     <!-- Styles -->
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: linear-gradient(rgba(214, 228, 229, 1),  rgba(249, 245, 242, 1));
             background-attachment: fixed;
         }
@@ -446,7 +447,7 @@
             </div>
             <div class="sideitem" style="display: flex; justify-content: center;">
                 <a class="navbar-brand" href="#">
-                    <h4 class="d-inline-block align-text- text-[#675959]"> Afanda </h4>
+                    <h4 class="d-inline-block align-text- text-[#675959]"> {{ auth()->user()->name}} </h4>
                 </a>
             </div>
         </div>
