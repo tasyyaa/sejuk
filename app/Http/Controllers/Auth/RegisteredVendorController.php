@@ -55,7 +55,7 @@ class RegisteredVendorController extends Controller
     event(new Registered($rentals));
 
     Auth::login($rentals);
-
+    //bikin ke homepage vendor
     return redirect(RouteServiceProvider::HOME);
 }
 

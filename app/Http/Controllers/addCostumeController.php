@@ -42,7 +42,7 @@ class addCostumeController extends Controller
         $c->save();
 
 	// alihkan halaman ke halaman pegawai
-	return redirect('/vendorCatalog');
+	return redirect('/homepageVendor');
 
     }
 

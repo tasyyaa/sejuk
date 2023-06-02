@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -16,9 +17,10 @@
 
         <style>
             body {
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Plus Jakarta Sans', sans-serif;
             }
         </style>
+
     </head>
     <body class="antialiased">
     <div class="flex-center position-ref full-height">

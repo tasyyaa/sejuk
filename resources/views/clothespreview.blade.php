@@ -5,10 +5,11 @@
 
     <head>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
     </head>
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: linear-gradient(rgba(214, 228, 229, 1), rgba(239, 245, 245, 1));
             background-attachment: fixed;
         }

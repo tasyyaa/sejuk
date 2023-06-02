@@ -2,8 +2,9 @@
 <html>
 
 <head>
-    <title>Return Package</title>
+    <title>Accept Payment</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
         integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
     </script>
@@ -12,15 +13,13 @@
 
     <title>Transfer in process</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
-            background: linear-gradient(rgba(73, 113, 116, 1), rgba(249, 245, 242, 1));
+            background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
             background-attachment: fixed;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
 </head>
@@ -37,9 +36,9 @@
                     <img src="{{ asset('images/sejuk1.png') }}" width="40" height="45"
                         class="d-inline-block align-text-">
                 </a>
-                <a class="navbar-brand">
-                    <h4 class="d-inline-block align-text- mt-4 text-white ml-[8px]"> Transfer In Process</h4>
-                </a>
+                <p
+                class="text-white font-medium text-[30px] ml-6 border-l-4 border-white h-14 place-self-center pt-1 pl-4">Transfer In Progress
+                </p>
             </div>
             <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
                 <a class="navbar-brand" href="/notifications" style="margin:0px 0px 0px 20px;">

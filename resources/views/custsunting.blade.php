@@ -99,7 +99,7 @@
                             Customer.id
                         </h1>
                         <a
-                            href="/editcustsunting"
+                            href="/editcustsunting/{{ $u->id }}"
                             class="flex flex-row items-center gap-2"
                         >
                             <img
