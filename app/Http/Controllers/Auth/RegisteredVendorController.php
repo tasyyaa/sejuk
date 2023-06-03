@@ -58,6 +58,6 @@ class RegisteredVendorController extends Controller
         session(['registervendor' => $formData]);
 
         return redirect()->route('registervendornext');
-    }
 }
 
+}

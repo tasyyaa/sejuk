@@ -13,22 +13,27 @@ class SuntController extends Controller
     public function complete($id)
     {
     	// mengambil data dari users
-        $editcustaccount = DB::table('users')->where('Id',$id)->get();
+        $editcustaccount = DB::table('users')->where('id',$id)->get();
 
         //mengirim data ke view custaccount
         return view('custsunting', ['users' => $editcustaccount]);
     }
 
-    public function create()
+    public function create($id)
     {
+        $editcustaccount = DB::table('users')->where('id',$id)->get();
         //memanggil view edit
-        return view('editcustsunting/{id}');
+
+
+        return view('editcustsunting', ['users' => $editcustaccount]);
+
     }
 
     public function store(Request $request)
     {
-        //insert data ke tabel users
-        DB::table('users')->insert([
+        //update data ke tabel users
+
+        DB::table('users')->where('id', $request->id)->update([
             'name' => $request->fullname,
             'cust_Creditcardtype1' => $request->mastercard,
             'cust_Creditcardtype2' => $request->visa,
@@ -39,6 +44,6 @@ class SuntController extends Controller
         ]);
 
         //alihkan halaman ke halaman cust account
-        return redirect('/custsunting/{id}');
+        return redirect('/custsunting');
     }
 }

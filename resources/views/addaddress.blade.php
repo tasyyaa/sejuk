@@ -2,9 +2,15 @@
 @section('title', 'address-page')
 @section('urlbfr','address')
 @section('content')
+<head>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: linear-gradient(#D6E4E5, #F9F5F2);
             background-attachment: fixed;
         }

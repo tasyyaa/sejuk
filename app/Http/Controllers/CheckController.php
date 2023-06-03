@@ -10,6 +10,11 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 class CheckController extends Controller
 {
 
+    public function myorderlist(){
+
+        return view ('myOrderList');
+    }
+
     public function complete()
     {
     	// mengambil data dari add address
