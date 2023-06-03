@@ -209,9 +209,6 @@
                                         <div>
                                             <h1>FAQ</h1>
                                         </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="mx-auto">

@@ -22,96 +22,199 @@
             background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
             background-attachment: fixed;
         }
+
+         .container {
+            max-width: 1050px;
+            width: 100%;
+        }
+
+
+        .navbar {
+            position: absolute;
+            width: 100%;
+            background-color: transparent;
+        }
+
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 62px;
+        }
+
+
+        .navbar .menu-items {
+        display: flex;
+        background-color: whitesmoke;
+        overflow-y: auto; /* Add this line to enable scrolling */
+    }
+
+
+        .navbar .nav-container li {
+            list-style: none;
+        }
+
+
+        .navbar .nav-container a {
+            text-decoration: none;
+            color: #0e2431;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 0.7rem;
+        }
+
+
+        .navbar .nav-container a:hover {
+            font-weight: bolder;
+        }
+
+
+        .nav-container {
+            display: block;
+            position: relative;
+            height: 60px;
+        }
+
+
+        .nav-container .checkbox {
+            position: absolute;
+            display: block;
+            height: 32px;
+            width: 32px;
+            top: 30px;
+            left: 30px;
+            z-index: 5;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+
+        .nav-container .hamburger-lines {
+            display: block;
+            height: 26px;
+            width: 32px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+
+        .nav-container .hamburger-lines .line {
+            display: block;
+            z-index: 10;
+            height: 5px;
+            width: 100%;
+            border-radius: 10px;
+            background: black;
+        }
+
+
+        .nav-container .hamburger-lines .line1 {
+            transform-origin: 0% 0%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .nav-container .hamburger-lines .line2 {
+            transition: transform 0.2s ease-in-out;
+        }
+
+
+        .nav-container .hamburger-lines .line3 {
+            transform-origin: 0% 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .navbar .menu-items {
+            position: absolute;
+            padding-top: 120px;
+            height: 100vh;
+            width: 100vw;
+            transform: translate(-150%);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.5s ease-in-out;
+            text-align: center;
+            overflow: hidden;
+        }
+
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, .25);
+    height: 80px;
+    z-index: 0;/* Replace with your desired background color */
+  }
+        .navbar .menu-items li {
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 90px;
+            font-size: 1.2rem;
+            width: 90px;
+            color: #0e2431;
+        }
+
+
+        .nav-container input[type="checkbox"]:checked~.menu-items {
+            transform: translateX(0);
+        }
+        .nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
+            transform: rotate(45deg);
+            background: #497174;
+        }
+
+
+        .nav-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
+            transform: scaleY(0);
+            background: #497174;
+        }
+
+
+        .nav-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
+            transform: rotate(-45deg);
+            background: #497174;
+        }
+
+
+        .nav-container input[type="checkbox"]:checked~.logo {
+            display: none;
+        }
+
+
     </style>
     {{-- start --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     {{-- tambah ini buat tailwind (mulai dari start) --}}
+
 </head>
 
 <body>
-    <nav class="">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <div class="leftitem" style="display: flex; justify-content: center;">
-                <div id="main" style="margin:0px 20px 0px 0px">
-                    <span style="font-size:20px;cursor:pointer" data-drawer-target="drawer-navigation"
-                        data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"> &#9776;
-                    </span>
-                </div>
-                <div id="drawer-navigation"
-                    class="fixed top-0 left-0 z-40 w-screen h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
-                    tabindex="-1" aria-labelledby="drawer-navigation-label">
-                    <div class="flex flex-row">
-                        <div class="flex flex-col bg-[#FFFFFF] w-[650px] relative">
-                            <div class="flex flex-row">
-                                <div class="flex flex-col ml-[25px]">
-                                    <img src="{{ asset('images/sejukcust2.svg') }}" width="60" height="80"
-                                        class="d-inline-block align-text-">
-                                </div>
-                                <div class="flex flex-col">
-                                    <button type="button" data-drawer-hide="drawer-navigation"
-                                        aria-controls="drawer-navigation"
-                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
-                                        <svg aria-hidden="true" class="w-10 h-10" fill="#497174" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                clip-rule="evenodd"></path>
-                                        </svg>
-                                        <span class="sr-only">Close menu</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="flex flex-row ml-[45px] mt-[20px]">
-                                <div class="relative w-[500px] ml-[25px]">
-                                    <input type="search" id="search-dropdown"
-                                        class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-[50px] bo border border-gray-300 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:ring-0 focus:border-transparent"
-                                        placeholder="Search by product, category,  size, etc." required>
-                                    <button type="submit"
-                                        class="bg-gray-50 absolute top-0 right-0 p-2.5 text-sm font-medium text-white  rounded-r-[50px] border focus:ring-0 focus:border-transparent">
-                                        <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="#000000"
-                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                        </svg>
-                                        <span class="sr-only">Search</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="flex flex-row ml-[80px] mt-[30px]">
-                                <a href="/homepageVendor"
-                                    class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">Home</a>
-                            </div>
-                            <div class="flex flex-row ml-[80px] mt-[6px]">
-                                <a href="/vendorCatalog"
-                                    class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">Your Catalogue</a>
-                            </div>
-                            <div class="flex flex-row ml-[80px] mt-[6px]">
-                                <a href="/orderList"
-                                    class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">My Order List</a>
-                            </div>
-                            <div class="flex flex-row ml-[80px] mt-[6px]">
-                                <a href="/faq"
-                                    class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">FAQ</a>
-                            </div>
-                            <div class="flex flex-row ml-[80px] mt-[6px]">
-                                <a href="/vendorAccount"
-                                    class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">My Account</a>
-                            </div>
-                        </div>
-                        <div class="flex flex-col">
-                            <img src="{{ asset('images/sidebar.jpg') }}" class="w-[650px] h-screen">
-                        </div>
-                    </div>
-                </div>
-
-                {{-- navbar --}}
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('storage/buatapp/sejuk1.png') }}" width="24" height="30"
-                        class="d-inline-block align-text-">
-                </a>
-            </div>
+    <nav class="sticky top-0 z-50">
+        <div class="navbar relative z-10">
             <div class="">
+                <div class="container  nav-container">
+                    <input class="checkbox" type="checkbox" name="" id="" />
+                    <div class="hamburger-lines">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+                    </div>
+                    <div class="logo">
+                        <img class="w-12" src="images/logo-singin.svg" alt="">
+                    </div>
+                    <div class="absolute top-6 left-[40%]">
                 <div class="relative">
                     <div
                         class="flex justify-center  w-[104px] absolute right-0 items-center h-[40px] bg-[#497174] rounded-md">
@@ -121,21 +224,79 @@
                         placeholder="Search">
                 </div>
             </div>
-            <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
-                <a class="navbar-brand" href="/orderList">
+             <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
+                <a class="navbar-brand" href="/mypurchases">
                     <img src="{{ asset('images/cart.svg') }}" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="/notifications" style="margin:0px 0px 0px 20px;">
+                <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
                     <img src="{{ asset('images/notifications.svg') }}" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="/vendorAccount" style="margin:0px 0px 0px 20px;">
+                <a class="navbar-brand" href="/customerAccount" style="margin:0px 0px 0px 20px;">
                     <img src="{{ asset('storage/buatapp/3.png') }}" width="30" height="24">
                 </a>
+            </div>
+
+                    <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
+                        <div class="flex flex-row ">
+                            <div class=" relative w-full">
+                                <div class=" mt-">
+                                    <div class="relative flex ml-12 justify-center">
+                                        <input
+                                            class="w-[700px]  text-2xl h-[70px] rounded-full bg-[#e4e4e4] text-[#565656] font-bold pl-4 focus:outline-0 placeholder:text-[#565656]"
+                                            placeholder="Search by product, category,  size, etc." type="text">
+                                        <i class="fa fa-search fa-2x absolute right-5 bottom-5" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="flex flex-col gap-[78px]">
+                                        <a class="text-semibold text-" href=""></a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
+                                    <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
+                                        <div>
+                                            <h1>Home</h1>
+                                        </div>
+                                        <div>
+                                            <h1>Your Catalogue</h1>
+                                        </div>
+                                        <div>
+                                            <h1>My Order List</h1>
+                                        </div>
+                                        <div>
+                                            <h1>FAQ</h1>
+                                        </div>
+                                        <div>
+                                            <h1>My Account</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full">
+                                <div class="logo flex ml-[780px] fill-[#4a7174] lg:ml-[700px]">
+                                    <img class="w-20" src="images/logo-side.svg" alt="">
+                                </div>
+                                <img class="absolute top-0 right-0 w-[40%]" src="images/sidebar.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script>
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const scrollDistance = 800; // Replace with your desired scroll distance in pixels
+
+    if (window.pageYOffset > scrollDistance) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+</script>
     @yield('content')
 </body>
 

@@ -239,22 +239,16 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
-                                    <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
+                                class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
+                                <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                         <div>
                                             <h1>Home</h1>
                                         </div>
                                         <div>
-                                            <h1>Your Catalogue</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Order List</h1>
+                                            <h1>My Purchases</h1>
                                         </div>
                                         <div>
                                             <h1>FAQ</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Account</h1>
                                         </div>
                                     </div>
                                 </div>
