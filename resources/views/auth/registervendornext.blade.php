@@ -48,10 +48,9 @@
 
 
         .navbar .menu-items {
-        display: flex;
-        background-color: whitesmoke;
-        overflow-y: auto; /* Add this line to enable scrolling */
-    }
+            display: flex;
+            background-color: whitesmoke;
+        }
 
 
         .navbar .nav-container li {
@@ -190,6 +189,29 @@
         .nav-container input[type="checkbox"]:checked~.logo {
             display: none;
         }
+
+        .input-label {
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .input-container {
+        position: relative;
+        width: 100%;
+    }
+    
+    .custom-input {
+        width: 600px;
+        height: 102px;
+        margin-top: 12px;
+        border: 1px solid #000;
+        color: #000;
+        font-size: 1rem;
+        padding: 0.8rem;
+        outline: none;
+        background-color: #FFF;
+    }
     </style>
 </head>
 
@@ -203,32 +225,40 @@
             </div>
             <div class="flex flex-row items-center gap-4 mr-32">
                 <div class="flex items-center gap-3">
-                    
                     <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#497174] ring-1 ring-black">
                         <h1 class="text-2xl font-semibold">1</h1>
                     </div>
                     <h1 class="font-semibold">Welcome</h1>
+                </div>
+                <hr class="border-none h-1 bg-[#BFB9B9] w-8">
+                <<div class="flex flex-row items-center gap-4 mr-32">
+                <div class="flex items-center gap-3">
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#497174] ring-1 ring-black">
+                        <h1 class="text-2xl font-semibold">2</h1>
+                    </div>
+                    <h1 class="font-semibold">About You</h1>
                 </div>
             </div>
         </div>
     </nav>
     <!-- nav end -->
 
-
-    <form style="background: linear-gradient(180deg, #FFFFFF 0%, #F9F5F2 100%);" class="" x-on:submit="handleSubmit" x-data="{
-    password: '',
-    confirmPassword: '',
-    passwordsMatch: false,
-    fullname: '',
-    isValidFullname: false,
-    isValidPhone: false,
-    isValidEmail: false,
-    email: '',
-    phone: '',
-    minPhoneLength: 8,
-    invalid: false,
-    incomplete: false,
-}">
+    <form style="background: linear-gradient(180deg, #FFFFFF 0%, #F9F5F2 100%);" class="" x-on:submit="handleSubmit"
+      x-data="{
+        vendorname: '',
+        vendortype: '',
+        isValidVendorname: false,
+        startTime: '',
+        endTime: '',
+        isValidVendoroprhours: false,
+        isValidVendorstoreaddress: false,
+        vendorstoreaddress: '',
+        phone: '',
+        minVendoroprhoursLength: 8,
+        invalid: false,
+        incomplete: false,
+      }" method="POST">
+      @csrf
     <div x-show="invalid" class="fixed top-0 left-0 right-0 h-36 bg-white z-50" x-transition x-cloak>
         <div class="flex flex-col px-12 pt-4 pb-2">
             <h2 class="text-3xl font-bold text-[#FE4A4A]">
@@ -236,7 +266,7 @@
             </h2>
             <p class="text-lg font-medium">Click OK to continue</p>
             <p class="ml-auto mt-4 px-8 py-0.5 border-2 shadow-xl border-b-4 border-b-slate-300 hove:brightness-75 cursor-pointer"
-                @click="invalid=false">
+                @click="invalid = false">
                 Ok
             </p>
         </div>
@@ -247,55 +277,48 @@
             <p class="text-[#BFB9B9] text-2xl w-[460px]">Please fill in a few details below about your business!</p>
         </div>
         <div>
-            <input x-model="fullname" x-on:input="isValidFullname = fullname.trim() !== ''"
+            <input x-model="vendorname" x-on:input="isValidVendorname = vendorname.trim() !== ''"
                 class="w-[600px] h-[102px] mt-12 ring-1 text-black focus:border-none ring-black bg-white focus:outline-none  placeholder:text-[#BFB9B9] text-xl pl-8"
-                placeholder="FULLNAME">
+                placeholder="VENDORNAME">
+            <p class="text-red-500 mt-1" x-show="!isValidVendorname">Vendor name is required.</p>
         </div>
         <div>
-            <select name="city" id="city"
-                class="w-[600px] h-[102px] mt-12 ring-1 appearance-none focus:border-none ring-black bg-white focus:outline-none  text-xl pl-8">
-                <option value="Surabaya">Surabaya</option>
-                <option value="Jakarta">Jakarta</option>
-                <option value="Medan">Medan</option>
+            <select name="vendortype" id="vendortype"
+                class="w-[600px] h-[102px] mt-12 ring-1 appearance-none focus:border-none ring-black bg-white focus:outline-none  text-xl pl-8"
+                x-model="vendortype">
+                <option value="" disabled selected>Select Vendor Type</option>
+                <option value="Retail">Retail</option>
+                <option value="Rental">Rental</option>
+                <option value="Seller">Seller</option>
             </select>
+            <p class="text-red-500 mt-1" x-show="!vendortype">Vendor type is required.</p>
         </div>
         <div>
-            <input x-model="email" x-on:input="isValidEmail = email.trim() !== ''"
+            <label for="start_time" class="input-label">Start Time:</label>
+            <div class="input-container">
+                <input type="time" id="start_time" x-model="startTime" class="custom-input">
+            </div>
+            <p class="text-red-500 mt-1" x-show="!startTime">Start time is required.</p>
+        </div>
+        <div>
+            <label for="end_time" class="input-label">End Time:</label>
+            <div class="input-container">
+                <input type="time" id="end_time" x-model="endTime" class="custom-input">
+            </div>
+            <p class="text-red-500 mt-1" x-show="!endTime">End time is required.</p>
+        </div>
+        <div>
+            <input x-model="vendorstoreaddress" x-on:input="isValidVendorstoreaddress = vendorstoreaddress.trim() !== ''"
                 class="w-[600px] h-[102px] mt-12 ring-1 text-black focus:border-none ring-black bg-white focus:outline-none  placeholder:text-[#BFB9B9] text-xl pl-8"
-                placeholder="email">
+                placeholder="vendorstoreaddress">
+            <p class="text-red-500 mt-1" x-show="!isValidVendorstoreaddress">Vendor store address is required.</p>
         </div>
-        <div class="relative mt-12 flex flex-row">
-            <select
-                class="p-2 border border-r-0 text-xl h-[102px] border-black focus:outline-none bg-white text-gray-600 ">
-                <option>🇮🇩 +62</option>
-                <option>🇩🇪 +44</option>
-                <option>🇺🇸 +91</option>
-            </select>
-            <input x-model="phone" x-on:input="isValidPhone = phone.trim() !== '' && phone.length >= minPhoneLength"
-                type="text" class="border-l-0 p-2 border w-[503px] text-3xl h-[102px] border-black " />
-        </div>
-        <input placeholder="PASSWORD"
-            class="w-[600px] h-[102px] mt-12 ring-1 focus:border-none ring-black bg-white focus:outline-none text-[#BFB9B9] text-xl pl-8"
-            type="password" name="password" id="password" x-model="password"
-            x-on:input="passwordsMatch = (password === confirmPassword)">
-        <input type="password" placeholder="VERIFY PASSWORD"
-            class="w-[600px] h-[102px] mt-12 ring-1 focus:border-none ring-black bg-white focus:outline-none text-[#BFB9B9] text-xl pl-8"
-            type="password" name="confirmPassword" id="confirmPassword" x-model="confirmPassword"
-            x-on:input="passwordsMatch = (password === confirmPassword)">
-
-        <div x-show="password !== '' && confirmPassword !== '' && !passwordsMatch"
-            class="text-red-500 text-3xl mt-12 font-semibold">
-            Passwords do not match
-        </div>
-        <p class="mt-12 text-xl " href="">By entering your phone number, you agree to
-            our <a class="font-bold hover:underline" href="#">Terms
-                and Conditions.</a></p>
-
-
+        <p class="mt-12 text-xl">
+            By entering your phone number, you agree to our <a class="font-bold hover:underline" href="#">Terms and Conditions.</a>
+        </p>
         <div class="flex flex-row gap-48 my-16">
-            <button type="submit"
-                class="w-[310px] h-[62px] hover:bg-slate-200 bg-white ring-1 ring-black text-3xl flex justify-center text-black placeholder:text-[#BFB9B9] items-center"
-                x-bind:disabled="!isValidFullname || !isValidEmail || !isValidPhone || password !== confirmPassword">
+            <button type="submit" class="w-[310px] h-[62px] hover:bg-slate-200 bg-white ring-1 ring-black text-3xl flex justify-center text-black placeholder:text-[#BFB9B9] items-center"
+                :disabled="!isValidVendorname || !vendortype || !startTime || !endTime || !isValidVendorstoreaddress">
                 SIGN UP
             </button>
         </div>
@@ -303,22 +326,24 @@
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+
 <script>
     function handleSubmit(event) {
         const isValid =
-            this.isValidFullname &&
-            this.isValidPhone &&
-            this.isValidEmail &&
-            this.password === this.confirmPassword;
+            this.isValidVendorname &&
+            this.vendortype !== '' &&
+            this.startTime !== '' &&
+            this.endTime !== '' &&
+            this.isValidVendorstoreaddress;
 
         if (!isValid) {
             this.invalid = true;
             event.preventDefault();
         } else {
             const formElement = event.target.closest("form");
+            // Define where the data will be sent here
             formElement.action = "/dashboard";
             window.location.href = "/dashboard";
         }
     }
 </script>
-
