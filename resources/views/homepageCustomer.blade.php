@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@extends('layout.navbarcust1')
+@extends('layout.navbarcustsupi')
 <html lang="en">
     <head>
         <meta charset="UTF-8" />

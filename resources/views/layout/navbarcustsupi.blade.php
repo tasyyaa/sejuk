@@ -1,26 +1,27 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/cormorant-2" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>@yield('title')</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Sign In</title>
-    <style>
-        body {
-            width: 100%;
-            height: 100vh;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(#D6E4E5, #F9F5F2); */
+            background-attachment: fixed;
+        }
         .container {
             max-width: 1050px;
             width: 100%;
@@ -96,7 +97,7 @@
             height: 5px;
             width: 100%;
             border-radius: 10px;
-            background: white;
+            background: black;
         }
 
         .nav-container .hamburger-lines .line1 {
@@ -164,10 +165,14 @@
             display: none;
         }
     </style>
+    {{-- start --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- tambah ini buat tailwind (mulai dari start) --}}
 </head>
 
-<body class="bg-blackoverflow-hidden h-screen overflow-hidden">
-    <nav>
+<body>
+    <nav class="sticky">
         <div class="navbar">
             <div class="">
                 <div class="container  nav-container">
@@ -227,110 +232,8 @@
             </div>
         </div>
     </nav>
-    <div class="flex  flex-row">
-        <div class="w-full">
-            <img src="images/bg-signin.jpg" alt="">
-        </div>
-        <div class="w-full h-screen bg-[#fbf8f6]">
-            <div class=" h-screen ml-[71px]  ">
-                <div class="flex gap-[30px] z-0  h-screen justify-center flex-col pb-1">
-                    <h1 class="text-4xl font-semibold  text-[#050505]">
-                        Welcome Back!
-                    </h1>
-
-                    <!-- Session Status -->
-                    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-                    <!-- Validation Errors -->
-                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div style="font-family: 'Montserrat', sans-serif;" class="flex flex-col gap-[39px]">
-                            <!-- Email Address -->
-                            <div>
-                                <input type="email" name="email" :value="old('email')" id="email"
-                                    placeholder="EMAIL"
-                                    class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0">
-                            </div>
-
-
-                            <!-- Password -->
-                            <div class="mt-4">
-                                <input type="password" name="password" id="password" placeholder="PASSWORD" required
-                                    autocomplete="current-password"
-                                    class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0">
-                            </div>
-
-                            <!-- Remember Me -->
-                            <div class="flex items-center mt-4 justify-between flex-row">
-                                <label for="remember_me" class="inline-flex items-center">
-                                    <input id="remember_me" type="checkbox"
-                                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        name="remember">
-                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                                </label>
-
-                                @if (Route::has('password.request'))
-                                    <a class="underline text-sm text-gray-400 hover:text-black-900"
-                                        href="{{ route('password.request') }}">
-                                        <div>
-                                            <a href="forgot-password" class="text-[#000000] mr-16">Forgot Password</a>
-                                        </div>
-                                    </a>
-                                @endif
-                            </div>
-                            <div class="flex justify-center">
-                                <button
-                                    href=""class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign
-                                    In</button>
-                            </div>
-                            <a class="underline text-sm text-gray-600 hover:text-gray-900"
-                                href="{{ route('register') }}">
-                                {{ __('Haven’t made an account?Create an account here!') }}
-                            </a>
-
-                            <div class="text-[#565656] text-[15px]">
-
-                                <div class="flex flex-row justify-end absolute right-14 z-0 ">
-                                    <a href="">
-                                        <button><img class="w-[80px]" src="images/bubble-chat.svg" alt=""
-                                                onclick="document.getElementById('id01').style.display='block'"
-                                                class="w3-button w3-black"></button>
-                                        {{-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button> --}}
-
-                                        <div id="id01" class="w3-modal">
-                                            <div class="w3-modal-content w3-animate-right"
-                                                style="width: 600px; height: 300px; margin-left: 780px; margin-top: 300px;">
-                                                <header class="w3-container">
-                                                    <img src="images/faq.png" alt="" style="width: 70px;">
-                                                    <span
-                                                        onclick="document.getElementById('id01').style.display='none'"
-                                                        class="w3-button w3-display-topright">&times;</span>
-
-                                                </header>
-                                                <div class="w3-container">
-
-                                                    <p>FAQs</p>
-                                                    <p>General</p>
-                                                    <p>Shipping</p>
-                                                    <p>Payment</p>
-                                                    <p>Return</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </div>
-
-
-                                </a>
-                            </div>
-                        </div>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    @yield('content')
 </body>
+
+</html>
