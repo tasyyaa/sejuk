@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -21,7 +21,9 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: linear-gradient(#D6E4E5, #F9F5F2); */
             background-attachment: fixed;
-             .container {
+        }
+
+         .container {
             max-width: 1050px;
             width: 100%;
         }
@@ -142,7 +144,11 @@
             overflow: hidden;
         }
 
-
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, .25);
+    height: 80px;
+    z-index: 0;/* Replace with your desired background color */
+  }
         .navbar .menu-items li {
             margin-bottom: 1.2rem;
             font-size: 1.5rem;
@@ -163,8 +169,6 @@
         .nav-container input[type="checkbox"]:checked~.menu-items {
             transform: translateX(0);
         }
-
-
         .nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
             transform: rotate(45deg);
             background: #497174;
@@ -186,7 +190,8 @@
         .nav-container input[type="checkbox"]:checked~.logo {
             display: none;
         }
-        }
+
+
     </style>
     {{-- start --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -219,7 +224,7 @@
                         placeholder="Search">
                 </div>
             </div>
-             <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
+             <div class="absolute top-6 -right-12" style="display: flex; justify-content: center;margin-left:10px;">
                 <a class="navbar-brand" href="/mypurchases">
                     <img src="{{ asset('images/cart.svg') }}" width="30" height="24">
                 </a>
@@ -230,7 +235,7 @@
                     <img src="{{ asset('storage/buatapp/3.png') }}" width="30" height="24">
                 </a>
             </div>
-        </div>
+
                     <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
                         <div class="flex flex-row ">
                             <div class=" relative w-full">
@@ -286,7 +291,20 @@
     </nav>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script>
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const scrollDistance = 800; // Replace with your desired scroll distance in pixels
+
+    if (window.pageYOffset > scrollDistance) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+</script>
     @yield('content')
 </body>
 
 </html>
+

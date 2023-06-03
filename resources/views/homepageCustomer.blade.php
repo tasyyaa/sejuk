@@ -32,7 +32,7 @@
     </head>
     @section('content')
     <body
-        class="h-screen bg-fixed w-full bg-gradient-to-b from-[#D6E4E5] to-[#F9F5F2]"
+        class="overflow-x-hidden"
     >
 
         <!-- Hero -->
