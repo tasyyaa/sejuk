@@ -108,6 +108,7 @@ Route::controller(chooseController::class)->group(function(){
     Route::get('/clothespreview/{id}', 'preview');
     Route::get('/homepageGuest', 'homepageguest');
     Route::get('/homepageCustomer', 'homepagecust');
+    Route::get('/homepageVendor', 'homepagevendor');
     Route::get('/myPurchases', 'mypurchases');
 });
 

@@ -19,6 +19,10 @@ class chooseController extends Controller
     {
         return view('homepageCustomer');
     }
+    public function homepagevendor()
+    {
+        return view('homepageVendor');
+    }
     public function mypurchases()
     {
         return view('myPurchases');
