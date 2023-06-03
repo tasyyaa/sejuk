@@ -19,7 +19,7 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
+            background: linear-gradient(#D6E4E5, #F9F5F2); */
             background-attachment: fixed;
         }
 
@@ -212,7 +212,7 @@
                         <span class="line line3"></span>
                     </div>
                     <div class="logo">
-                        <img class="w-12" src="images/logo-singin.svg" alt="">
+                        <img class="w-12" src="images/logo-side.svg" alt="">
                     </div>
                     <div class="absolute top-6 left-[40%]">
                 <div class="relative">
@@ -257,10 +257,7 @@
                                             <h1>Home</h1>
                                         </div>
                                         <div>
-                                            <h1>Your Catalogue</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Order List</h1>
+                                            <h1>My Purchases</h1>
                                         </div>
                                         <div>
                                             <h1>FAQ</h1>
@@ -301,3 +298,4 @@
 </body>
 
 </html>
+

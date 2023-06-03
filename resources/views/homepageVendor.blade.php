@@ -34,7 +34,7 @@
     <title>Owner Catalog Page</title>
 </head>
 @section('content')
-<body>
+<body class="overflow-x-hidden">
     <!-- Hero -->
     <section class="flex flex-col justify-center items-start w-11/12 mx-auto mt-36 text-white">
         <div class="flex flex-col text-7xl">
