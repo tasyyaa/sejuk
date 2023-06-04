@@ -45,6 +45,14 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->namespace($this->namespace)
+                ->group(base_path('routes/auth.php'));
+
+            Route::middleware(['web', 'switch.guard'])
+                ->namespace($this->namespace)
+                ->group(base_path('routes/auth-rentals.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
     }

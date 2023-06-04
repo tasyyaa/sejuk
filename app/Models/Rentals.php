@@ -12,6 +12,8 @@ class Rentals extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'rentals';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,33 +25,26 @@ class Rentals extends Authenticatable
         'email',
         'city',
         'phone_number',
-        'vendor_Creditcardtype1',
-        'vendor_Creditcardtype2',
         'vendor_store',
         'vendor_type',
-        'vendor_oprhours',
-        'vendor_storeaddress',
-        'vendor_homepage',
+        'vendor_Creditcardtype1',
+        'vendor_Creditcardtype2',
+        'vendor_homephone',
         'vendor_address',
+        'vendor_Nocreditcard',
+        'oprhours_open',
+        'oprhours_close',
+        'password'
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array<int, string>
+     * @var array<int, string> */
 
     protected $hidden = [
         'password',
         'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ]; */
 }
 
