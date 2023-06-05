@@ -24,8 +24,10 @@ class User extends Authenticatable
         'phone_number',
         'cust_Creditcardtype1',
         'cust_Creditcardtype2',
-        'cust_homepage',
+        'cust_homephone',
         'cust_address',
+        'cust_Nocreditcard',
+        'password'
     ];
 
     /**

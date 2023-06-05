@@ -37,10 +37,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-
+})->middleware(['auth:web'])->name('dashboard');
 
 Route::controller(addCostumeController::class)->group(function(){
     Route::get('/homepageVendor', 'index');

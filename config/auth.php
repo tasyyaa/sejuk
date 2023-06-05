@@ -70,7 +70,7 @@ return [
         ],
         'rentals' => [
             'driver' => 'eloquent',
-            'model' => App\Models\rentals::class,
+            'model' => App\Models\Rentals::class,
         ],
 
         // 'users' => [
@@ -103,7 +103,7 @@ return [
         ],
         'rentals' => [
             'provider' => 'rentals',
-            'table' => 'rental_pass_reset',
+            'table' => 'password_resets_rentals',
             'expire' => 60,
             'throttle' => 60,
         ],
@@ -121,5 +121,4 @@ return [
     */
 
     'password_timeout' => 10800,
-
 ];

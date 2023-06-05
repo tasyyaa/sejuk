@@ -34,9 +34,11 @@ class RegisteredVendorController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:rentals'],
             'city'=> ['required', 'string', 'max:255'],
             'phone_number'=> ['required', 'string', 'max:15'],
+            'vendor_store' => ['required', 'string', 'max:100', 'unique:rentals'],
+            'vendor_type' => ['required', 'in:Retail,Rental,Seller'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -45,17 +47,12 @@ class RegisteredVendorController extends Controller
             'email' => $request->email,
             'city' => $request->city,
             'phone_number' => $request->phone_number,
+            'vendor_store' => $request->vendor_store,
+            'vendor_type' => $request->vendor_type,
             'password' => Hash::make($request->password),
         ]);
 
-        // Store the form data in the session
-        $formData = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'city' => $request->city,
-            'phone_number' => $request->phone_number,
-        ];
-        session(['registervendor' => $formData]);
+        Auth::login($rentals);
 
         return redirect()->route('registervendornext');
 }

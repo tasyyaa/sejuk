@@ -28,10 +28,6 @@ class rentalresetController extends Controller
      */
     public function store(Request $request)
     {
-        $input_type = filter_var($request->input('input_type'), FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
-
-        $request->merge([$input_type=>$request->input('input_type')]);
-
         $request->validate([
             'email' => ['required', 'email'],
         ]);
@@ -39,16 +35,13 @@ class rentalresetController extends Controller
         // We will send the password reset link to this user. Once we have attempted
         // to send the link, we will examine the response then see the message we
         // need to show to the user. Finally, we'll send out a proper response.
-
-
-        $status = Password::sendResetLink(
-            $request->only($input_type)
+        $status = Password::broker('rentals')->sendResetLink(
+            $request->only('email')
         );
 
         return $status == Password::RESET_LINK_SENT
-                    ? back()->with('status', __($status))
-                    : back()->withInput($request->only($input_type))
-                            ->withErrors([$input_type => __($status)]);
-
+            ? back()->with('status', __($status))
+            : back()->withInput($request->only('email'))
+                ->withErrors(['email' => __($status)]);
     }
 }
