@@ -1,19 +1,10 @@
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/cormorant-2" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Sign In</title>
+@extends('layouts.auth')
+
+@section('title')
+    Sign In
+@endsection
+
+@section('additional-sheet')
     <style>
         body {
             width: 100%;
@@ -164,9 +155,10 @@
             display: none;
         }
     </style>
-</head>
+@endsection
 
-<body class="bg-blackoverflow-hidden h-screen overflow-hidden">
+@section('child-layout')
+<div class="bg-blackoverflow-hidden h-screen overflow-hidden">
     <nav>
         <div class="navbar">
             <div class="">
@@ -281,56 +273,49 @@
                                 @endif
                             </div>
                             <div class="flex justify-center">
-                                <button
-                                    href=""class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign
-                                    In</button>
+                                <button type="submit" class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign In</button>
                             </div>
                             <a class="underline text-sm text-gray-600 hover:text-gray-900"
                                 href="{{ route('register') }}">
                                 {{ __('Haven’t made an account?Create an account here!') }}
                             </a>
 
-                            <div class="text-[#565656] text-[15px]">
+{{--                            <div class="text-[#565656] text-[15px]">--}}
 
-                                <div class="flex flex-row justify-end absolute right-14 z-0 ">
-                                    <a href="">
-                                        <button><img class="w-[80px]" src="images/bubble-chat.svg" alt=""
-                                                onclick="document.getElementById('id01').style.display='block'"
-                                                class="w3-button w3-black"></button>
-                                        {{-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button> --}}
+{{--                                <div class="flex flex-row justify-end absolute right-14 z-0 ">--}}
+{{--                                    <a href="">--}}
+{{--                                        <button><img class="w-[80px]" src="images/bubble-chat.svg" alt=""--}}
+{{--                                                onclick="document.getElementById('id01').style.display='block'"--}}
+{{--                                                class="w3-button w3-black"></button>--}}
+{{--                                        --}}{{-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button> --}}
 
-                                        <div id="id01" class="w3-modal">
-                                            <div class="w3-modal-content w3-animate-right"
-                                                style="width: 600px; height: 300px; margin-left: 780px; margin-top: 300px;">
-                                                <header class="w3-container">
-                                                    <img src="images/faq.png" alt="" style="width: 70px;">
-                                                    <span
-                                                        onclick="document.getElementById('id01').style.display='none'"
-                                                        class="w3-button w3-display-topright">&times;</span>
+{{--                                        <div id="id01" class="w3-modal">--}}
+{{--                                            <div class="w3-modal-content w3-animate-right"--}}
+{{--                                                style="width: 600px; height: 300px; margin-left: 780px; margin-top: 300px;">--}}
+{{--                                                <header class="w3-container">--}}
+{{--                                                    <img src="images/faq.png" alt="" style="width: 70px;">--}}
+{{--                                                    <span--}}
+{{--                                                        onclick="document.getElementById('id01').style.display='none'"--}}
+{{--                                                        class="w3-button w3-display-topright">&times;</span>--}}
 
-                                                </header>
-                                                <div class="w3-container">
+{{--                                                </header>--}}
+{{--                                                <div class="w3-container">--}}
 
-                                                    <p>FAQs</p>
-                                                    <p>General</p>
-                                                    <p>Shipping</p>
-                                                    <p>Payment</p>
-                                                    <p>Return</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                </div>
-
-
-                                </a>
-                            </div>
-                        </div>
+{{--                                                    <p>FAQs</p>--}}
+{{--                                                    <p>General</p>--}}
+{{--                                                    <p>Shipping</p>--}}
+{{--                                                    <p>Payment</p>--}}
+{{--                                                    <p>Return</p>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                 </div>
                 </form>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-</body>
+</div>
+@endsection
