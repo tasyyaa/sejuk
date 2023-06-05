@@ -17,22 +17,22 @@ Route::middleware('guest:rentals')->group(function () {
 
     Route::post('registervendor', [RegisteredVendorController::class, 'store']); // ok
 
-    Route::get('loginvendor', [rentalsController::class, 'create']);
+    Route::get('loginvendor', [rentalsController::class, 'create']); // ok
 
     Route::post('loginvendor', [rentalsController::class, 'store'])
-        ->name('loginvendor');
+        ->name('loginvendor'); // ok
 
     Route::get('forgetvendor', [rentalresetController::class, 'create'])
-        ->name('password.request.vendor');
+        ->name('password.request.vendor'); // ok
 
     Route::post('forgetvendor', [rentalresetController::class, 'store'])
-        ->name('password.email.vendor');
+        ->name('password.email.vendor'); // ok
 
     Route::get('resetvendor/{token}', [rentalnewController::class, 'create'])
-        ->name('password.reset.vendor');
+        ->name('password.reset.vendor'); // ok
 
     Route::post('resetvendor', [rentalnewController::class, 'store'])
-        ->name('password.update.vendor');
+        ->name('password.update.vendor'); // ok
 });
 
 Route::middleware('auth:rentals')->group(function () {
