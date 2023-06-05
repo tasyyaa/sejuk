@@ -11,7 +11,7 @@ use App\Http\Controllers\Auth\rentalresetController;
 use App\Http\Controllers\Auth\rentalverifyController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
+Route::middleware('guest:rentals')->group(function () {
     Route::get('registervendor', [RegisteredVendorController::class, 'create'])
         ->name('registervendor');
 
@@ -28,30 +28,30 @@ Route::middleware('guest')->group(function () {
         ->name('loginvendor');
 
     Route::get('forgetvendor', [rentalresetController::class, 'create'])
-        ->name('password.request');
+        ->name('password.request.vendor');
 
     Route::post('forgetvendor', [rentalresetController::class, 'store'])
-        ->name('password.email');
+        ->name('password.email.vendor');
 
     Route::get('resetvendor/{token}', [rentalnewController::class, 'create'])
-        ->name('password.reset');
+        ->name('password.reset.vendor');
 
     Route::post('resetvendor', [rentalnewController::class, 'store'])
-        ->name('password.update');
+        ->name('password.update.vendor');
 
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('verify-email', [rentalemailpromptController::class, '__invoke'])
-        ->name('verification.notice');
-
-    Route::get('verify-email/{id}/{hash}', [rentalverifyController::class, '__invoke'])
-        ->middleware(['signed', 'throttle:6,1'])
-        ->name('verification.verify');
-
-    Route::post('email/verification-notification', [rentalemailNotifController::class, 'store'])
-        ->middleware('throttle:6,1')
-        ->name('verification.send');
+Route::middleware('auth:rentals')->group(function () {
+//    Route::get('verify-email', [rentalemailpromptController::class, '__invoke'])
+//        ->name('verification.notice');
+//
+//    Route::get('verify-email/{id}/{hash}', [rentalverifyController::class, '__invoke'])
+//        ->middleware(['signed', 'throttle:6,1'])
+//        ->name('verification.verify');
+//
+//    Route::post('email/verification-notification', [rentalemailNotifController::class, 'store'])
+//        ->middleware('throttle:6,1')
+//        ->name('verification.send');
 
     Route::get('rentalconfirm', [rentalsconfirmpassController::class, 'show'])
         ->name('password.confirm');

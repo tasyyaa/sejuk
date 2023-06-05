@@ -11,7 +11,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
+Route::middleware('guest:web')->group(function () {
     Route::get('chooserole', [chooseroleController::class, 'create'])
         ->name('chooserole'); // ok
 
@@ -28,19 +28,19 @@ Route::middleware('guest')->group(function () {
 
     Route::get('signin', function () {
         return view('auth.signin');
-    });
+    }); // ok
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
-                ->name('password.request');
+                ->name('password.request'); // ok
 
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
-                ->name('password.email');
+                ->name('password.email'); // ok
 
     Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
-                ->name('password.reset');
+                ->name('password.reset'); // ok
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
-                ->name('password.update');
+                ->name('password.update'); // ok
 });
 
 Route::middleware('auth:web')->group(function () {
