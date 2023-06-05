@@ -109,10 +109,11 @@
 
         .nav-container .hamburger-lines .line {
             display: block;
+            z-index: 10;
             height: 5px;
             width: 100%;
             border-radius: 10px;
-            background: white;
+            background: black;
         }
 
 
@@ -156,7 +157,7 @@
 
         .logo {
             position: absolute;
-            top: 15px;
+            top: 5px;
             left: 90px;
             font-size: 1.2rem;
             width: 90px;
@@ -192,22 +193,80 @@
         }
     </style>
 </head>
-
-<body>
+<body class="bg-blackoverflow-hidden h-screen overflow-x-hidden">
     <!-- nav start -->
-    <nav>
-        <div class="flex flex-row justify-between px-4 py-1">
-            <div class="flex flex-row items-center">
-                <i class="fa-solid fa-bars fa-2xl"></i>
-                <img class="w-24" src="img/logo.svg" alt="">
-            </div>
-            <div class="flex flex-row items-center gap-4 mr-32">
+     <nav class="sticky top-0 z-50">
+        <div class="navbar relative z-10">
+            <div class="">
+                <div class="container  nav-container">
+                    <input class="checkbox" type="checkbox" name="" id="" />
+                    <div class="hamburger-lines">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+                    </div>
+                    <div class="logo">
+                        <img class="w-12" src="images/logo-side.svg" alt="">
+                    </div>
+                    <div class="flex flex-row items-center absolute top-2 -right-12 gap-4 mr-32">
                 <div class="flex items-center gap-3">
-                    
                     <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#497174] ring-1 ring-black">
                         <h1 class="text-2xl font-semibold">1</h1>
                     </div>
                     <h1 class="font-semibold">Welcome</h1>
+                </div>
+                <hr class="border-none h-1 bg-[#BFB9B9] w-8">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center rounded-full bg-[#497174] ring-1 ring-[#BFB9B9]">
+                        <h1 class="text-2xl text-[#BFB9B9] font-semibold">2</h1>
+                    </div>
+                    <h1 class="text-[#BFB9B9] font-semibold">About You</h1>
+                </div>
+            </div>
+                    <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
+                        <div class="flex flex-row ">
+                            <div class=" relative w-full">
+                                <div class=" mt-">
+                                    <div class="relative flex ml-12 justify-center">
+                                        <input
+                                            class="w-[700px]  text-2xl h-[70px] rounded-full bg-[#e4e4e4] text-[#565656] font-bold pl-4 focus:outline-0 placeholder:text-[#565656]"
+                                            placeholder="Search by product, category,  size, etc." type="text">
+                                        <i class="fa fa-search fa-2x absolute right-5 bottom-5" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="flex flex-col gap-[78px]">
+                                        <a class="text-semibold text-" href=""></a>
+                                    </div>
+                                </div>
+                                <div
+                                class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
+                                <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
+                                        <div>
+                                            <h1>Home</h1>
+                                        </div>
+                                        <div>
+                                            <h1>My Purchases</h1>
+                                        </div>
+                                        <div>
+                                            <h1>FAQ</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mx-auto">
+                                    <button
+                                        class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
+                                        SIGN IN
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="w-full">
+                                <div class="logo flex ml-[780px] fill-[#4a7174] lg:ml-[700px]">
+                                    <img class="w-20" src="images/logo-side.svg" alt="">
+                                </div>
+                                <img class="absolute top-0 right-0 w-[40%]" src="images/sidebar.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -264,15 +323,15 @@
                 class="w-[600px] h-[102px] mt-12 ring-1 text-black focus:border-none ring-black bg-white focus:outline-none  placeholder:text-[#BFB9B9] text-xl pl-8"
                 placeholder="email">
         </div>
-        <div class="relative mt-12 flex flex-row">
+        <div class="z-0 mt-12 flex flex-row">
             <select
-                class="p-2 border border-r-0 text-xl h-[102px] border-black focus:outline-none bg-white text-gray-600 ">
+                class="p-2 border border-r-0 z-0 relative  text-xl h-[102px] border-black focus:outline-none bg-white text-gray-600 ">
                 <option>🇮🇩 +62</option>
                 <option>🇩🇪 +44</option>
                 <option>🇺🇸 +91</option>
             </select>
             <input x-model="phone" x-on:input="isValidPhone = phone.trim() !== '' && phone.length >= minPhoneLength"
-                type="text" class="border-l-0 p-2 border w-[503px] text-3xl h-[102px] border-black " />
+                type="text" class="border-l-0 p-2 border w-[503px] text-3xl h-[102px] relative z-0 border-black " />
         </div>
         <input placeholder="PASSWORD"
             class="w-[600px] h-[102px] mt-12 ring-1 focus:border-none ring-black bg-white focus:outline-none text-[#BFB9B9] text-xl pl-8"

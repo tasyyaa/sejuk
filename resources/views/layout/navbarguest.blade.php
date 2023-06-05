@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -19,7 +19,7 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
+            background: linear-gradient(#D6E4E5, #F9F5F2); */
             background-attachment: fixed;
         }
 
@@ -212,7 +212,7 @@
                         <span class="line line3"></span>
                     </div>
                     <div class="logo">
-                        <img class="w-12" src="images/logo-singin.svg" alt="">
+                        <img class="w-12" src="images/logo-side.svg" alt="">
                     </div>
                     <div class="absolute top-6 left-[40%]">
                 <div class="relative">
@@ -224,16 +224,9 @@
                         placeholder="Search">
                 </div>
             </div>
-             <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                <a class="navbar-brand" href="/mypurchases">
-                    <img src="{{ asset('images/cart.svg') }}" width="30" height="24">
-                </a>
-                <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
-                    <img src="{{ asset('images/notifications.svg') }}" width="30" height="24">
-                </a>
-                <a class="navbar-brand" href="/customerAccount" style="margin:0px 0px 0px 20px;">
-                    <img src="{{ asset('storage/buatapp/3.png') }}" width="30" height="24">
-                </a>
+             <div class="absolute top-6 right-12">
+                <a href="#" class="text-xl font-medium text-black mr-10">Sign in</a>
+                <a href="#" class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">Sign up</a>
             </div>
 
                     <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
@@ -257,18 +250,18 @@
                                             <h1>Home</h1>
                                         </div>
                                         <div>
-                                            <h1>Your Catalogue</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Order List</h1>
+                                            <h1>My Purchases</h1>
                                         </div>
                                         <div>
                                             <h1>FAQ</h1>
                                         </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
                                     </div>
+                                </div>
+                                <div class="mx-auto">
+                                    <button
+                                        class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
+                                        SIGN IN
+                                    </button>
                                 </div>
                             </div>
                             <div class="w-full">
@@ -301,3 +294,4 @@
 </body>
 
 </html>
+
