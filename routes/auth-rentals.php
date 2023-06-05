@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest:rentals')->group(function () {
     Route::get('registervendor', [RegisteredVendorController::class, 'create'])
-        ->name('registervendor');
+        ->name('registervendor'); // ok
 
-    Route::post('registervendor', [RegisteredVendorController::class, 'store']);
-
-    Route::get('registervendornext', [RegisteredVendornextController::class, 'create'])
-        ->name('registervendornext');
-
-    Route::post('registervendornext', [RegisteredVendornextController::class, 'store']);
+    Route::post('registervendor', [RegisteredVendorController::class, 'store']); // ok
 
     Route::get('loginvendor', [rentalsController::class, 'create']);
 
@@ -38,10 +33,14 @@ Route::middleware('guest:rentals')->group(function () {
 
     Route::post('resetvendor', [rentalnewController::class, 'store'])
         ->name('password.update.vendor');
-
 });
 
 Route::middleware('auth:rentals')->group(function () {
+    Route::get('registervendornext', [RegisteredVendornextController::class, 'create'])
+        ->name('registervendornext'); // ok
+
+    Route::post('registervendornext', [RegisteredVendornextController::class, 'store']); // ok
+
 //    Route::get('verify-email', [rentalemailpromptController::class, '__invoke'])
 //        ->name('verification.notice');
 //
@@ -54,10 +53,10 @@ Route::middleware('auth:rentals')->group(function () {
 //        ->name('verification.send');
 
     Route::get('rentalconfirm', [rentalsconfirmpassController::class, 'show'])
-        ->name('password.confirm');
+        ->name('password.confirm.vendor');
 
     Route::post('rentalconfirm', [rentalsconfirmpassController::class, 'store']);
 
-    Route::post('logout', [rentalsController::class, 'destroy'])
-        ->name('logout');
+    Route::post('logoutrental', [rentalsController::class, 'destroy'])
+        ->name('logout.vendor'); // ok
 });

@@ -16,7 +16,7 @@ class CreateRentalsTable extends Migration
         Schema::create('rentals', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('vendor_store', 100);
+            $table->string('vendor_store', 100)->unique();
             $table->string('vendor_type', 100);
             $table->string('email')->unique();
             $table->string('city')->nullable();
@@ -25,8 +25,8 @@ class CreateRentalsTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->time('oprhours_open');
-            $table->time('oprhours_close');
+            $table->time('oprhours_open')->nullable();
+            $table->time('oprhours_close')->nullable();
             $table->string('vendor_Creditcardtype1', 100)->nullable();
             $table->string('vendor_Creditcardtype2', 100)->nullable();
             $table->string('vendor_Nocreditcard', 30)->nullable();

@@ -18,12 +18,9 @@ class RegisteredVendornextController extends Controller
      * @return \Illuminate\View\View
      */
     public function create(Request $request)
-{
-    // Process the data from the second form if needed
-    // Pass any relevant data to the next form or store it in session if required
-
-    return view('auth.registervendornext');
-}
+    {
+        return view('auth.registervendornext');
+    }
 
 
     /**
@@ -35,32 +32,23 @@ class RegisteredVendornextController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
-{
-    $request->validate([
-        'vendor_store' => ['required', 'string', 'max:100', 'unique:rentals'],
-        'vendor_type' => ['required', 'in:Retail,Rental,Seller'],
-        'start_time' => ['required'],
-        'end_time' => ['required'],
-        'vendor_storeaddress' => ['required', 'string', 'max:100'],
-    ]);
+    {
+        $request->validate([
+            'oprhours_open' => ['required'],
+            'oprhours_close' => ['required'],
+            'vendor_address' => ['required', 'string', 'max:100'],
+//            'vendor_homephone' =>  ['required', 'string', 'max:15'],
+        ]);
 
-    $start_time = $request->input('start_time');
-    $end_time = $request->input('end_time');
+        $rental = Auth::user();
 
-    $vendor_oprhours = $start_time . ' - ' . $end_time;
+        $rental->oprhours_open = $request->oprhours_open;
+        $rental->oprhours_close = $request->oprhours_close;
+        $rental->vendor_address = $request->vendor_address;
+//        $rental->vendor_homephone = $request->vendor_homephone;
 
-    $rentals = Rentals::create([
-        'vendor_store' => $request->vendor_store,
-        'vendor_type' => $request->vendor_type,
-        'vendor_oprhours' => $vendor_oprhours,
-        'vendor_storeaddress' => $request->vendor_storeaddress,
-    ]);
+        $rental->save();
 
-    event(new Registered($rentals));
-
-    Auth::login($rentals);
-
-    return redirect()->route('login');;
-}
-
+        return redirect()->route('dashboard.rental');
+    }
 }
