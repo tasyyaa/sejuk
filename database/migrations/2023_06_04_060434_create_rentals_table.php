@@ -29,7 +29,6 @@ class CreateRentalsTable extends Migration
             $table->time('oprhours_close')->nullable();
             $table->string('vendor_Creditcardtype1', 100)->nullable();
             $table->string('vendor_Creditcardtype2', 100)->nullable();
-            $table->string('vendor_Nocreditcard', 30)->nullable();
             $table->string('vendor_homephone', 20)->nullable();
             $table->string('vendor_address', 100)->nullable();
         });

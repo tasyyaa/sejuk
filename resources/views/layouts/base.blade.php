@@ -30,7 +30,7 @@
     @yield('additional-script')
 </head>
 
-<body>
+<body class="@yield('body-class')">
 @yield('navigation')
 @yield('child-layout')
 @yield('additional-layout')

@@ -26,7 +26,6 @@ class User extends Authenticatable
         'cust_Creditcardtype2',
         'cust_homephone',
         'cust_address',
-        'cust_Nocreditcard',
         'password'
     ];
 

@@ -31,7 +31,6 @@ class Rentals extends Authenticatable
         'vendor_Creditcardtype2',
         'vendor_homephone',
         'vendor_address',
-        'vendor_Nocreditcard',
         'oprhours_open',
         'oprhours_close',
         'password'
