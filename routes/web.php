@@ -32,7 +32,7 @@ use App\Http\Controllers\rentalsverifyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage.homepage');
 });
 
 Route::get('/dashboard', function () {
