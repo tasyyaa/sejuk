@@ -154,16 +154,16 @@
                                                         <td>Jumlah Pesanan</td>
                                                         <td>:</td>
 
- 
-                                                        
+
+
                                                     </tr>
                                                 </tbody>
                                             </table>
 
                                             <form method="" action="" >
-                                                
+
                                                 <input type="number" min="0" name="jumlah_pesan" class="justify-items-center form-control mb-5 shadow appearance-none border rounded w-64 py-2 px-2 text-gray-250 leading-tight focus:outline-none focus:shadow-outline" required="">
-                                                
+
                                                 <div class="flex items-center justify-between">
                                                     <button type="submit" class=" text-white btn bg-[#497174] hover:bg-[#497174]-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fa fa-shopping-cart"></i>
                                                      Add To Cart</button>
