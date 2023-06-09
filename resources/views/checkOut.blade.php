@@ -242,7 +242,7 @@
 
                                     <td class="flex flex-row items-center px-4 py-4 pl-8">
                                         <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <input id="default-radio-1" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                             <div class="flex-1 pl-3 tracking-wide">
                                                 <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
                                                     JNE</label>
@@ -263,7 +263,7 @@
                                 <tr class=" hover:bg-gray-100">
                                     <td class="flex flex-row items-center px-4 py-4 pl-8">
                                         <div class="flex items-center">
-                                            <input id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <input id="radio" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                             <div class="flex-1 pl-3 tracking-wide">
                                                 <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
                                                     JNT</label>
@@ -284,7 +284,7 @@
                                 <tr class=" hover:bg-gray-100">
                                     <td class="flex flex-row items-center px-4 py-4 pl-8">
                                         <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <input id="default-radio-1" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                             <div class="flex-1 pl-3 tracking-wide">
                                                 <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
                                                     SiCepat</label>
@@ -303,7 +303,7 @@
                                 <tr class=" hover:bg-gray-100">
                                     <td class="flex flex-row items-center px-4 py-4 pl-8">
                                         <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <input id="default-radio-1" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                             <div class="flex-1 pl-3 tracking-wide">
                                                 <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
                                                     Go-Send</label>
@@ -360,7 +360,7 @@
                                 <div class="px-6 pt-4 pb-2">
                                     <div class = "flex justify-center">
 
-                                    <button type="submit" class=" flex justify-center text-white btn bg-[#497174] text-white font-bold py-2 px-20 rounded focus:outline-none focus:shadow-outline">
+                                    <button type="submit" class=" flex justify-center text-white btn bg-[#497174] font-bold py-2 px-20 rounded focus:outline-none focus:shadow-outline">
                                         Checkout</button>
                                     </div>
                                         <p class="text-center text-gray-500 text-xs pt-4">
@@ -395,7 +395,7 @@
                                                 <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                                     <td class="flex flex-row items-center px-4 py-4">
                                                         <div class="flex items-center">
-                                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                             <div class="flex w-10 h-10 ml-4">
                                                                 <img alt="profil" src="images/gopay.png" />
                                                             </div>
@@ -412,7 +412,7 @@
                                                 <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                                     <td class="flex flex-row items-center px-4 py-4">
                                                         <div class="flex items-center">
-                                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                             <div class="flex w-10 h-10 ml-4 items-center">
                                                                 <img alt="profil" src="images/ovo1..jpeg" />
                                                             </div>
@@ -439,7 +439,7 @@
                                                 <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                                     <td class="flex flex-row items-center px-4 py-4">
                                                         <div class="flex items-center">
-                                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                             <div class="flex w-10 h-10 ml-4">
                                                                 <img alt="profil" src="images/alfamart.svg" />
                                                             </div>
@@ -455,7 +455,7 @@
                                                 <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                                     <td class="flex flex-row items-center px-4 py-4">
                                                         <div class="flex items-center">
-                                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                             <div class="flex w-10 h-10 ml-4 items-center">
                                                                 <img alt="profil" src="images/indomaret.png" />
                                                             </div>
@@ -480,7 +480,7 @@
                                                 <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                                     <td class="flex flex-row items-center px-4 py-4">
                                                         <div class="flex items-center">
-                                                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                             <div class="flex w-10 h-10 ml-4">
                                                                 <img alt="profil" src="images/kredit.png" />
                                                             </div>
@@ -511,7 +511,7 @@
                                     <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                         <td class="flex flex-row items-center px-4 py-4">
                                             <div class="flex items-center">
-                                                <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                 <div class="flex w-10 h-5 ml-4">
                                                     <img alt="profil" src="images/mandiri.png" />
                                                 </div>
@@ -528,7 +528,7 @@
                                     <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                         <td class="flex flex-row items-center px-4 py-4">
                                             <div class="flex items-center">
-                                                <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                 <div class="flex w-10 h-10 ml-4 items-center">
                                                     <img alt="profil" src="images/bca.png" />
                                                 </div>
@@ -545,7 +545,7 @@
                                     <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                         <td class="flex flex-row items-center px-4 py-4">
                                             <div class="flex items-center">
-                                                <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                 <div class="flex w-10 h-10 ml-4 items-center">
                                                     <img alt="profil" src="images/bni.png" />
                                                 </div>
@@ -562,7 +562,7 @@
                                     <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                         <td class="flex flex-row items-center px-4 py-4">
                                             <div class="flex items-center">
-                                                <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                 <div class="flex w-10 h-10 ml-4 items-center">
                                                     <img alt="profil" src="images/bri.svg" />
                                                 </div>
@@ -579,7 +579,7 @@
                                     <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                         <td class="flex flex-row items-center px-4 py-4">
                                             <div class="flex items-center">
-                                                <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                 <div class="flex w-10 h-10 ml-4 items-center">
                                                     <img alt="profil" src="images/bsi.jpg" />
                                                 </div>
