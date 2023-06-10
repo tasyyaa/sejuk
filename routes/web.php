@@ -34,10 +34,6 @@ Route::get('/', function () {
     return view('homepage.homepage'); // ok
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth:web'])->name('dashboard');
-
 Route::controller(addCostumeController::class)->group(function(){
     Route::get('/homepageVendor', 'index');
     Route::get('/homepageVendor/addCostume','create');
@@ -98,9 +94,9 @@ Route::controller(chooseController::class)->group(function(){
     Route::get('/costumepage', 'indexcostume');
     Route::get('/clothespage', 'indexclothes');
     Route::get('/clothespreview/{id}', 'preview');
-    Route::get('/homepageGuest', 'homepageguest');
-    Route::get('/homepageCustomer', 'homepagecust');
-    Route::get('/homepageVendor', 'homepagevendor');
+//    Route::get('/homepageGuest', 'homepageguest');
+//    Route::get('/homepageCustomer', 'homepagecust');
+//    Route::get('/homepageVendor', 'homepagevendor');
     Route::get('/myPurchases', 'mypurchases');
 });
 
