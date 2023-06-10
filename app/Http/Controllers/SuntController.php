@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\sunting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -35,10 +34,10 @@ class SuntController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::guard('web')->user()->id, 'id')],
             'city'=> ['required', 'string', 'max:255'],
             'phone_number'=> ['required', 'string', 'max:20'],
-            'cust_Creditcardtype1' => ['required', 'string', 'numeric'],
-            'cust_Creditcardtype2' => ['required', 'string', 'numeric'],
-            'cust_homephone' => ['required', 'string', 'numeric'],
-            'cust_address' => ['required', 'string']
+            'cust_Creditcardtype1' => ['nullable', 'string', 'numeric'],
+            'cust_Creditcardtype2' => ['nullable', 'string', 'numeric'],
+            'cust_homephone' => ['nullable', 'string', 'numeric'],
+            'cust_address' => ['nullable', 'string']
         ]);
 
         $user = Auth::guard('web')->user();
