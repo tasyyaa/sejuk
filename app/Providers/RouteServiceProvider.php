@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    public const HOME = '/';
     public const HOME_RENTALS = '/dashboard-rental';
 
     /**
@@ -52,13 +52,18 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/auth-rentals.php'));
 
-            Route::middleware('web')
+            Route::prefix('vendor')
+                ->middleware(['web', 'switch.guard', 'auth:rentals'])
+                ->namespace($this->namespace)
+                ->group(base_path('routes/web-rentals.php'));
+
+            Route::middleware(['web'])
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
 
-            Route::middleware(['web', 'switch.guard'])
+            Route::middleware(['web', 'auth:web'])
                 ->namespace($this->namespace)
-                ->group(base_path('routes/web-rentals.php'));
+                ->group(base_path('routes/web-customer.php'));
         });
     }
 

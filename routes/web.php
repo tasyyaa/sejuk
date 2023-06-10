@@ -8,7 +8,6 @@ use App\Http\Controllers\returnPackageController;
 use App\Http\Controllers\returnPaymentController;
 use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\chooseController;
-use App\Http\Controllers\SuntController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\rentalsController;
 
@@ -32,12 +31,8 @@ use App\Http\Controllers\rentalsverifyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage.homepage'); // ok
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth:web'])->name('dashboard');
 
 Route::controller(addCostumeController::class)->group(function(){
     Route::get('/homepageVendor', 'index');
@@ -93,19 +88,15 @@ Route::controller(CheckController::class)->group(function(){
     Route::get('/myOrderList', 'myorderlist');
 });
 
-Route::controller(SuntController::class)->group(function(){
-    Route::get('/custsunting/{id}', 'complete');
-    Route::get('/editcustsunting/{id}', 'create');
-    Route::post('/editcustsunting/store', 'store');
-});
+
 
 Route::controller(chooseController::class)->group(function(){
     Route::get('/costumepage', 'indexcostume');
     Route::get('/clothespage', 'indexclothes');
     Route::get('/clothespreview/{id}', 'preview');
-    Route::get('/homepageGuest', 'homepageguest');
-    Route::get('/homepageCustomer', 'homepagecust');
-    Route::get('/homepageVendor', 'homepagevendor');
+//    Route::get('/homepageGuest', 'homepageguest');
+//    Route::get('/homepageCustomer', 'homepagecust');
+//    Route::get('/homepageVendor', 'homepagevendor');
     Route::get('/myPurchases', 'mypurchases');
 });
 

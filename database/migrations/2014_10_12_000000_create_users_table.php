@@ -25,7 +25,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('cust_Creditcardtype1', 100)->nullable();
             $table->string('cust_Creditcardtype2', 100)->nullable();
-            $table->string('cust_Nocreditcard', 30)->nullable();
             $table->string('cust_homephone', 20)->nullable();
             $table->string('cust_address', 100)->nullable();
         });
