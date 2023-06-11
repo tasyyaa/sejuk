@@ -16,4 +16,5 @@ Route::controller(SuntController::class)->group(function(){
 Route::controller(AddCostumeController::class)->prefix('catalog')->group(function() {
     Route::get('add', 'create')->name('add-catalog');
     Route::post('add', 'store');
+    Route::delete('/{id}', 'hapus')->name('delete-catalog');
 });

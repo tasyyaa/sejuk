@@ -17,7 +17,7 @@ use App\Http\Controllers\rentalconfirmpassController;
 use App\Http\Controllers\rentalsemailverifnotifController;
 use App\Http\Controllers\rentalsemailverifpromptController;
 use App\Http\Controllers\rentalsverifyController;
-
+use App\Http\Controllers\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,18 +30,10 @@ use App\Http\Controllers\rentalsverifyController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.homepage'); // ok
-});
+Route::get('/', [HomepageController::class, 'view']);
 
 Route::controller(addCostumeController::class)->group(function(){
-//    Route::get('/homepageVendor', 'index');
-//    Route::get('/homepageVendor/addCostume','create');
-//    Route::post('/vendorCatalog/store','store');
     Route::get('/vendorCatalog/delete/{id}','hapus');
-//    Route::get('/vendorCatalog/addCostumeInvalid','view');
-    // Route::get('/pegawai/cari','cari');
-    // Route::get('/pegawai/view/{id}','view');
 });
 
 Route::controller(returnPackageController::class)->group(function(){
@@ -94,9 +86,6 @@ Route::controller(chooseController::class)->group(function(){
     Route::get('/costumepage', 'indexcostume');
     Route::get('/clothespage', 'indexclothes');
     Route::get('/clothespreview/{id}', 'preview');
-//    Route::get('/homepageGuest', 'homepageguest');
-//    Route::get('/homepageCustomer', 'homepagecust');
-//    Route::get('/homepageVendor', 'homepagevendor');
     Route::get('/myPurchases', 'mypurchases');
 });
 

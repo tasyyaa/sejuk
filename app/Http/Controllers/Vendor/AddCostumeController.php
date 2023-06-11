@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Vendorcatalogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AddCostumeController extends Controller
 {
@@ -35,7 +36,7 @@ class AddCostumeController extends Controller
             'size' => $request->size,
             'stock' => $request->stock,
             'category_id' => $request->category_id,
-            'catalog_image' =>  $request->file('catalog_image')->storePublicly('catalog'),
+            'catalog_image' => Storage::disk('public')->put('catalog', $request->file('catalog_image')),
             'vendor_id' => auth()->guard('rentals')->user()->id,
         ]);
 
@@ -45,8 +46,7 @@ class AddCostumeController extends Controller
 
     public function hapus($id)
     {
-        // menghapus data pegawai berdasarkan id yang dipilih
-        DB::table('vendorcatalogs')->where('catalog_id',$id)->delete();
+        Vendorcatalogs::where('catalog_id', $id)->delete();
 
         // alihkan halaman ke halaman pegawai
         return redirect()->route('homepage.vendor');

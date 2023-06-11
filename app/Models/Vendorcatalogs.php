@@ -22,10 +22,10 @@ class Vendorcatalogs extends Model
 //        return $this->hasMany('App\orders', 'order_id', 'id');
 //    }
 
-    public function getCatalogIdAttribute()
-    {
-        return 'CAT' . $this->attributes['id'];
-    }
+//    public function getCatalogIdAttribute()
+//    {
+//        return 'CAT' . $this->attributes['id'];
+//    }
 
     protected $fillable = [
         'item_name',
