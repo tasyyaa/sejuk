@@ -6,7 +6,7 @@ use App\Models\Vendorcatalogs;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class chooseController extends Controller
+class ChooseController extends Controller
 {
     public function mypurchases()
     {
@@ -24,10 +24,9 @@ class chooseController extends Controller
 
     public function preview($id)
     {
-        $vendorcatalogs = DB::table('vendorcatalogs')->where('catalog_id', $id)->get();
-        ;
+        $product = Vendorcatalogs::with('category')->with('vendor')->where('catalog_id', $id)->first();
 
         // mengirim data pegawai ke view index
-        return view('clothespreview', ['vendorcatalogs' => $vendorcatalogs]);
+        return view('catalog.index', ['product' => $product]);
     }
 }

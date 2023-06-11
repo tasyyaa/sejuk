@@ -190,9 +190,9 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <div class="logo">
+                <a class="logo" href="/">
                     <img class="w-12" src="/images/logo-side.svg" alt="">
-                </div>
+                </a>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
                         <div
@@ -241,7 +241,7 @@
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
                                 <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                     <div>
-                                        <h1>Home</h1>
+                                        <h1>HOME</h1>
                                     </div>
                                     <div>
                                         <h1>FAQ</h1>
