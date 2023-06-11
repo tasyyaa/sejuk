@@ -32,10 +32,6 @@ use App\Http\Controllers\HomepageController;
 
 Route::get('/', [HomepageController::class, 'view']);
 
-Route::controller(addCostumeController::class)->group(function(){
-    Route::get('/vendorCatalog/delete/{id}','hapus');
-});
-
 Route::controller(returnPackageController::class)->group(function(){
     // Route::get('/ordersummary', 'index');
     Route::get('/returnpackage','create');
@@ -79,8 +75,6 @@ Route::controller(CheckController::class)->group(function(){
     Route::get('/address', 'complete');
     Route::get('/myOrderList', 'myorderlist');
 });
-
-
 
 Route::controller(chooseController::class)->group(function(){
     Route::get('/costumepage', 'indexcostume');
