@@ -7,7 +7,7 @@ use App\Http\Controllers\acceptPaymentController;
 use App\Http\Controllers\returnPackageController;
 use App\Http\Controllers\returnPaymentController;
 use App\Http\Controllers\applyForReturnController;
-use App\Http\Controllers\chooseController;
+use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\rentalsController;
 
@@ -17,7 +17,7 @@ use App\Http\Controllers\rentalconfirmpassController;
 use App\Http\Controllers\rentalsemailverifnotifController;
 use App\Http\Controllers\rentalsemailverifpromptController;
 use App\Http\Controllers\rentalsverifyController;
-
+use App\Http\Controllers\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,18 +30,11 @@ use App\Http\Controllers\rentalsverifyController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.homepage'); // ok
-});
+Route::get('/', [HomepageController::class, 'view']);
 
-Route::controller(addCostumeController::class)->group(function(){
-    Route::get('/homepageVendor', 'index');
-    Route::get('/homepageVendor/addCostume','create');
-    Route::post('/vendorCatalog/store','store');
-    Route::get('/vendorCatalog/delete/{id}','hapus');
-    Route::get('/vendorCatalog/addCostumeInvalid','view');
-    // Route::get('/pegawai/cari','cari');
-    // Route::get('/pegawai/view/{id}','view');
+Route::controller(ChooseController::class)->group(function(){
+    Route::get('/preview/{id}', 'preview')->name('preview');
+    Route::get('/myPurchases', 'mypurchases');
 });
 
 Route::controller(returnPackageController::class)->group(function(){
@@ -86,18 +79,6 @@ Route::controller(CheckController::class)->group(function(){
     Route::post('/addaddress/store','store');
     Route::get('/address', 'complete');
     Route::get('/myOrderList', 'myorderlist');
-});
-
-
-
-Route::controller(chooseController::class)->group(function(){
-    Route::get('/costumepage', 'indexcostume');
-    Route::get('/clothespage', 'indexclothes');
-    Route::get('/clothespreview/{id}', 'preview');
-//    Route::get('/homepageGuest', 'homepageguest');
-//    Route::get('/homepageCustomer', 'homepagecust');
-//    Route::get('/homepageVendor', 'homepagevendor');
-    Route::get('/myPurchases', 'mypurchases');
 });
 
 //development

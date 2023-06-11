@@ -22,7 +22,7 @@
     <section class="flex flex-col justify-center items-start w-11/12 mx-auto mt-36 text-white">
         <div class="flex flex-col text-7xl">
             <h1 class="font-black">Welcome Back,</h1>
-            <h1 class="font-medium">{{ auth()->guard('rentals')->user()->name }}</h1>
+            <h1 class="font-medium">{{ auth()->guard('rentals')->user()->vendor_store }}</h1>
         </div>
         <div class="flex items-center text-center mx-auto gap-4 mt-[277px]">
             <p class="font-medium text-2xl">
@@ -39,221 +39,53 @@
             <div
                 class="flex flex-row text-white justify-between items-center gap-10 font-medium text-xl w-[75%] mx-auto">
                 <div class="flex flex-row items-center gap-3">
-                    <p class="whitespace-nowrap">Costume.id Categories</p>
+                    <p class="whitespace-nowrap">{{ auth()->guard('rentals')->user()->vendor_store }} Categories</p>
                     <img src="/images/chevron-down.png" alt="chevron-down" class="mt-2 w-[20px]" />
                 </div>
-                <p>Haloween</p>
-                <p>Promo</p>
-                <p>Cosplay</p>
-                <p>Kids Costume</p>
-                <p>Edit</p>
-                <p>
-                    <img src="/images/add.png" alt="add" class="mt-[2px] w-[20px]" />
-                </p>
+
+                @foreach($categories as $category)
+                    <p>{{ $category->category_type }}</p>
+                @endforeach
+                <a href="{{route('add-catalog')}}" class="flex flex-row items-center">
+                    <img src="/images/add.png" alt="add" class="w-[20px] h-[20px]" /> <span class="ml-2">Add</span>
+                </a>
             </div>
             <div class="flex flex-row justify-center flex-wrap items-center gap-8 mx-auto">
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
+                @foreach($products as $product)
+                <div class="flex flex-col items-center relative">
+                    <div class="absolute top-2 right-2 text-white">
+                        <form method="POST" action="{{route('delete-catalog', ['id' => $product->catalog_id])}}" >
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="bg-red-600 rounded py-1 px-3">Hapus</button>
+                        </form>
+                    </div>
+                    <img src="{{url('storage/'.$product->catalog_image)}}" alt="{{$product->item_name}}" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
                     <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
                         <div>
                             <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
+                                {{$product->item_name}}
                             </h3>
                             <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
+                                {{$product->category->category_type}}
                             </p>
                         </div>
                         <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
+                            <p class="text-2xl font-bold">Rp {{$product->item_price}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="/images/shirt-1.png" alt="shirt" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
-                    <div class="flex flex-col justify-between items-start bg-white px-4 pb-6 pt-3 w-full h-[207px]">
-                        <div>
-                            <h3 class="text-3xl font-semibold">
-                                Cotton T-Shirt
-                            </h3>
-                            <p class="text-xl mt-2 text-[#B7B7B7] font-semibold">
-                                Woman Collection
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-bold">Rp 250.000</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div class="flex felx-row gap-6 justify-center items-center">
-                <a href="#">
-                    <img src="/images/arrow-left-dark.png" alt="arrow-left" class="" />
-                </a>
-                <p class="text-black text-2xl font-semibold">1</p>
-                <a href="#">
-                    <img src="/images/arrow-right-dark.png" alt="arrow-right" class="" />
-                </a>
-            </div>
+{{--            <div class="flex felx-row gap-6 justify-center items-center">--}}
+{{--                <a href="#">--}}
+{{--                    <img src="/images/arrow-left-dark.png" alt="arrow-left" class="" />--}}
+{{--                </a>--}}
+{{--                <p class="text-black text-2xl font-semibold">1</p>--}}
+{{--                <a href="#">--}}
+{{--                    <img src="/images/arrow-right-dark.png" alt="arrow-right" class="" />--}}
+{{--                </a>--}}
+{{--            </div>--}}
         </div>
     </section>
 
