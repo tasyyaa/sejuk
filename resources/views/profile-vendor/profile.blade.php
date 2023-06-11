@@ -1,4 +1,4 @@
-@extends('profile.profile-layout')
+@extends('profile-vendor.profile-layout')
 
 @section('title')
     Profile

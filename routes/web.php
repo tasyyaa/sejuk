@@ -36,10 +36,10 @@ Route::get('/', function () {
 
 Route::controller(addCostumeController::class)->group(function(){
 //    Route::get('/homepageVendor', 'index');
-    Route::get('/homepageVendor/addCostume','create');
-    Route::post('/vendorCatalog/store','store');
+//    Route::get('/homepageVendor/addCostume','create');
+//    Route::post('/vendorCatalog/store','store');
     Route::get('/vendorCatalog/delete/{id}','hapus');
-    Route::get('/vendorCatalog/addCostumeInvalid','view');
+//    Route::get('/vendorCatalog/addCostumeInvalid','view');
     // Route::get('/pegawai/cari','cari');
     // Route::get('/pegawai/view/{id}','view');
 });

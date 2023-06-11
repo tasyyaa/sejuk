@@ -7,9 +7,8 @@ use App\Models\Category;
 use App\Models\Vendorcatalogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
-class CatalogController extends Controller
+class AddCostumeController extends Controller
 {
     public function create()
     {
@@ -50,6 +49,6 @@ class CatalogController extends Controller
         DB::table('vendorcatalogs')->where('catalog_id',$id)->delete();
 
         // alihkan halaman ke halaman pegawai
-        return redirect('/vendorCatalog');
+        return redirect()->route('homepage.vendor');
     }
 }

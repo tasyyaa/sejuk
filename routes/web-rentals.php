@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Vendor\HomepageController;
 use App\Http\Controllers\Vendor\SuntController;
-use App\Http\Controllers\Vendor\CatalogController;
+use App\Http\Controllers\Vendor\AddCostumeController;
 
 Route::get('/', [HomepageController::class, 'homepage'])->name('homepage.vendor');
 
@@ -13,7 +13,7 @@ Route::controller(SuntController::class)->group(function(){
     Route::post('/profile/edit', 'store'); // ok
 });
 
-Route::controller(CatalogController::class)->prefix('catalog')->group(function() {
+Route::controller(AddCostumeController::class)->prefix('catalog')->group(function() {
     Route::get('add', 'create')->name('add-catalog');
     Route::post('add', 'store');
 });

@@ -244,15 +244,15 @@
                     </div>
                 </div>
             </div>
-            <div class="flex felx-row gap-6 justify-center items-center">
-                <a href="#">
-                    <img src="/images/arrow-left-dark.png" alt="arrow-left" class="" />
-                </a>
-                <p class="text-black text-2xl font-semibold">1</p>
-                <a href="#">
-                    <img src="/images/arrow-right-dark.png" alt="arrow-right" class="" />
-                </a>
-            </div>
+{{--            <div class="flex felx-row gap-6 justify-center items-center">--}}
+{{--                <a href="#">--}}
+{{--                    <img src="/images/arrow-left-dark.png" alt="arrow-left" class="" />--}}
+{{--                </a>--}}
+{{--                <p class="text-black text-2xl font-semibold">1</p>--}}
+{{--                <a href="#">--}}
+{{--                    <img src="/images/arrow-right-dark.png" alt="arrow-right" class="" />--}}
+{{--                </a>--}}
+{{--            </div>--}}
         </div>
     </section>
 
