@@ -2,21 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckController;
-use App\Http\Controllers\addCostumeController;
 use App\Http\Controllers\acceptPaymentController;
 use App\Http\Controllers\returnPackageController;
 use App\Http\Controllers\returnPaymentController;
 use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\ChooseController;
-use App\Http\Controllers\SigninController;
-use App\Http\Controllers\rentalsController;
+use App\Http\Controllers\Auth\ChooseRoleController;
 
-use App\Http\Controllers\rentalnewpassController;
-use App\Http\Controllers\rentalresetController;
-use App\Http\Controllers\rentalconfirmpassController;
-use App\Http\Controllers\rentalsemailverifnotifController;
-use App\Http\Controllers\rentalsemailverifpromptController;
-use App\Http\Controllers\rentalsverifyController;
 use App\Http\Controllers\HomepageController;
 
 /*
@@ -31,6 +23,11 @@ use App\Http\Controllers\HomepageController;
 */
 
 Route::get('/', [HomepageController::class, 'view']);
+
+Route::middleware('guest:web,rentals')->get('choose-login', [ChooseRoleController::class, 'login'])
+    ->name('choose-login'); // ok
+Route::middleware('guest:web,rentals')->get('choose-register', [ChooseRoleController::class, 'register'])
+    ->name('choose-register'); // ok
 
 Route::controller(ChooseController::class)->group(function(){
     Route::get('/preview/{id}', 'preview')->name('preview');

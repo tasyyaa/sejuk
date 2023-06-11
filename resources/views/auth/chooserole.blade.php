@@ -169,7 +169,7 @@ Sign In
                         <span class="line line3"></span>
                     </div>
                     <div class="logo">
-                        <img class="w-12" src="images/logo-singin.svg" alt="">
+                        <img class="w-12" src="/images/logo-singin.svg" alt="">
                     </div>
                     <div class="menu-items h-screen relative overflow-visible">
                         <div class="flex flex-row ">
@@ -208,9 +208,9 @@ Sign In
                             </div>
                             <div class="w-full">
                                 <div class="logo flex ml-[780px] fill-[#4a7174]">
-                                    <img class="w-20" src="images/logo-side.svg" alt="">
+                                    <img class="w-20" src="/images/logo-side.svg" alt="">
                                 </div>
-                                <img class="absolute top-0 right-0 w-[40%]" src="images/sidebar.jpg" alt="">
+                                <img class="absolute top-0 right-0 w-[40%]" src="/images/sidebar.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -230,14 +230,12 @@ Sign In
         Before Start the Journey, Please Assign your Roles First!
     </label>
         <button class="w-[450px] h-[50px] bg-black text-white font-bold mb-4 text-lg"
-            onclick="window.location.href = '{{ route('register') }}'">{{ __('Customer') }}</button>
+            onclick="window.location.href = '{{ $type == 'login' ? route('login') : route('register') }}'">Customer</button>
 
         <button class="w-[450px] h-[50px] bg-black text-white font-bold text-lg"
-            onclick="window.location.href = '{{ route('registervendor') }}'">{{ __('Vendor') }}</button>
+            onclick="window.location.href = '{{ $type == 'login' ? route('loginvendor') : route('registervendor') }}'">Vendor</button>
     </div>
 </div>
-
-
             </div>
 
         </div>
