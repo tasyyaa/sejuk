@@ -3,11 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Vendor\HomepageController;
 use App\Http\Controllers\Vendor\SuntController;
+use App\Http\Controllers\Vendor\CatalogController;
 
-Route::get('/', [HomepageController::class, 'homepage']);
+Route::get('/', [HomepageController::class, 'homepage'])->name('homepage.vendor');
 
 Route::controller(SuntController::class)->group(function(){
     Route::get('/profile', 'complete')->name('profile.vendor'); // ok
     Route::get('/profile/edit', 'create')->name('profile.edit.vendor'); // ok
     Route::post('/profile/edit', 'store'); // ok
+});
+
+Route::controller(CatalogController::class)->prefix('catalog')->group(function() {
+    Route::get('add', 'create')->name('add-catalog');
+    Route::post('add', 'store');
 });

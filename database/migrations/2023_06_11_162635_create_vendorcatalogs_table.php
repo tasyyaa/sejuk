@@ -17,7 +17,7 @@ class CreateVendorcatalogsTable extends Migration
             $table->id('catalog_id');
             $table->string('item_name', 100);
             $table->integer('item_price');
-            $table->string('size', 5);
+            $table->string('size', 20);
             $table->integer('stock');
             $table->string('category_id', 10);
             $table->string('catalog_image', 255);

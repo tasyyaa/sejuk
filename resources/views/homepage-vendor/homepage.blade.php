@@ -22,7 +22,7 @@
     <section class="flex flex-col justify-center items-start w-11/12 mx-auto mt-36 text-white">
         <div class="flex flex-col text-7xl">
             <h1 class="font-black">Welcome Back,</h1>
-            <h1 class="font-medium">{{ auth()->guard('rentals')->user()->name }}</h1>
+            <h1 class="font-medium">{{ auth()->guard('rentals')->user()->vendor_store }}</h1>
         </div>
         <div class="flex items-center text-center mx-auto gap-4 mt-[277px]">
             <p class="font-medium text-2xl">
@@ -39,17 +39,16 @@
             <div
                 class="flex flex-row text-white justify-between items-center gap-10 font-medium text-xl w-[75%] mx-auto">
                 <div class="flex flex-row items-center gap-3">
-                    <p class="whitespace-nowrap">Costume.id Categories</p>
+                    <p class="whitespace-nowrap">{{ auth()->guard('rentals')->user()->vendor_store }} Categories</p>
                     <img src="/images/chevron-down.png" alt="chevron-down" class="mt-2 w-[20px]" />
                 </div>
-                <p>Haloween</p>
-                <p>Promo</p>
-                <p>Cosplay</p>
-                <p>Kids Costume</p>
-                <p>Edit</p>
-                <p>
+
+                @foreach($categories as $category)
+                    <p>{{ $category->category_type }}</p>
+                @endforeach
+                <a href="{{route('add-catalog')}}">
                     <img src="/images/add.png" alt="add" class="mt-[2px] w-[20px]" />
-                </p>
+                </a>
             </div>
             <div class="flex flex-row justify-center flex-wrap items-center gap-8 mx-auto">
                 <div class="flex flex-col items-center">

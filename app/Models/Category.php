@@ -17,4 +17,8 @@ class Category extends Model
         'category_id',
         'category_type'
     ];
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
 }

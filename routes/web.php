@@ -35,7 +35,7 @@ Route::get('/', function () {
 });
 
 Route::controller(addCostumeController::class)->group(function(){
-    Route::get('/homepageVendor', 'index');
+//    Route::get('/homepageVendor', 'index');
     Route::get('/homepageVendor/addCostume','create');
     Route::post('/vendorCatalog/store','store');
     Route::get('/vendorCatalog/delete/{id}','hapus');
