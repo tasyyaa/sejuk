@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\vendorCatalogs;
+use App\Models\Vendorcatalogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -30,7 +30,7 @@ class addCostumeController extends Controller
     {
 	// insert data ke table pegawai
         $id = IdGenerator::generate(['table' => 'vendorcatalogs','field'=>'catalog_id', 'length' => 5, 'prefix' =>'CAT']);
-        $c = new vendorcatalogs();
+        $c = new Vendorcatalogs();
         $c->catalog_id = $id;
         $c->item_name = $request -> item_name;
         $c->item_price = $request->item_price;

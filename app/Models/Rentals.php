@@ -45,5 +45,9 @@ class Rentals extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function catalogs() {
+        return $this->hasMany(Vendorcatalogs::class, 'vendor_id', 'id');
+    }
 }
 
