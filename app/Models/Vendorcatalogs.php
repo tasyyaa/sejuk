@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vendorcatalogs extends Model
 {
+    protected $primaryKey = 'catalog_id';
+
     public function vendor()
     {
         return $this->belongsTo(Rentals::class, 'vendor_id', 'id');

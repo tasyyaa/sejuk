@@ -10,16 +10,7 @@ class ChooseController extends Controller
 {
     public function mypurchases()
     {
-        return view('myPurchases');
-    }
-
-    public function indexclothes()
-    {
-        // mengambil data dari table pegawai
-        $vendorcatalogs = DB::table('vendorcatalogs')->where('category_id', 'ACS')->paginate(16);
-
-        // mengirim data pegawai ke view index
-        return view('clothespage', ['vendorcatalogs' => $vendorcatalogs]);
+        return view('orders.orders');
     }
 
     public function preview($id)

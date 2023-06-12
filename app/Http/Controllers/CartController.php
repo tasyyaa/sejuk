@@ -18,12 +18,19 @@ class CartController extends Controller
         $carts = Cart::with('catalog.vendor')->with('catalog.category')->where('user_id', $user->id)->get();
         $shippingMethods = ShippingMethod::all();
 
+        $subtotal = 0;
+
+        foreach ($carts as $cart) {
+            $subtotal += $cart->catalog->item_price*$cart->amount;
+        }
+
         $paymentMethods = PaymentMethod::all()->collect()->groupBy('category');
 
         return view('cart.checkout', [
             'carts' => $carts,
             'shippingMethods' => $shippingMethods,
-            'paymentGroups' => $paymentMethods
+            'paymentGroups' => $paymentMethods,
+            'subtotal' => $subtotal
         ]);
     }
 

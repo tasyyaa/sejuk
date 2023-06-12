@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('order_status', 25);
             $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('vendor_id')->references('id')->on('rentals');
             $table->integer('total_price');
             $table->timestamps();
         });

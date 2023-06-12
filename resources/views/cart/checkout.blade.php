@@ -84,6 +84,8 @@
                 </div>
                 <p class="px-8 text-xl mb-8">{{auth()->guard('web')->user()->cust_address}} (phone {{auth()->guard('web')->user()->cust_homephone}})</p>
             </div>
+            <form method="POST" action="{{route('cart')}}">
+                @csrf
             <div class="bg-white rounded-lg shadow-lg mt-10 border-2 mb-10">
                 <div class="columns-2 mt-10  mx-auto  bg-white">
                     <div class="text-3xl font-bold text-[#497174] px-8 py-4">
@@ -95,11 +97,11 @@
                         <tr class=" hover:bg-gray-100">
                             <td class="flex flex-row items-center px-4 py-4 pl-8">
                                 <div class="flex items-center">
-                                    <input id="default-radio-1" type="radio" value="{{$shippingMethod->id}}" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <input id="default-radio-1" type="radio" value="{{$shippingMethod->id}}" name="shipping_method_id" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                     <div class="flex-1 pl-3 tracking-wide">
-                                        <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
+                                        <label class="ml-4 text-m font-bold text-[#675959] pr-20">
                                             {{$shippingMethod->name}}</label>
-                                        <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
+                                        <div class="ml-4 text-sm font-medium text-[#675959] pr-20">
                                             Estimasi: {{$shippingMethod->estimate_delivery}}</div>
                                     </div>
                                 </div>
@@ -119,55 +121,48 @@
                         <div class=" rounded overflow-hidden shadow-lg  bg-white">
                             <div class="px-6 py-4">
                                 <div class="font-bold text-xl mb-2">Ringkasan Belanja</div>
-
-
                                 <table class= "border-separate border-spacing-2 border-slate-400 font-semibold text-md">
                                     <tbody>
                                     <tr>
-                                        <td>Total Harga</td>
+                                        <td>Subtotal</td>
                                         <td></td>
-                                        <td>Rp.1.250.600 <!-- <-Harga Dummy;Harga sesuai database--></td>
+                                        <td>Rp{{$subtotal}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Diskon</td>
-                                        <td></td>
-                                        <td>10% <!-- <-Harga Dummy;Harga sesuai database--></td>
-                                    </tr>
+{{--                                     todo ongkos kirim diupdate ketika klik metode pengiriman--}}
+{{--                                    <tr>--}}
+{{--                                        <td>Ongkos Kirim</td>--}}
+{{--                                        <td></td>--}}
+{{--                                        <td>10% <!-- <-Harga Dummy;Harga sesuai database--></td>--}}
+{{--                                    </tr>--}}
                                     <tr>
                                         <td><hr class="my-auto border-t-2"/></td>
                                     </tr>
 
-                                    <tr class="font-bold">
-                                        <td >Total Pembayaran</td>
-                                        <td></td>
-                                        <td>Rp.-<!-- <-Ukuran Dummy;Ukuran sesuai database--></td>
-                                    </tr>
-
+{{--                                    <tr class="font-bold">--}}
+{{--                                        <td >Total Pembayaran</td>--}}
+{{--                                        <td></td>--}}
+{{--                                        <td>Rp.-<!-- <-Ukuran Dummy;Ukuran sesuai database--></td>--}}
+{{--                                    </tr>--}}
                                     </tbody>
                                 </table>
                             </div>
                             <div class="px-6 pt-4 pb-2">
                                 <div class = "flex justify-center">
-
                                     <button type="submit" class=" flex justify-center text-white btn bg-[#497174] font-bold py-2 px-20 rounded focus:outline-none focus:shadow-outline">
                                         Checkout</button>
                                 </div>
                                 <p class="text-center text-gray-500 text-xs pt-4">
                                     &copy;Sejuk2023.
                                 </p>
-
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="columns-2 mx-auto bg-white">
-
                     <div class="rounded overflow-hidden">
-
                         <div class="text-3xl font-bold text-[#497174] px-8 py-4 mb-4">
                             Pilih Metode Pembayaran
-
                         </div>
 
                         @foreach($paymentGroups as $key => $paymentMethods)
@@ -198,6 +193,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 @endsection
