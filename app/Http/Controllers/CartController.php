@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\PaymentMethod;
 use App\Models\Shipping;
 use App\Models\ShippingMethod;
 use Illuminate\Http\Request;
@@ -17,9 +18,12 @@ class CartController extends Controller
         $carts = Cart::with('catalog.vendor')->with('catalog.category')->where('user_id', $user->id)->get();
         $shippingMethods = ShippingMethod::all();
 
+        $paymentMethods = PaymentMethod::all()->collect()->groupBy('category');
+
         return view('cart.checkout', [
             'carts' => $carts,
             'shippingMethods' => $shippingMethods,
+            'paymentGroups' => $paymentMethods
         ]);
     }
 

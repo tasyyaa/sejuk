@@ -26,8 +26,9 @@
                         <th class="px-4 py-3 font-semibold border-b-2 ">Jumlah Barang</th>
                         <th class="px-2 font-semibold border-b-2 ">Total Harga</th>
                         <th class="px-4 py-3 font-semibold border-b-2 ">
-                            <button type="submit" class=" text-white btn bg-[#D7306C] hover:bg-[#D7306C]-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                Hapus</button></th>
+{{--                            <button type="submit" class=" text-white btn bg-[#D7306C] hover:bg-[#D7306C]-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">--}}
+{{--                                Hapus</button>--}}
+                        </th>
                     </tr>
                     </thead>
                     <tbody class="text-sm font-normal text-gray-700">
@@ -114,10 +115,7 @@
                         @endforeach
                     </table>
 
-
                     <div class=" flex justify-center items-center pt-5 pl-10 pb-32 ">
-
-
                         <div class=" rounded overflow-hidden shadow-lg  bg-white">
                             <div class="px-6 py-4">
                                 <div class="font-bold text-xl mb-2">Ringkasan Belanja</div>
@@ -161,12 +159,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
                 </div>
 
                 <div class="columns-2 mx-auto bg-white">
@@ -178,218 +170,33 @@
 
                         </div>
 
-                        <div class="mb-10 ml-8">
-                            <table class="border-collapse table-fixed hover:table-fixed">
-                                <caption class="caption-top text-left  text-lg font-bold text-[#675959] ">
-                                    Pembayaran lain
-                                </caption>
-                                <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                    <td class="flex flex-row items-center px-4 py-4">
-                                        <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <div class="flex w-10 h-10 ml-4">
-                                                <img alt="profil" src="images/gopay.png" />
-                                            </div>
-                                            <div class="flex-1 tracking-wide">
-                                                <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                    Rp100.000</label>
-                                                <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                                    GoPay Coins 200.000</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                    <td class="flex flex-row items-center px-4 py-4">
-                                        <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <div class="flex w-10 h-10 ml-4 items-center">
-                                                <img alt="profil" src="images/ovo1..jpeg" />
-                                            </div>
-                                            <div class="flex-1 pl-1 tracking-wide">
-                                                <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                    Rp150.000</label>
-                                                <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                                    OVO Points 0</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-
-
-
-
-                        <div class="mb-10 ml-8">
-                            <table class="border-collapse table-fixed hover:table-fixed">
-                                <caption class="caption-top text-left text-lg font-bold text-[#675959] ">
-                                    Tunai di Gerai
-                                </caption>
-                                <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                    <td class="flex flex-row items-center px-4 py-4">
-                                        <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <div class="flex w-10 h-10 ml-4">
-                                                <img alt="profil" src="images/alfamart.svg" />
-                                            </div>
-                                            <div class="flex-1 tracking-wide">
-                                                <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                    Alfamart / Alfamidi / Lawson / Dan+Dan</label>
-
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                    <td class="flex flex-row items-center px-4 py-4">
-                                        <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <div class="flex w-10 h-10 ml-4 items-center">
-                                                <img alt="profil" src="images/indomaret.png" />
-                                            </div>
-                                            <div class="flex-1 pl-3 tracking-wide">
-                                                <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                    Indomaret / Ceriamart</label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </table>
-                        </div>
-
-
-
+                        @foreach($paymentGroups as $key => $paymentMethods)
                         <div class="mb-20 ml-8">
                             <table class="border-collapse table-fixed hover:table-fixed">
                                 <caption class="caption-top text-left text-lg font-bold text-[#675959] ">
-                                    Kartu Kredit
+                                    {{$key}}
                                 </caption>
+                                @foreach($paymentMethods as $paymentMethod)
                                 <tr class=" hover:bg-gray-100 border-b border-gray-200">
                                     <td class="flex flex-row items-center px-4 py-4">
                                         <div class="flex items-center">
-                                            <input id="default-radio-1" type="radio" value="" name="pembayaran" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <input id="default-radio-1" type="radio" value="{{$paymentMethod->id}}" name="payment_method_id" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                             <div class="flex w-10 h-10 ml-4">
                                                 <img alt="profil" src="images/kredit.png" />
                                             </div>
                                             <div class="flex-1 tracking-wide">
                                                 <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                    Kartu Kredit / Debit</label>
-
+                                                    {{$paymentMethod->type}}</label>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-
+                                @endforeach
                             </table>
                         </div>
-
+                        @endforeach
                     </div>
-
-
-                    <div class="text-3xl font-bold text-[#497174] px-8 py-4 mb-12 mt-24">
-
-                    </div>
-
-                    <div class="mb-10 ml-8">
-                        <table class="border-collapse table-fixed hover:table-fixed">
-                            <caption class="caption-top text-left  text-lg font-bold text-[#675959] ">
-                                Transfer Virtual Account / Via Bank
-                            </caption>
-                            <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                <td class="flex flex-row items-center px-4 py-4">
-                                    <div class="flex items-center">
-                                        <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <div class="flex w-10 h-5 ml-4">
-                                            <img alt="profil" src="images/mandiri.png" />
-                                        </div>
-                                        <div class="flex-1 tracking-wide">
-                                            <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                Bank Mandiri</label>
-                                            <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                <td class="flex flex-row items-center px-4 py-4">
-                                    <div class="flex items-center">
-                                        <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <div class="flex w-10 h-10 ml-4 items-center">
-                                            <img alt="profil" src="images/bca.png" />
-                                        </div>
-                                        <div class="flex-1 pl-1 tracking-wide">
-                                            <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                Bank BCA</label>
-                                            <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                <td class="flex flex-row items-center px-4 py-4">
-                                    <div class="flex items-center">
-                                        <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <div class="flex w-10 h-10 ml-4 items-center">
-                                            <img alt="profil" src="images/bni.png" />
-                                        </div>
-                                        <div class="flex-1 pl-1 tracking-wide">
-                                            <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                Bank BNI</label>
-                                            <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                <td class="flex flex-row items-center px-4 py-4">
-                                    <div class="flex items-center">
-                                        <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <div class="flex w-10 h-10 ml-4 items-center">
-                                            <img alt="profil" src="images/bri.svg" />
-                                        </div>
-                                        <div class="flex-1 pl-1 tracking-wide">
-                                            <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                Bank BRI</label>
-                                            <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class=" hover:bg-gray-100 border-b border-gray-200">
-                                <td class="flex flex-row items-center px-4 py-4">
-                                    <div class="flex items-center">
-                                        <input id="default-radio-1" type="radio" value="" name="bank" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <div class="flex w-10 h-10 ml-4 items-center">
-                                            <img alt="profil" src="images/bsi.jpg" />
-                                        </div>
-                                        <div class="flex-1 pl-1 tracking-wide">
-                                            <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                                Bank Syariah Indonesia (BSI)</label>
-                                            <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-                        </table>
-                    </div>
-
                 </div>
-
             </div>
         </div>
     </div>
