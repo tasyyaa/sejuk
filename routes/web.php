@@ -91,21 +91,3 @@ Route::get('/cartDetailsVendor2', function () {
 Route::get('/cartDetailsVendorSuccess', function () {
     return view('cartDetailsOwnerPageSuccess');
 });
-Route::get('/dev', function () {
-    return view('cartOwnerPage');
-});
-Route::get('/dev2', function () {
-    return view('cartDetailsOwnerPage');
-});
-Route::get('/dev3', function () {
-    return view('cartDetailsOwner2Page');
-});
-Route::get('/dev4', function () {
-    return view('cartDetailsOwnerPageSuccess');
-});
-Route::get('/view', function () {
-    return view('viewDetail');
-});
-Route::get('/checkout', function () {
-    return view('checkOut');
-});
