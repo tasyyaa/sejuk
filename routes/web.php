@@ -103,3 +103,9 @@ Route::get('/dev3', function () {
 Route::get('/dev4', function () {
     return view('cartDetailsOwnerPageSuccess');
 });
+Route::get('/view', function () {
+    return view('viewDetail');
+});
+Route::get('/checkout', function () {
+    return view('checkOut');
+});
