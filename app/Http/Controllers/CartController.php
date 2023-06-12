@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Shipping;
+use App\Models\ShippingMethod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\Response;
@@ -13,9 +15,11 @@ class CartController extends Controller
     {
         $user = auth()->guard('web')->user();
         $carts = Cart::with('catalog.vendor')->with('catalog.category')->where('user_id', $user->id)->get();
+        $shippingMethods = ShippingMethod::all();
 
         return view('cart.checkout', [
-            'carts' => $carts
+            'carts' => $carts,
+            'shippingMethods' => $shippingMethods,
         ]);
     }
 

@@ -72,9 +72,6 @@ Route::controller(returnPaymentController::class)->group(function(){
 
 Route::controller(CheckController::class)->group(function(){
     // Route::get('/ordersummary', 'index');
-    Route::get('/addaddress','create');
-    Route::post('/addaddress/store','store');
-    Route::get('/address', 'complete');
     Route::get('/myOrderList', 'myorderlist');
 });
 

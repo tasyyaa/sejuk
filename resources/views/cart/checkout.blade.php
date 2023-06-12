@@ -90,89 +90,28 @@
                     </div>
                     <table class="border-collapse table-fixed hover:table-fixed ">
 
+                        @foreach($shippingMethods as $shippingMethod)
                         <tr class=" hover:bg-gray-100">
-
                             <td class="flex flex-row items-center px-4 py-4 pl-8">
                                 <div class="flex items-center">
-                                    <input id="default-radio-1" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <input id="default-radio-1" type="radio" value="{{$shippingMethod->id}}" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                     <div class="flex-1 pl-3 tracking-wide">
                                         <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                            JNE</label>
+                                            {{$shippingMethod->name}}</label>
                                         <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            Estimasi: 2-3 hari</div>
+                                            Estimasi: {{$shippingMethod->estimate_delivery}}</div>
                                     </div>
                                 </div>
                             </td>
 
                             <td>
                                 <div class="text-lg font-bold text-[#675959] pr-2 ">
-                                    Rp.25.000
+                                    Rp.{{$shippingMethod->price}}
                                 </div>
                             </td>
 
                         </tr>
-
-                        <tr class=" hover:bg-gray-100">
-                            <td class="flex flex-row items-center px-4 py-4 pl-8">
-                                <div class="flex items-center">
-                                    <input id="radio" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <div class="flex-1 pl-3 tracking-wide">
-                                        <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                            JNT</label>
-                                        <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            Estimasi: 2-3 hari</div>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="text-lg font-bold text-[#675959] pr-2 ">
-                                    Rp.27.000
-                                </div>
-                            </td>
-
-                        </tr>
-
-                        <tr class=" hover:bg-gray-100">
-                            <td class="flex flex-row items-center px-4 py-4 pl-8">
-                                <div class="flex items-center">
-                                    <input id="default-radio-1" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <div class="flex-1 pl-3 tracking-wide">
-                                        <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                            SiCepat</label>
-                                        <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            Estimasi: 1-2 hari</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="text-lg font-bold text-[#675959] pr-2 ">
-                                    Rp.20.000
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr class=" hover:bg-gray-100">
-                            <td class="flex flex-row items-center px-4 py-4 pl-8">
-                                <div class="flex items-center">
-                                    <input id="default-radio-1" type="radio" value="" name="pengiriman" class="w-4 h-4 text-[#497174] bg-gray-100 border-gray-300 focus:ring-[#497174] dark:focus:ring-[#497174] dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <div class="flex-1 pl-3 tracking-wide">
-                                        <label for="default-radio-1" class="ml-4 text-m font-bold text-[#675959] pr-20">
-                                            Go-Send</label>
-                                        <div for="default-radio-1" class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            Estimasi: On the same day</div>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="text-lg font-bold text-[#675959] pr-2 ">
-                                    Rp.15.000
-                                </div>
-                            </td>
-
-                        </tr>
-
+                        @endforeach
                     </table>
 
 
