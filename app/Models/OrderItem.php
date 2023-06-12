@@ -17,4 +17,9 @@ class OrderItem extends Model
         'amount',
         'price'
     ];
+
+    public function catalog()
+    {
+        return $this->belongsTo(Vendorcatalogs::class, 'catalog_id', 'catalog_id');
+    }
 }

@@ -7,7 +7,7 @@ use App\Models\returnpackage;
 use Illuminate\Support\Facades\DB;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
-class returnPackageController extends Controller
+class ReturnPackageController extends Controller
 {
     // public function index()
     // {

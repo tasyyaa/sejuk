@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Vendor\HomepageController;
 use App\Http\Controllers\Vendor\SuntController;
+use App\Http\Controllers\ReturnPackageController;
 use App\Http\Controllers\Vendor\AddCostumeController;
 
 Route::get('/', [HomepageController::class, 'homepage'])->name('homepage.vendor');
@@ -17,4 +18,9 @@ Route::controller(AddCostumeController::class)->prefix('catalog')->group(functio
     Route::get('add', 'create')->name('add-catalog');
     Route::post('add', 'store');
     Route::delete('/{id}', 'hapus')->name('delete-catalog');
+});
+
+Route::controller(ReturnPackageController::class)->group(function() {
+    Route::get('/orders/{id}', 'view')->name('order');
+    Route::get('/orderSummaryConfirmed', 'viewconf');
 });

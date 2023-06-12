@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\acceptPaymentController;
-use App\Http\Controllers\returnPackageController;
+use App\Http\Controllers\ReturnPackageController;
 use App\Http\Controllers\returnPaymentController;
 use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\ChooseController;
@@ -33,13 +33,11 @@ Route::controller(ChooseController::class)->group(function(){
     Route::get('/preview/{id}', 'preview')->name('preview');
 });
 
-Route::controller(returnPackageController::class)->group(function(){
+Route::controller(ReturnPackageController::class)->group(function(){
     // Route::get('/ordersummary', 'index');
     Route::get('/returnpackage','create');
     Route::post('/returnpackage/store','store');
     Route::get('/returnpackagecomplete', 'complete');
-    Route::get('/orderSummary', 'view');
-    Route::get('/orderSummaryConfirmed', 'viewconf');
 });
 
 Route::controller(applyForReturnController::class)->group(function(){

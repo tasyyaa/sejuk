@@ -30,4 +30,9 @@ class Order extends Model
     {
         return $this->hasOne(Transaction::class, 'order_id', 'id')->latestOfMany();
     }
+
+    public function vendor()
+    {
+        return $this->belongsTo(Rentals::class, 'vendor_id', 'id');
+    }
 }
