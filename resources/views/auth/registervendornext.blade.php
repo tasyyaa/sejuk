@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.base')
 
+@section('title')
+    Complete Vendor Registration
+@endsection
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/cormorant-2" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <title>signup</title>
-</head>
+@section('additional-sheet')
 <style>
     body {
         font-family: 'Plus Jakarta Sans', sans-serif;
@@ -195,12 +181,12 @@
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
     }
-    
+
     .input-container {
         position: relative;
         width: 100%;
     }
-    
+
     .custom-input {
         width: 600px;
         height: 102px;
@@ -213,9 +199,10 @@
         background-color: #FFF;
     }
     </style>
-</head>
+@endsection
 
-<body>
+@section('child-layout')
+<div>
     <!-- nav start -->
     <nav>
         <div class="flex flex-row justify-between px-4 py-1">
@@ -231,23 +218,21 @@
                     <h1 class="font-semibold">Welcome</h1>
                 </div>
                 <hr class="border-none h-1 bg-[#BFB9B9] w-8">
-                <<div class="flex flex-row items-center gap-4 mr-32">
+                <div class="flex flex-row items-center gap-4 mr-32">
                 <div class="flex items-center gap-3">
                     <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#497174] ring-1 ring-black">
                         <h1 class="text-2xl font-semibold">2</h1>
                     </div>
                     <h1 class="font-semibold">About You</h1>
                 </div>
+                </div>
             </div>
         </div>
     </nav>
     <!-- nav end -->
 
-    <form style="background: linear-gradient(180deg, #FFFFFF 0%, #F9F5F2 100%);" class="" x-on:submit="handleSubmit"
+    <form style="background: linear-gradient(180deg, #FFFFFF 0%, #F9F5F2 100%);" class="" action="{{route('registervendornext')}}"
       x-data="{
-        vendorname: '',
-        vendortype: '',
-        isValidVendorname: false,
         startTime: '',
         endTime: '',
         isValidVendoroprhours: false,
@@ -256,61 +241,44 @@
         phone: '',
         minVendoroprhoursLength: 8,
         invalid: false,
-        incomplete: false,
+        incomplete: false
       }" method="POST">
       @csrf
-    <div x-show="invalid" class="fixed top-0 left-0 right-0 h-36 bg-white z-50" x-transition x-cloak>
-        <div class="flex flex-col px-12 pt-4 pb-2">
-            <h2 class="text-3xl font-bold text-[#FE4A4A]">
-                Data is Invalid / Belum Lengkap
-            </h2>
-            <p class="text-lg font-medium">Click OK to continue</p>
-            <p class="ml-auto mt-4 px-8 py-0.5 border-2 shadow-xl border-b-4 border-b-slate-300 hove:brightness-75 cursor-pointer"
-                @click="invalid = false">
-                Ok
-            </p>
-        </div>
-    </div>
+{{--    <div x-show="invalid" class="fixed top-0 left-0 right-0 h-36 bg-white z-50" x-transition x-cloak>--}}
+{{--        <div class="flex flex-col px-12 pt-4 pb-2">--}}
+{{--            <h2 class="text-3xl font-bold text-[#FE4A4A]">--}}
+{{--                Data is Invalid / Belum Lengkap--}}
+{{--            </h2>--}}
+{{--            <p class="text-lg font-medium">Click OK to continue</p>--}}
+{{--            <p class="ml-auto mt-4 px-8 py-0.5 border-2 shadow-xl border-b-4 border-b-slate-300 hove:brightness-75 cursor-pointer"--}}
+{{--                @click="invalid = false">--}}
+{{--                Ok--}}
+{{--            </p>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col mt-16 items-center text-center gap-12 justify-center">
             <h1 class="text-3xl font-semibold">COMPLETE YOUR ACCOUNT</h1>
             <p class="text-[#BFB9B9] text-2xl w-[460px]">Please fill in a few details below about your business!</p>
         </div>
         <div>
-            <input x-model="vendorname" x-on:input="isValidVendorname = vendorname.trim() !== ''"
-                class="w-[600px] h-[102px] mt-12 ring-1 text-black focus:border-none ring-black bg-white focus:outline-none  placeholder:text-[#BFB9B9] text-xl pl-8"
-                placeholder="VENDORNAME">
-            <p class="text-red-500 mt-1" x-show="!isValidVendorname">Vendor name is required.</p>
-        </div>
-        <div>
-            <select name="vendortype" id="vendortype"
-                class="w-[600px] h-[102px] mt-12 ring-1 appearance-none focus:border-none ring-black bg-white focus:outline-none  text-xl pl-8"
-                x-model="vendortype">
-                <option value="" disabled selected>Select Vendor Type</option>
-                <option value="Retail">Retail</option>
-                <option value="Rental">Rental</option>
-                <option value="Seller">Seller</option>
-            </select>
-            <p class="text-red-500 mt-1" x-show="!vendortype">Vendor type is required.</p>
-        </div>
-        <div>
             <label for="start_time" class="input-label">Start Time:</label>
             <div class="input-container">
-                <input type="time" id="start_time" x-model="startTime" class="custom-input">
+                <input type="time" id="start_time" x-model="startTime" class="custom-input" name="oprhours_open">
             </div>
             <p class="text-red-500 mt-1" x-show="!startTime">Start time is required.</p>
         </div>
         <div>
             <label for="end_time" class="input-label">End Time:</label>
             <div class="input-container">
-                <input type="time" id="end_time" x-model="endTime" class="custom-input">
+                <input type="time" id="end_time" x-model="endTime" class="custom-input" name="oprhours_close">
             </div>
             <p class="text-red-500 mt-1" x-show="!endTime">End time is required.</p>
         </div>
         <div>
             <input x-model="vendorstoreaddress" x-on:input="isValidVendorstoreaddress = vendorstoreaddress.trim() !== ''"
                 class="w-[600px] h-[102px] mt-12 ring-1 text-black focus:border-none ring-black bg-white focus:outline-none  placeholder:text-[#BFB9B9] text-xl pl-8"
-                placeholder="vendorstoreaddress">
+                placeholder="vendor store address" name="vendor_address">
             <p class="text-red-500 mt-1" x-show="!isValidVendorstoreaddress">Vendor store address is required.</p>
         </div>
         <p class="mt-12 text-xl">
@@ -318,32 +286,12 @@
         </p>
         <div class="flex flex-row gap-48 my-16">
             <button type="submit" class="w-[310px] h-[62px] hover:bg-slate-200 bg-white ring-1 ring-black text-3xl flex justify-center text-black placeholder:text-[#BFB9B9] items-center"
-                :disabled="!isValidVendorname || !vendortype || !startTime || !endTime || !isValidVendorstoreaddress">
+                :disabled="!startTime || !endTime || !isValidVendorstoreaddress">
                 SIGN UP
             </button>
         </div>
     </div>
 </form>
 
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
-
-<script>
-    function handleSubmit(event) {
-        const isValid =
-            this.isValidVendorname &&
-            this.vendortype !== '' &&
-            this.startTime !== '' &&
-            this.endTime !== '' &&
-            this.isValidVendorstoreaddress;
-
-        if (!isValid) {
-            this.invalid = true;
-            event.preventDefault();
-        } else {
-            const formElement = event.target.closest("form");
-            // Define where the data will be sent here
-            formElement.action = "/dashboard";
-            window.location.href = "/dashboard";
-        }
-    }
-</script>
+</div>
+@endsection

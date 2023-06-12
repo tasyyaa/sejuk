@@ -1,19 +1,10 @@
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/cormorant-2" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Forgot Password</title>
+@extends('layouts.base')
+
+@section('title')
+    Reset Password
+@endsection
+
+@section('additional-sheet')
     <style>
         body {
             width: 100%;
@@ -164,21 +155,21 @@
             display: none;
         }
     </style>
-</head>
+@endsection
 
-<body class="bg-blackoverflow-hidden h-screen overflow-hidden">
+@section('child-layout')
+<div class="bg-blackoverflow-hidden h-screen overflow-hidden">
     <nav>
         <div class="navbar">
             <div class="">
                 <div class="container  nav-container">
-                    <input class="checkbox" type="checkbox" name="" id="" />
                     <div class="hamburger-lines">
                         <span class="line line1"></span>
                         <span class="line line2"></span>
                         <span class="line line3"></span>
                     </div>
                     <div class="logo">
-                        <img class="w-12" src="images/logo-singin.svg" alt="">
+                        <img class="w-12" src="/images/logo-singin.svg" alt="">
                     </div>
                     <div class="menu-items h-screen relative overflow-visible">
                         <div class="flex flex-row ">
@@ -256,8 +247,8 @@
                                 your registered email to reset your password!</label>
                             <div class=" w-[518px] h-83px[]">
                                 <input id="email" type="text" name="email"
-                                :value="old('email', $request->email)" required autofocus class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0"
-                                placeholder="EMAIL" />
+                                       :value="old('email', $request=>email)" required autofocus class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0"
+                                       placeholder="EMAIL" />
                             </div>
                         </div>
 
@@ -280,9 +271,10 @@
                                 {{ __('Reset Password') }}
                             </button>
                         </div>
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>
