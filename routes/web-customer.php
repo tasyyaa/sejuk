@@ -12,5 +12,6 @@ Route::controller(SuntController::class)->group(function(){
 
 Route::controller(CartController::class)->group(function() {
     Route::get('/checkout', 'showCartPage')->name('cart');
-    Route::post('cart/add', 'addToCart')->name('cart.add');
+    Route::post('/checkout/add', 'addToCart')->name('cart.add');
+    Route::delete('/checkout/delete/{id}', 'deleteCart')->name('cart.delete');
 });

@@ -18,8 +18,8 @@
                     <thead class="">
                     <tr class="text-base font-semibold text-left border-t-4 border-b-4">
                         <th class="px-4 py-3  "><div class="flex items-center">
-                                <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="default-checkbox" class="ml-2 text-sm font-semibold text-gray-900 dark:text-gray-300 ">Pilih Semua</label>
+{{--                                <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">--}}
+{{--                                <label for="default-checkbox" class="ml-2 text-sm font-semibold text-gray-900 dark:text-gray-300 ">Pilih Semua</label>--}}
                             </div></th>
                         <th class=" font-semibold border-b-2 ">Toko</th>
                         <th class="px-4 py-3 font-semibold border-b-2 ">Harga Satuan</th>
@@ -32,96 +32,61 @@
                     </thead>
                     <tbody class="text-sm font-normal text-gray-700">
 
-                    <!--Item 1-->
+                    @foreach($carts as $cart)
                     <tr class="py-10 border-b border-gray-200 hover:bg-gray-100">
                         <td class="flex flex-row items-center px-4 py-4">
                             <div class="flex items-center">
-                                <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="default-checkbox" class="ml-2 text-sm font-semibold text-gray-900 dark:text-gray-300 "></label>
+{{--                                <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">--}}
+{{--                                <label for="default-checkbox" class="ml-2 text-sm font-semibold text-gray-900 dark:text-gray-300 "></label>--}}
                                 <div class="flex w-10 h-10 mr-4">
-                                    <img alt="profil" src="images/harry.png" />
+                                    <img alt="profil" src="{{asset('storage/'.$cart->catalog->catalog_image)}}" />
                                 </div>
                                 <div class="flex-1 pl-2 tracking-wide">
-                                    <div class="font-medium text[#675959] pb-2">Kota Surabaya</div>
+                                    <div class="font-medium text[#675959] pb-2">{{$cart->catalog->vendor->city}}</div>
                                     <div class="text-sm font-extrabold text-[#675959] pr-2 ">
-                                        Full Set Harry Potter Costume Jubah (Kemeja Adult/Anak-anak)
+                                        {{$cart->catalog->item_name}}
                                     </div>
                                     <div class="text-sm text-[#A89E9E] dark:text-gray-200 pt-2">
-                                        Varian: -Ukuran L -Adult
+                                        Varian: {{$cart->catalog->size}}
                                     </div>
                                 </div></div>
                         </td>
                         <td class="font-bold">
-                            danzino
+                            {{$cart->catalog->vendor->vendor_store}}
                         </td>
                         <td class="px-8 font-semibold">
-                            Rp.150.000
+                            Rp.{{$cart->catalog->item_price}}
                         </td>
                         <td class="px-2 py-4">
-                            <input type="number" min="0" name="jumlah_pesan" class="justify-items-center form-control mb-1 shadow appearance-none border rounded w-20 py-2 px-2 text-gray-250 leading-tight focus:outline-none focus:shadow-outline" required="">
+                            <p class="justify-items-center form-control mb-1 shadow appearance-none border rounded w-20 py-2 px-2 text-gray-250 leading-tight">{{$cart->amount}}</p>
                         </td>
                         <td class="px-1 text-lg font-bold text-[#497174]">
-                            Rp.150.000
+                            Rp.{{$cart->catalog->item_price * $cart->amount}}
                         </td>
                         <td class="px-4 py-4">
-                            <button class="bg-transparent hover:bg-[#D7306C] text-[#D7306C] font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent flex rounded-full">
-                                Hapus
-                            </button>
+                            <form action="{{route('cart.delete', ['id' => $cart->id])}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="bg-transparent hover:bg-[#D7306C] text-[#D7306C] font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent flex rounded-full">
+                                    Hapus
+                                </button>
+                            </form>
                         </td>
                         </tr>
-                        <!--Item 2-->
-                    <tr class="py-10 border-b border-gray-200 hover:bg-gray-100">
-                        <td class="flex flex-row items-center px-4 py-4">
-                            <div class="flex items-center">
-                                <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="default-checkbox" class="ml-2 text-sm font-semibold text-gray-900 dark:text-gray-300 "></label>
-                                <div class="flex w-10 h-10 mr-4">
-                                    <img alt="profil" src="images/keqing.png" />
-                                </div>
-                                <div class="flex-1 pl-2 tracking-wide">
-                                    <div class="font-medium text[#675959] pb-2">Kota Surabaya</div>
-                                    <div class="text-sm font-extrabold text-[#675959] pr-2 ">
-                                        Kostum Keqing Default Genshin Impact Cosplay
-                                    </div>
-                                    <div class="text-sm text-[#A89E9E] dark:text-gray-200 pt-2">
-                                        Varian: -Ukuran L -Adult
-                                    </div>
-                                </div></div>
-                        </td>
-                        <td class="font-bold">
-                            iuroidea
-                        </td>
-                        <td class="px-8 font-semibold">
-                            Rp.875.600
-                        </td>
-                        <td class="px-2 py-4">
-                            <input type="number" min="0" name="jumlah_pesan" class="justify-items-center form-control mb-1 shadow appearance-none border rounded w-20 py-2 px-2 text-gray-250 leading-tight focus:outline-none focus:shadow-outline" required="">
-                        </td>
-                        <td class="px-1 text-lg font-bold text-[#497174]">
-                            Rp.875.600
-                        </td>
-                        <td class="px-4 py-4">
-                            <button class="bg-transparent hover:bg-[#D7306C] text-[#D7306C] font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent flex rounded-full">
-                                Hapus
-                            </button>
-                        </td>
-                    </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
-            <a href="#">
-                <div class ="w-auto h-32 mx-auto rounded-lg shadow-lg mt-10 border-2 bg-white">
-                    <div class="text-3xl font-bold text-[#497174] px-8 py-4">
-                        Address
-                    </div>
-
+            <div class ="w-auto h-32 mx-auto rounded-lg shadow-lg mt-10 border-2 bg-white">
+                <div class="text-3xl font-bold text-[#497174] px-8 py-4">
+                    Address
                 </div>
-            </a>
+                <p class="px-8 text-xl mb-8">{{auth()->guard('web')->user()->cust_address}} (phone {{auth()->guard('web')->user()->cust_homephone}})</p>
+            </div>
             <div class="bg-white rounded-lg shadow-lg mt-10 border-2 mb-10">
                 <div class="columns-2 mt-10  mx-auto  bg-white">
                     <div class="text-3xl font-bold text-[#497174] px-8 py-4">
                         Pilih Metode Pengiriman
-
                     </div>
                     <table class="border-collapse table-fixed hover:table-fixed ">
 

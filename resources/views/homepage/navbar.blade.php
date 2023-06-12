@@ -208,7 +208,7 @@
                             <a class="navbar-brand" href="/mypurchases">
                                 <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
                             </a>
-                            <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
+                            <a class="navbar-brand" href="{{route('cart')}}" style="margin:0px 0px 0px 20px;">
                                 <img src="{{ asset('/images/notifications.svg') }}" width="30" height="24">
                             </a>
                             <a class="navbar-brand" href="{{route('profile')}}" style="margin:0px 0px 0px 20px;">
