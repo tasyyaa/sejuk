@@ -9,6 +9,15 @@ class Order extends Model
 {
     use HasFactory;
 
+    public const PAID = 'PAID';
+    public const SHIPPED = 'SHIPPED';
+    public const SHIPPED_BACK_APPLY_RETURN = 'SHIP_APPLY_RETURN';
+
+    public const SHIPPED_BACK_RETURN = 'SHIP_RETURN';
+
+    public const COMPETED_RETURN = 'COMPLETED_RETURN';
+    public const COMPLETD_APPLY_RETURN = 'COMPLETED_APPLY_RETURN';
+
     protected $fillable = [
         'user_id',
         'vendor_id',
@@ -34,5 +43,10 @@ class Order extends Model
     public function vendor()
     {
         return $this->belongsTo(Rentals::class, 'vendor_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

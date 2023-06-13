@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CheckController;
 use App\Http\Controllers\acceptPaymentController;
 use App\Http\Controllers\ReturnPackageController;
 use App\Http\Controllers\returnPaymentController;
@@ -57,17 +56,11 @@ Route::controller(acceptPaymentController::class)->group(function(){
 });
 
 Route::controller(returnPaymentController::class)->group(function(){
-    // Route::get('/ordersummary', 'index');
     Route::get('/returnpayment','create');
     Route::post('/returnpayment/store','store');
     Route::get('/returncomplete', 'complete');
     Route::get('/returnpaymentprocess/{id}', 'rip');
     Route::get('/returnpaymentsuccess', 'rps');
-});
-
-Route::controller(CheckController::class)->group(function(){
-    // Route::get('/ordersummary', 'index');
-    Route::get('/myOrderList', 'myorderlist');
 });
 
 //development

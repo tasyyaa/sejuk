@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Vendorcatalogs;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -11,13 +12,19 @@ class ChooseController extends Controller
 {
     public function mypurchases()
     {
-        $query = Order::with('items.catalog.category')->with('vendor');
+        $user = Auth::guard('web')->user();
+
+        $query = Order::with('items.catalog.category')->with('vendor')->where('user_id', $user->id);
 
         return view('orders.orders', [
-            'ordersPaid' => $query->where('order_status', 'PAID')->get(),
-            'ordersShipped' => $query->where('order_status', 'SHIPPED')->get(),
-            'ordersReturn' => $query->where('order_status', 'RETURNED')->get(),
-            'ordersCompleted' => $query->where('order_status', 'COMPLETED')->get()
+            'ordersPaid' => $query->where('order_status', Order::PAID)->get(),
+            'ordersShipped' => $query->where('order_status', Order::SHIPPED)->get(),
+            'ordersReturn' => $query->where(function ($query) {
+                return $query->where('order_status', Order::SHIPPED_BACK_RETURN)->orWhere('order_status', Order::SHIPPED_BACK_APPLY_RETURN);
+            })->get(),
+            'ordersCompleted' =>$query->where(function ($query) {
+                return $query->where('order_status', Order::COMPETED_RETURN)->orWhere('order_status', Order::COMPLETD_APPLY_RETURN);
+            })->get(),
         ]);
     }
 
