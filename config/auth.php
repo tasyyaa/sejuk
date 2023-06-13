@@ -40,10 +40,6 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'rentals' => [
-            'driver' => 'session',
-            'provider' => 'rentals',
-        ],
     ],
 
     /*
@@ -68,11 +64,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'rentals' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\rentals::class,
-        ],
-
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -101,12 +92,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-        'rentals' => [
-            'provider' => 'rentals',
-            'table' => 'rental_pass_reset',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
+ 
     ],
 
     /*
