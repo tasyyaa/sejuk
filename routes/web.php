@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\acceptPaymentController;
 use App\Http\Controllers\ReturnPackageController;
 use App\Http\Controllers\returnPaymentController;
-use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\Auth\ChooseRoleController;
 
@@ -38,12 +37,6 @@ Route::controller(ReturnPackageController::class)->group(function(){
     Route::get('/returnpackagecomplete', 'complete');
 });
 
-Route::controller(applyForReturnController::class)->group(function(){
-    Route::get('/applyforreturn','create');
-    Route::post('/applyforreturn/store','store');
-    Route::get('/applyforreturncomplete', 'complete');
-});
-
 Route::controller(acceptPaymentController::class)->group(function(){
     Route::get('/acceptpayment','create');
     Route::post('/acceptpayment/store','store');
@@ -61,16 +54,4 @@ Route::controller(returnPaymentController::class)->group(function(){
     Route::get('/returncomplete', 'complete');
     Route::get('/returnpaymentprocess/{id}', 'rip');
     Route::get('/returnpaymentsuccess', 'rps');
-});
-
-Route::get('/cartDetailsVendor', function () {
-    return view('cartDetailsOwnerPage');
-});
-
-Route::get('/cartDetailsVendor2', function () {
-    return view('cartDetailsOwner2Page');
-});
-
-Route::get('/cartDetailsVendorSuccess', function () {
-    return view('cartDetailsOwnerPageSuccess');
 });

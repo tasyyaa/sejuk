@@ -24,6 +24,7 @@ class ReturnPackageController extends Controller
         $user = Auth::guard('web')->user();
         $query = Order::with('items.catalog.category')->with('vendor');
         $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
+        $query = $query->with('applyReturn.shippingMethod')->with('returnPackage.shippingMethod');
         $order = $query->where("id", $id)->first();
 
         if ($user->id != $order->user_id) {

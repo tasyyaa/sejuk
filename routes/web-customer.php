@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\ReturnPackageController;
+use App\Http\Controllers\ApplyForReturnController;
 
 Route::controller(SuntController::class)->group(function(){
     Route::get('/profile', 'complete')->name('profile'); // ok
@@ -29,4 +30,10 @@ Route::controller(ChooseController::class)->group(function(){
 
 Route::controller(ReturnPackageController::class)->group(function() {
     Route::get('/mypurchases/order/{id}', 'view')->name('order');
+});
+
+Route::controller(ApplyForReturnController::class)->group(function(){
+    Route::get('/applyforreturn/{id}','create')->name('order.apply-return');
+    Route::post('/applyforreturn/{id}','store');
+    Route::get('/applyforreturncomplete', 'complete');
 });

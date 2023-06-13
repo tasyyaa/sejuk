@@ -410,109 +410,85 @@
 @endsection
 
 @section('title')
-    Order #{{$order->id}}
+    Apply Return Order #{{$order->id}}
 @endsection
 
 @section('content')
-<div class="mt-12 mx-8">
-    <div class="bg-[#FFFFFF] ml-[15px] mr-[15px] rounded-md">
-        <div class="flex flex-row ml-[28px]">
-            <div class="flex flex-col gap-[20px] ml-[28px]">
-                <img src="{{ asset('storage/' . $order->items[0]->catalog->catalog_image) }}" class="object-left mt-3" width=306px>
-            </div>
-            <div class="flex flex-col gap-x-[550px] ml-[28px]">
-                <div class="flex flex-row">
-                    <p class="d-inline-block align-text- mt-[45px] text-[16px]">{{$order->vendor->city}}</p>
-                </div>
-                <div class="flex flex-row">
-                    <p class="d-inline-block align-text- mt-[8px] text-[16px] font-extrabold">{{$order->vendor->vendor_store}}</p>
-                </div>
-                <div class="flex flex-row">
-                    <p class="d-inline-block align-text- mt-[8px] text-[16px]">Product</p>
-                </div>
-            </div>
-            <div class="flex flex-col ml-[475px] mt-[105px]">
-                <div class="flex flex-row ml-[10px]">
-                    <p class="d-inline-block align-text- text-[16px]">Qty</p>
-                </div>
-            </div>
-            <div class="flex flex-col ml-[120px] mt-[105px]">
-                <div class="flex flex-row">
-                    <p class="d-inline-block align-text- text-[16px]">Price</p>
-                </div>
-            </div>
-        </div>
-        @foreach($order->items as $item)
+    <div class="mt-12 mx-8">
+        <div class="bg-[#FFFFFF] ml-[15px] mr-[15px] rounded-md">
             <div class="flex flex-row ml-[28px]">
                 <div class="flex flex-col gap-[20px] ml-[28px]">
-                    <div class="w-[306px]"></div>
+                    <img src="{{ asset('storage/' . $order->items[0]->catalog->catalog_image) }}" class="object-left mt-3" width=306px>
                 </div>
-                <div class="flex flex-col ml-[28px]">
+                <div class="flex flex-col gap-x-[550px] ml-[28px]">
                     <div class="flex flex-row">
-                        <p class="d-inline-block align-text- mt-[8px] text-[16px]">{{$item->catalog->item_name}} - {{$item->catalog->size}}</p>
+                        <p class="d-inline-block align-text- mt-[45px] text-[16px]">{{$order->vendor->city}}</p>
+                    </div>
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- mt-[8px] text-[16px] font-extrabold">{{$order->vendor->vendor_store}}</p>
+                    </div>
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- mt-[8px] text-[16px]">Product</p>
                     </div>
                 </div>
-                <div class="flex flex-col ml-[500px]">
+                <div class="flex flex-col ml-[475px] mt-[105px]">
                     <div class="flex flex-row ml-[10px]">
-                        <p class="d-inline-block align-text- text-[16px]">{{$item->amount}}</p>
+                        <p class="d-inline-block align-text- text-[16px]">Qty</p>
                     </div>
                 </div>
-                <div class="flex flex-col ml-[120px]">
+                <div class="flex flex-col ml-[120px] mt-[105px]">
                     <div class="flex flex-row">
-                        <p class="d-inline-block align-text- text-[16px]">Rp{{$item->amount*$item->price}}</p>
+                        <p class="d-inline-block align-text- text-[16px]">Price</p>
                     </div>
                 </div>
             </div>
-        @endforeach
-    </div>
-    <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
-        <div class="flex flex-row ml-[28px]">
-            <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Payment Methods</p>
+            @foreach($order->items as $item)
+                <div class="flex flex-row ml-[28px]">
+                    <div class="flex flex-col gap-[20px] ml-[28px]">
+                        <div class="w-[306px]"></div>
+                    </div>
+                    <div class="flex flex-col ml-[28px]">
+                        <div class="flex flex-row">
+                            <p class="d-inline-block align-text- mt-[8px] text-[16px]">{{$item->catalog->item_name}} - {{$item->catalog->size}}</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col ml-[500px]">
+                        <div class="flex flex-row ml-[10px]">
+                            <p class="d-inline-block align-text- text-[16px]">{{$item->amount}}</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col ml-[120px]">
+                        <div class="flex flex-row">
+                            <p class="d-inline-block align-text- text-[16px]">Rp{{$item->amount*$item->price}}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <div class="flex flex-row ml-[28px] mt-[10px]">
-            <div class="flex flex-col">
-                <img src="{{ asset('images/debitcard.svg') }}" class="object-left " width=45px height=30px>
+        <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
+            <div class="flex flex-row ml-[28px]">
+                <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Payment Methods</p>
             </div>
-            <div class="flex flex-col ml-[10px] mt-[5px]">
-                <p class="d-inline-block align-text- text-bold text-[#675959] text-[16px]">{{$order->transaction->paymentMethod->type}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
-        <div class="flex flex-row">
-            <div class="flex flex-col ml-[28px]">
-                <div class="flex flex-row">
-                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Shipping Information</p>
+            <div class="flex flex-row ml-[28px] mt-[10px]">
+                <div class="flex flex-col">
+                    <img src="{{ asset('images/debitcard.svg') }}" class="object-left " width=45px height=30px>
                 </div>
-                <div class="flex flex-row mt-[12px]">
-                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->shippingMethod->type}}</p>
-                </div>
-                <div class="flex flex-row">
-                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->shippingMethod->name}}</p>
-                </div>
-            </div>
-            <div class="flex flex-col ml-[725px]">
-                <div class="flex flex-row">
-                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">No. Resi</p>
-                </div>
-                <div class="flex flex-row mt-[22px]">
-                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->no_resi}}</p>
+                <div class="flex flex-col ml-[10px] mt-[5px]">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[16px]">{{$order->transaction->paymentMethod->type}}</p>
                 </div>
             </div>
         </div>
-    </div>
-    @if($order->order_status === \App\Models\Order::SHIPPED_BACK_APPLY_RETURN || $order->order_status === \App\Models\Order::COMPLETD_APPLY_RETURN)
         <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
             <div class="flex flex-row">
                 <div class="flex flex-col ml-[28px]">
                     <div class="flex flex-row">
-                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Apply Return Shipping Information</p>
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Shipping Information</p>
                     </div>
                     <div class="flex flex-row mt-[12px]">
-                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->applyReturn->shippingMethod->type}}</p>
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->shippingMethod->type}}</p>
                     </div>
                     <div class="flex flex-row">
-                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->applyReturn->shippingMethod->name}}</p>
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->shippingMethod->name}}</p>
                     </div>
                 </div>
                 <div class="flex flex-col ml-[725px]">
@@ -520,34 +496,73 @@
                         <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">No. Resi</p>
                     </div>
                     <div class="flex flex-row mt-[22px]">
-                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->applyReturn->no_resi}}</p>
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->no_resi}}</p>
                     </div>
                 </div>
-            </div>
-            <div class="ml-[28px]">
-                <div class="flex flex-col">
-                    <div class="flex flex-row">
-                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Alasan</p>
-                    </div>
-                    <div class="flex flex-row mt-4">
-                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->applyReturn->reason}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col ml-[28px] mt-8">
-                <img src="{{asset('storage/' . $order->applyReturn->product_image)}}">
             </div>
         </div>
-    @endif
-    <div class="flex justify-center gap-[50px] ml-[710px] mt-[75px] mb-[55px]">
-        @if($order->order_status === 'PAID')
-        @elseif($order->order_status === \App\Models\Order::SHIPPED)
-            <a href="/applyforreturn"
-               class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Apply For Return</a>
+        <form action="{{route('order.apply-return', ['id' => $order->id])}}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
+                <div class="flex flex-row">
+                    <div class="flex flex-col my-8">
+                        <div class="flex flex-row ml-[28px]">
+                            <p class="d-inline-block align-text- font-bold text-[#675959] text-[18px]">Shipping Information
+                            </p>
+                        </div>
+                        <div class="flex flex-row ml-[28px] mt-[12px]">
+                            <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Reguler</p>
+                        </div>
+                        @if($errors->any())
+                            {{$errors->all()}}
+                        @endif
+                        <div class="flex flex-row ml-[24px]">
+                            <select class="w-[475px] rounded-md h-[33px] text-xs focus:outline-0 text-[14px] text-[#675959]"
+                                    aria-label="Default select example" for="shipping_methods" id="shipping_methods"
+                                    name="shipping_method_id" required>
+                                <option selected disabled>Choose your shipping methods</option>
+                                @foreach($shippingMethods as $shippingMethod)
+                                    <option value="{{$shippingMethod->id}}">{{$shippingMethod->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="flex flex-row ml-[28px] mt-4">
+                            <input type="text" id="name_kurir"
+                                   class=" w-[450px] rounded-md h-[33px] focus:outline-0 text-[14px]"
+                                   name="nama_kurir"
+                                   required
+                                   placeholder="Nama kurir">
+                        </div>
+                        <div class="flex flex-row ml-[28px] mt-4">
+                            <input type="text" id="no_resi"
+                                   class=" w-[450px] rounded-md h-[33px] focus:outline-0 text-[14px]"
+                                   name="no_resi"
+                                   required
+                                   placeholder="Nomor Resi">
+                        </div>
 
-            <input type="Submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md "
-                   value="Confirm Package">
-        @endif
+                        <div class="flex flex-row ml-[28px]">
+                            <p class="d-inline-block align-text- font-bold text-[#675959] text-[18px]">Reason for return
+                            </p>
+                        </div>
+                        <div class="flex flex-row ml-[28px]">
+                            <input type="text" id="reason" class=" w-[450px] rounded-md h-[33px] focus:outline-0"
+                                   aria-labelledby="required" name="reason" placeholder="Input your reason" required>
+                        </div>
+                        <div class="flex flex-row ml-[28px] mt-[20px]">
+                            <p class="d-inline-block align-text- font-bold text-[#675959] text-[18px]">Product Image
+                            </p>
+                        </div>
+                        <div class="flex flex-row ml-[28px]">
+                            <input class="form-control" type="file" id="productimage" name="product_image" required>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md ml-[1050px] mt-[50px] mb-[55px] "
+                   value="Submit">
+        </form>
     </div>
-</div>
 @endsection
