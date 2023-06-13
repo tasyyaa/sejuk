@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ChooseController;
+use App\Http\Controllers\ReturnPackageController;
 
 Route::controller(SuntController::class)->group(function(){
     Route::get('/profile', 'complete')->name('profile'); // ok
@@ -24,4 +25,8 @@ Route::controller(OrderController::class)->group(function() {
 
 Route::controller(ChooseController::class)->group(function(){
     Route::get('/mypurchases', 'mypurchases')->name('orders.user');
+});
+
+Route::controller(ReturnPackageController::class)->group(function() {
+    Route::get('/mypurchases/order/{id}', 'view')->name('order');
 });

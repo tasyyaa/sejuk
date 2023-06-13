@@ -34,14 +34,12 @@ Route::controller(ChooseController::class)->group(function(){
 });
 
 Route::controller(ReturnPackageController::class)->group(function(){
-    // Route::get('/ordersummary', 'index');
     Route::get('/returnpackage','create');
     Route::post('/returnpackage/store','store');
     Route::get('/returnpackagecomplete', 'complete');
 });
 
 Route::controller(applyForReturnController::class)->group(function(){
-    // Route::get('/ordersummary', 'index');
     Route::get('/applyforreturn','create');
     Route::post('/applyforreturn/store','store');
     Route::get('/applyforreturncomplete', 'complete');

@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\returnpackage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class ReturnPackageController extends Controller
 {
-    // public function index()
-    // {
-    // 	// mengambil data dari table pegawai
-    // 	$ordersummary = DB::table('order')->get();
-
-    // 	// mengirim data pegawai ke view index
-    // 	return view('',['ordersummary' => $ordersummary]);
-    // }
-
     public function complete()
     {
     	// mengambil data dari table pegawai
@@ -27,10 +20,19 @@ class ReturnPackageController extends Controller
     	return view('returnpackagecomplete',['returnpackages' => $returnpackages]);
     }
 
-    public function view(){
-        // $orders = DB::table('orders')->get();
-        // DB::table('returnpackages')->where('return_id',$id)->view();
-        return view('ordersummary');
+    public function view($id) {
+        $user = Auth::guard('web')->user();
+        $query = Order::with('items.catalog.category')->with('vendor');
+        $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
+        $order = $query->where("id", $id)->first();
+
+        if ($user->id != $order->user_id) {
+            abort(403);
+        }
+
+        return view('orders.detail', [
+            'order' => $order
+        ]);
     }
 
     public function viewconf(){

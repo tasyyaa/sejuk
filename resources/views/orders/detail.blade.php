@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('homepage.navbar')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-            integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <title>Order Summary</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
+@section('child-sheet')
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -421,113 +407,110 @@
             }
         }
     </style>
-    
-</head>
+@endsection
 
-<body>
-<nav class="">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div class="leftitem" style="display: flex; justify-content: center;">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/backarrowcust.svg') }}" width="60" height="65"
-                     class="d-inline-block align-text-">
-            </a>
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/sejukcust.svg') }}" width="60" height="65"
-                     class="d-inline-block align-text-">
-            </a>
-            <a class="navbar-brand">
-                <h4 class="d-inline-block align-text- mt-4">Order Summary</h4>
-            </a>
+@section('title')
+    Order #{{$order->id}}
+@endsection
+
+@section('content')
+<div class="mt-12 mx-8">
+    <div class="bg-[#FFFFFF] ml-[15px] mr-[15px] rounded-md">
+        <div class="flex flex-row ml-[28px]">
+            <div class="flex flex-col gap-[20px] ml-[28px]">
+                <img src="{{ asset('storage/' . $order->items[0]->catalog->catalog_image) }}" class="object-left mt-3" width=306px>
+            </div>
+            <div class="flex flex-col gap-x-[550px] ml-[28px]">
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- mt-[45px] text-[16px]">{{$order->vendor->city}}</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- mt-[8px] text-[16px] font-extrabold">{{$order->vendor->vendor_store}}</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- mt-[8px] text-[16px]">Product</p>
+                </div>
+            </div>
+            <div class="flex flex-col ml-[475px] mt-[105px]">
+                <div class="flex flex-row ml-[10px]">
+                    <p class="d-inline-block align-text- text-[16px]">Qty</p>
+                </div>
+            </div>
+            <div class="flex flex-col ml-[120px] mt-[105px]">
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- text-[16px]">Price</p>
+                </div>
+            </div>
         </div>
-        <div class="sideitem" style="display: flex; justify-content: center;">
-            <a class="navbar-brand" href="#">
-                <h4 class="d-inline-block align-text- text-[#675959]"> {{ auth()->user()->name}} </h4>
-            </a>
+        @foreach($order->items as $item)
+            <div class="flex flex-row ml-[28px]">
+                <div class="flex flex-col gap-[20px] ml-[28px]">
+                    <div class="w-[306px]"></div>
+                </div>
+                <div class="flex flex-col ml-[28px]">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- mt-[8px] text-[16px]">{{$item->catalog->item_name}} - {{$item->catalog->size}}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col ml-[500px]">
+                    <div class="flex flex-row ml-[10px]">
+                        <p class="d-inline-block align-text- text-[16px]">{{$item->amount}}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col ml-[120px]">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-[16px]">Rp{{$item->amount*$item->price}}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
+        <div class="flex flex-row ml-[28px]">
+            <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Payment Methods</p>
+        </div>
+        <div class="flex flex-row ml-[28px] mt-[10px]">
+            <div class="flex flex-col">
+                <img src="{{ asset('images/debitcard.svg') }}" class="object-left " width=45px height=30px>
+            </div>
+            <div class="flex flex-col ml-[10px] mt-[5px]">
+                <p class="d-inline-block align-text- text-bold text-[#675959] text-[16px]">{{$order->transaction->paymentMethod->type}}</p>
+            </div>
         </div>
     </div>
-</nav>
-{{-- @foreach ($returnpackages as $return) --}}
-{{-- <div class="flex justify-center w-[1668] h-[524] rounded-md bg-[#FFFFFF]"> --}}
-<div class="bg-[#FFFFFF] ml-[15px] mr-[15px] rounded-md">
-    <div class="flex flex-row ml-[28px]">
-        <div class="flex flex-col gap-[20px] ml-[28px]">
-            <img src="{{ asset('images/phimage.svg') }}" class="object-left mt-3" width=306px height=379px>
-        </div>
-        <div class="flex flex-col gap-x-[550px] ml-[28px]">
-            <div class="flex flex-row">
-                <p class="d-inline-block align-text- mt-[45px] text-[16px]">location</p>
+    <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
+        <div class="flex flex-row">
+            <div class="flex flex-col ml-[28px]">
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Shipping Information</p>
+                </div>
+                <div class="flex flex-row mt-[12px]">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->shippingMethod->type}}</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->shippingMethod->name}}</p>
+                </div>
             </div>
-            <div class="flex flex-row">
-                <p class="d-inline-block align-text- mt-[8px] text-[16px] font-extrabold">Store</p>
-            </div>
-            <div class="flex flex-row">
-                <p class="d-inline-block align-text- mt-[8px] text-[16px]">Product</p>
-            </div>
-        </div>
-        <div class="flex flex-col ml-[475px] mt-[105px]">
-            <div class="flex flex-row ml-[10px]">
-                <p class="d-inline-block align-text- text-[16px]">Qty</p>
-            </div>
-            <div class="flex flex-row mt-[20px]">
-                <p class="d-inline-block align-text- text-extrabold text-[#497174] text-[16px]">Total</p>
+            <div class="flex flex-col ml-[725px]">
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">No. Resi</p>
+                </div>
+                <div class="flex flex-row mt-[22px]">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->no_resi}}</p>
+                </div>
             </div>
         </div>
-        <div class="flex flex-col ml-[120px] mt-[105px]">
-            <div class="flex flex-row">
-                <p class="d-inline-block align-text- text-[16px]">Price</p>
-            </div>
-            <div class="flex flex-row mt-[20px]">
-                <p class="d-inline-block align-text- text-extrabold text-[#497174] text-[16px]">Total Price</p>
-            </div>
-        </div>
+    </div>
+    <div class="flex justify-center gap-[50px] ml-[710px] mt-[75px] mb-[55px]">
+        @if($order->order_status === 'PAID')
+        @else
+            <a href="/applyforreturn"
+               class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Apply For Return</a>
+
+            <input type="Submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md "
+                   value="Confirm Package">
+
+        @endif
     </div>
 </div>
-<div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
-    <div class="flex flex-row ml-[28px]">
-        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Payment Methods</p>
-    </div>
-    <div class="flex flex-row ml-[28px] mt-[10px]">
-        <div class="flex flex-col">
-            <img src="{{ asset('images/debitcard.svg') }}" class="object-left " width=45px height=30px>
-        </div>
-        <div class="flex flex-col ml-[10px] mt-[5px]">
-            <p class="d-inline-block align-text- text-bold text-[#675959] text-[16px]">Mandiri Virtual Account</p>
-        </div>
-    </div>
-</div>
-<div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
-    <div class="flex flex-row">
-        <div class="flex flex-col ml-[28px]">
-            <div class="flex flex-row">
-                <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Shipping Information</p>
-            </div>
-            <div class="flex flex-row mt-[12px]">
-                <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Reguler</p>
-            </div>
-            <div class="flex flex-row">
-                <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">JNE Express</p>
-            </div>
-        </div>
-        <div class="flex flex-col ml-[725px]">
-            <div class="flex flex-row">
-                <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">No. Resi</p>
-            </div>
-            <div class="flex flex-row mt-[22px]">
-                <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">362178361</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="flex justify-center gap-[50px] ml-[710px] mt-[75px] mb-[55px]">
-    <a href="/applyforreturn"
-       class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Apply For Return</a>
-
-    <input type="Submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md "
-           value="Confirm Package">
-
-</div>
-{{-- </div> --}}
-</body>
-
-</html>
+@endsection

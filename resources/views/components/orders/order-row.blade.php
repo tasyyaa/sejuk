@@ -5,10 +5,10 @@
     x-cloak
 >
     @if(count($orders) === 0)
-        <img src="/images/no-order.png" alt="no-order" />
+        <img src="/images/no-order.png" class="mx-auto" alt="no-order" />
     @else
         @foreach($orders as $order)
-            <div class="flex flex-row justify-between items-center w-full">
+            <a class="flex flex-row justify-between items-center w-full" href="{{route('order', ['id' => $order->id])}}">
                 <div class="flex flex-row items-center gap-8">
                     <img
                         src="{{asset('storage/'.$order->items[0]->catalog->catalog_image)}}"
@@ -30,7 +30,8 @@
                 <p class="text-lg font-semibold text-[#675959] w-32">
                     Total Rp{{$order->total_price}}
                 </p>
-            </div>
+            </a>
+
         @endforeach
     @endif
 </div>
