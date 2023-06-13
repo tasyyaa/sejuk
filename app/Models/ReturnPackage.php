@@ -14,7 +14,7 @@ class ReturnPackage extends Model
         'nama_kurir',
         'vendor_address',
         'customer_address',
-        'no_seri',
+        'no_resi',
         'order_id'
     ];
 

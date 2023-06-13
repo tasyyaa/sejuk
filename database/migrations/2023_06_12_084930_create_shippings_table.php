@@ -19,7 +19,7 @@ class CreateShippingsTable extends Migration
             $table->foreignId('shipping_method_id')->references('id')->on('shipping_methods');
             $table->string('customer_address');
             $table->string('vendor_address');
-            $table->string('no_seri')->nullable();
+            $table->string('no_resi')->nullable();
             $table->string('nama_kurir')->nullable();
             $table->integer('price');
             $table->timestamps();

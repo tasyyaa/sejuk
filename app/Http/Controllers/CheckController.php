@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Models\addaddress;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class CheckController extends Controller
 {
@@ -28,8 +25,35 @@ class CheckController extends Controller
         ]);
     }
 
-    public function detail() {
-        return view('cartOwnerPage');
+    public function detail($id) {
+        $user = Auth::guard('rentals')->user();
+        $query = Order::with('items.catalog.category')->with('vendor')->with('user');
+        $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
+        $order = $query->where("id", $id)->first();
+
+        if ($user->id != $order->vendor_id) {
+            abort(403);
+        }
+        return view('orders-vendor.detail', ['order'=>$order]);
     }
 
+    public function ship(Request $request, $id) {
+        $order = Order::with('shipping')->where('id', $id)->first();
+        $vendor = auth()->guard('rentals')->user();
+
+        $request->validate([
+            'no_resi' => ['required', 'string']
+        ]);
+
+        if ($order === null || $order->vendor_id !== $vendor->id) {
+            abort(400);
+        }
+
+        $order->shipping->no_resi = $request->no_resi;
+        $order->shipping->save();
+        $order->order_status = Order::SHIPPED;
+        $order->save();
+
+        return back();
+    }
 }

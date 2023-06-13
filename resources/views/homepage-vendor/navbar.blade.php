@@ -190,8 +190,10 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <div class="logo">
-                    <img class="w-12" src="/images/logo-side.svg" alt="">
+                <div >
+                    <a href="{{route('homepage.vendor')}}" class="logo">
+                        <img class="w-12" src="/images/logo-side.svg" alt="">
+                    </a>
                 </div>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
@@ -205,7 +207,7 @@
                 </div>
                 @if(auth()->guard('rentals')->check())
                     <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                        <a class="navbar-brand" href="/mypurchases">
+                        <a class="navbar-brand" href="{{route('orders.vendor')}}">
                             <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
                         </a>
                         <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">

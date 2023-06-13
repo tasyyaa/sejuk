@@ -63,16 +63,14 @@ Route::controller(returnPaymentController::class)->group(function(){
     Route::get('/returnpaymentsuccess', 'rps');
 });
 
-//development
-Route::get('/cartvendor', function () {
-    return view('cartOwnerPage');
-});
 Route::get('/cartDetailsVendor', function () {
     return view('cartDetailsOwnerPage');
 });
+
 Route::get('/cartDetailsVendor2', function () {
     return view('cartDetailsOwner2Page');
 });
+
 Route::get('/cartDetailsVendorSuccess', function () {
     return view('cartDetailsOwnerPageSuccess');
 });

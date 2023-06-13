@@ -14,7 +14,7 @@ class Shipping extends Model
         'shipping_method_id',
         'customer_address',
         'vendor_address',
-        'no_seri',
+        'no_resi',
         'nama_kurir',
         'price'
     ];

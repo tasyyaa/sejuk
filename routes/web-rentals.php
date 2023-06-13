@@ -23,4 +23,5 @@ Route::controller(AddCostumeController::class)->prefix('catalog')->group(functio
 Route::controller(CheckController::class)->group(function(){
     Route::get('/myorderlist', 'myorderlist')->name('orders.vendor');
     Route::get('/myorderlist/order/{id}', 'detail')->name('order.vendor');
+    Route::POST('/myorderlist/ship/{id}', 'ship')->name('order.vendor.ship');
 });
