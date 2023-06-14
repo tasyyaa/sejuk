@@ -31,12 +31,6 @@ Route::controller(ChooseController::class)->group(function(){
     Route::get('/preview/{id}', 'preview')->name('preview');
 });
 
-Route::controller(ReturnPackageController::class)->group(function(){
-    Route::get('/returnpackage','create');
-    Route::post('/returnpackage/store','store');
-    Route::get('/returnpackagecomplete', 'complete');
-});
-
 Route::controller(acceptPaymentController::class)->group(function(){
     Route::get('/acceptpayment','create');
     Route::post('/acceptpayment/store','store');

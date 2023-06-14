@@ -81,7 +81,8 @@ class OrderController extends Controller
         Transaction::create([
             'payment_method_id' => $request->payment_method_id,
             'total_price' => $total,
-            'order_id' => $order->id
+            'order_id' => $order->id,
+            'card_number' => $user->cust_Creditcardtype1 ?? $user->cust_Creditcardtype2
         ]);
 
         $vendor = Rentals::where('id', $carts[0]->catalog->vendor_id)->first();

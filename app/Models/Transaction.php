@@ -12,7 +12,8 @@ class Transaction extends Model
     protected $fillable = [
         'payment_method_id',
         'total_price',
-        'order_id'
+        'order_id',
+        'card_number'
     ];
 
     public function paymentMethod()

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionsTable extends Migration
+class CreateFormReturnPaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('form_return_payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('payment_method_id')->references('id')->on('payment_methods');
-            $table->string('card_number', 100)->nullable();
-            $table->integer('total_price');
+            $table->string('bank_name');
+            $table->string('bank_account_number');
+            $table->string('bank_account_name');
             $table->foreignId('order_id')->references('id')->on('orders');
+            $table->foreignId('sejuk_bank_account_outcome_id')->references('id')->on('sejuk_bank_account_outcomes');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('form_return_payments');
     }
 }
