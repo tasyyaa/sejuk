@@ -7,8 +7,7 @@
 @section('content')
 <main class="">
     <div
-        class="flex flex-col text-[#565656] justify-center items-start w-full max-w-6xl bg-white rounded-lg mx-auto my-20 p-6 pr-36"
-    >
+        class="flex flex-col text-[#565656] justify-center items-start w-full max-w-6xl bg-white rounded-lg mx-auto my-20 p-6 pr-36">
         <!-- Profile Data -->
         <div class="flex flex-col">
             <div class="flex flex-row items-center gap-6">

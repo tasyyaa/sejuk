@@ -10,7 +10,7 @@ use App\Http\Controllers\applyForReturnController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\rentalsController;
-
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\rentalnewpassController;
 use App\Http\Controllers\rentalresetController;
 use App\Http\Controllers\rentalconfirmpassController;
@@ -79,6 +79,11 @@ Route::controller(CheckController::class)->group(function(){
     Route::post('/addaddress/store','store');
     Route::get('/address', 'complete');
     Route::get('/myOrderList', 'myorderlist');
+});
+
+//FAQ
+Route::get('/FAQ', function () {
+    return view('FAQ');
 });
 
 //development
