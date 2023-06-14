@@ -140,6 +140,12 @@
             font-weight: 500;
         }
 
+        .navbar .menu-items a {
+            font-size: 25px;
+            margin-left: -10px;
+            font-weight: 900;
+        }
+
 
         .logo {
             position: absolute;
@@ -244,7 +250,7 @@
                                         <h1>Home</h1>
                                     </div>
                                     <div>
-                                        <h1>FAQ</h1>
+                                        <a class="text-bold" href="/FAQ">FAQ</a>
                                     </div>
                                     @if(auth()->guard('rentals')->check())
                                         <div>
@@ -265,7 +271,7 @@
                                         @csrf
                                         <button type="submit"
                                                 class="bg-[#497174] mt-[20px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                            Logout
+                                           SIGN OUT
                                         </button>
                                     </form>
                                 @else

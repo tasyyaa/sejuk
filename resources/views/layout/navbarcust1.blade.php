@@ -87,7 +87,7 @@
                                     class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">My Purchases</a>
                             </div>
                             <div class="flex flex-row ml-[80px] mt-[6px]">
-                                <a href="/faq"
+                                <a href="/FAQ"
                                     class="text-[#565656] font-semibold w-[196px] h-[51px] text-[18px]">FAQ</a>
                             </div>
                             <div class="flex flex-row ml-[80px] mt-[6px]">

@@ -155,6 +155,12 @@
             font-weight: 500;
         }
 
+        .navbar .menu-items a {
+            font-size: 25px;
+            margin-left: -10px;
+            font-weight: 900;
+        }
+
 
         .logo {
             position: absolute;
@@ -263,7 +269,7 @@
                                             <h1>My Order List</h1>
                                         </div>
                                         <div>
-                                            <h1>FAQ</h1>
+                                            <a class="text-bold" href="/FAQ">FAQ</a>
                                         </div>
                                         <div>
                                             <h1>My Account</h1>
