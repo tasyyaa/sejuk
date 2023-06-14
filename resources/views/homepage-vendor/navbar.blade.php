@@ -247,10 +247,10 @@
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
                                 <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                     <div>
-                                        <h1>Home</h1>
+                                        <a style="font-weight: 600; color:#565656;" href="/">HOME</a>
                                     </div>
                                     <div>
-                                        <a class="text-bold" href="/FAQ">FAQ</a>
+                                        <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
                                     @if(auth()->guard('rentals')->check())
                                         <div>

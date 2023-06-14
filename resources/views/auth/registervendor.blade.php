@@ -221,7 +221,7 @@
                                 </div>
                             </div>
                             <div class="w-full">
-                                <div class="logo flex ml-[780px] fill-[#4a7174]">
+                                <div class="logo flex ml-[780px] fill-[#4a7174] lg:ml-[700px]">
                                     <img class="w-20" src="images/logo-side.svg" alt="" />
                                 </div>
                                 <img class="absolute top-0 right-0 w-[40%]" src="images/sidebar.jpg" alt="" />
