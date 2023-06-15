@@ -68,7 +68,7 @@ class AcceptPaymentController extends Controller
 
         foreach($order->items as $item) {
             $item->catalog->stock += $item->amount;
-            $item->save();
+            $item->catalog->save();
         }
 
         $order->save();
