@@ -171,7 +171,7 @@
                             <span class="line line3"></span>
                         </div>
                         <div class="logo">
-                            <img class="w-12" src="images/logo-singin.svg" alt="" />
+                            <img class="w-12" src="/images/logo-singin.svg" alt="" />
                         </div>
                         <div class="menu-items h-screen relative overflow-visible">
                             <div class="flex flex-row">
@@ -204,9 +204,9 @@
                                 </div>
                                 <div class="w-full">
                                     <div class="logo flex ml-[780px] fill-[#4a7174] lg:ml-[700px]">
-                                        <img class="w-20" src="images/logo-side.svg" alt="" />
+                                        <img class="w-20" src="/images/logo-side.svg" alt="" />
                                     </div>
-                                    <img class="absolute top-0 right-0 w-[40%]" src="images/sidebar.jpg" alt="" />
+                                    <img class="absolute top-0 right-0 w-[40%]" src="/images/sidebar.jpg" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -216,7 +216,7 @@
         </nav>
         <div class="flex  flex-row">
             <div class="w-full">
-                <img src="images/bg-signin.jpg" alt="">
+                <img src="/images/bg-signin.jpg" alt="">
             </div>
             <div class="w-full h-screen bg-[#fbf8f6]">
                 <div class=" h-screen ml-[71px]  ">
@@ -236,7 +236,7 @@
                             <div style="font-family: 'Montserrat', sans-serif;" class="flex flex-col gap-[39px]">
                                 <!-- Email Address -->
                                 <div>
-                                    <input type="email" name="email" :value="old('email')" id="email"
+                                    <input type="email" name="email" value="{{old('email')}}" id="email"
                                            placeholder="EMAIL"
                                            class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0">
                                 </div>
@@ -276,7 +276,7 @@
                                 <div>
                                     <!-- Faq Toogle -->
                                     <img x-show="navOpen===false" @click="faqOpen=true" x-transition x-cloak
-                                        src="images/faq-logo-dark.png" id="faq-dark" alt="faq"
+                                        src="/images/faq-logo-dark.png" id="faq-dark" alt="faq"
                                         x-bind:class="faqOpen == true ? 'hidden' :
                                             ''"
                                         class="w-[5%] absolute bottom-16 right-14 cursor-pointer" />
@@ -286,8 +286,8 @@
                                         class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[500px] bg-white rounded-[10px] bottom-10 right-10"
                                         x-data="{ tab: '' }">
                                         <div class="flex flex-row items-center justify-between bg-[#497174] py-4 px-6 rounded-[10px]">
-                                            <img src="images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
-                                            <img src="images/close-logo.png" alt="faq" class="w-[42px] h-[42px] cursor-pointer"
+                                            <img src="/images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
+                                            <img src="/images/close-logo.png" alt="faq" class="w-[42px] h-[42px] cursor-pointer"
                                                 @click="faqOpen=false" />
                                         </div>
                                         <div class="flex flex-col" x-show="tab === ''" x-cloak x-transition>
@@ -297,7 +297,7 @@
                                             <hr class="w-full h-[1px] bg-black/10" />
                                             <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab='general'">
-                                                <img src="images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
+                                                <img src="/images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     General
                                                 </p>
@@ -305,7 +305,7 @@
                                             <hr class="w-full h-[1px] bg-black/10" />
                                             <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab='shipping'">
-                                                <img src="images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                                <img src="/images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     Shipping
                                                 </p>
@@ -313,7 +313,7 @@
                                             <hr class="w-full h-[1px] bg-black/10" />
                                             <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab='payment'">
-                                                <img src="images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                                <img src="/images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     Payment
                                                 </p>
@@ -321,7 +321,7 @@
                                             <hr class="w-full h-[1px] bg-black/10" />
                                             <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab='return'">
-                                                <img src="images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                                <img src="/images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     Return
                                                 </p>
@@ -331,7 +331,7 @@
                                         <div x-show="tab === 'general'" class="flex flex-col" x-transition x-cloak>
                                             <div class="flex flex-row items-center gap-3 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab=''">
-                                                <img src="images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
+                                                <img src="/images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     General
                                                 </p>
@@ -351,7 +351,7 @@
                                         <div x-show="tab === 'shipping'" class="flex flex-col" x-transition x-cloak>
                                             <div class="flex flex-row items-center gap-4 py-2 px-8 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab=''">
-                                                <img src="images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                                <img src="/images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     Shipping
                                                 </p>
@@ -422,7 +422,7 @@
                                         <div x-show="tab === 'payment'" class="flex flex-col" x-transition x-cloak>
                                             <div class="flex flex-row items-center gap-2 py-2 px-8 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab=''">
-                                                <img src="images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                                <img src="/images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     Payment
                                                 </p>
@@ -498,7 +498,7 @@
                                         <div x-show="tab === 'return'" class="flex flex-col" x-transition x-cloak>
                                             <div class="flex flex-row items-center gap-4 py-2 px-8 hover:bg-slate-200 cursor-pointer"
                                                 @click="tab=''">
-                                                <img src="images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                                <img src="/images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                                 <p class="text-[#050505] text-[28px] font-medium">
                                                     Return
                                                 </p>

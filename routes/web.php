@@ -26,3 +26,7 @@ Route::middleware('guest:web,rentals')->get('choose-register', [ChooseRoleContro
 Route::controller(ChooseController::class)->group(function(){
     Route::get('/preview/{id}', 'preview')->name('preview');
 });
+
+Route::get('FAQ', function() {
+    return view('FAQ');
+});
