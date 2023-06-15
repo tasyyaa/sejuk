@@ -28,6 +28,10 @@ class OrderController extends Controller
             return back();
         }
 
+        if ($user->cust_address === null || $user->cust_homephone === null) {
+            return redirect()->route('profile');
+        }
+
         $isSame = true;
         $hasStock = true;
 

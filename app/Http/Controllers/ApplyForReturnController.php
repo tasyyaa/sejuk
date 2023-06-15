@@ -50,8 +50,8 @@ class ApplyForReturnController extends Controller
             'reason' => $request->reason,
             'product_image' => $imagePath,
             'order_id' => $id,
-            'vendor_address' => $order->vendor->vendor_address,
-            'customer_address' => $order->user->cust_address
+            'vendor_address' => $order->vendor->vendor_address ?? '',
+            'customer_address' => $order->user->cust_address ?? ''
         ]);
 
         $order->order_status = Order::SHIPPED_BACK_APPLY_RETURN;
