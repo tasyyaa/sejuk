@@ -87,9 +87,7 @@ Route::get('/FAQ', function () {
 });
 
 //development
-Route::get('/cartvendor', function () {
-    return view('cartOwnerPage');
-});
+
 Route::get('/cartDetailsVendor', function () {
     return view('cartDetailsOwnerPage');
 });
@@ -99,16 +97,16 @@ Route::get('/cartDetailsVendor2', function () {
 Route::get('/cartDetailsVendorSuccess', function () {
     return view('cartDetailsOwnerPageSuccess');
 });
-Route::get('/dev', function () {
+Route::get('/cartOwnerPage', function () {
     return view('cartOwnerPage');
 });
-Route::get('/dev2', function () {
+Route::get('/cartDetailsOwnerPage', function () {
     return view('cartDetailsOwnerPage');
 });
-Route::get('/dev3', function () {
+Route::get('/cartDetailsOwner2Page', function () {
     return view('cartDetailsOwner2Page');
 });
-Route::get('/dev4', function () {
+Route::get('/cartDetailsOwnerPageSuccess', function () {
     return view('cartDetailsOwnerPageSuccess');
 });
 Route::get('/view', function () {

@@ -37,7 +37,7 @@
         class="relative flex flex-row w-full justify-between items-center h-24 mx-auto px-12 font-monserrat"
     >
         <div class="flex flex-row items-center gap-6">
-            <a href="#">
+            <a href="/vendor">
                 <img
                 src="{{ asset('images/backarrowvendor.svg') }}"
                alt="burger-logo"
@@ -52,25 +52,6 @@
             >
                 My Order List
             </p>
-        </div>
-        <div class="flex flex-row items-center gap-8">
-            <a href="#">
-                <img src="images/cart-logo.png" alt="cart-logo" class="w-10" />
-            </a>
-            <a href="#">
-                <img
-                    src="images/notification-logo.png"
-                    alt="notif-logo"
-                    class="w-10"
-                />
-            </a>
-            <a href="#">
-                <img
-                    src="images/user-logo-white.png"
-                    alt="user-logo"
-                    class="w-10"
-                />
-            </a>
         </div>
     </nav>
 

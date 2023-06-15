@@ -77,29 +77,23 @@
 
 <body>
     <!-- navbar -->
-    <nav class="">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <div class="leftitem" style="display: flex; justify-content: center;">
-                <a class="navbar-brand" href="">
-                    <img src="{{ asset('images/backarrowvendor.svg') }}" width="60" height="65"
-                        class="d-inline-block align-text-">
-                </a>
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/sejuk1.png') }}" width="40" height="45"
-                        class="d-inline-block align-text-">
-                </a>
-            </div>
-            <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
-                <a class="navbar-brand" href="/notifications" style="margin:0px 0px 0px 20px;">
-                    <img src="{{ asset('images/notifications.svg') }}" width="30" height="24">
-                </a>
-                <a class="navbar-brand" href="/vendorAccount" style="margin:0px 0px 0px 20px;">
-                    <img src="{{ asset('images/3.png') }}" width="30" height="24">
-                </a>
-            </div>
+    nav
+        class="relative flex flex-row w-full justify-between items-center h-24 mx-auto px-12 font-monserrat"
+    >
+        <div class="flex flex-row items-center gap-6">
+            <a href="/vendor">
+                <img
+                src="{{ asset('images/backarrowvendor.svg') }}"
+               alt="burger-logo"
+                    class="w-[60px] h-[65px]"
+                />
+            </a>
+            <a href="#">
+                <img src="images/logo.png" alt="logo" class="w-2/3" />
+            </a>
         </div>
     </nav>
-
+    
     <div class="flex flex-col my-12 mx-[88px]">
         <h1 class="font-semibold text-5xl text-white">Ongoing Rent</h1>
         <div class="w-full h-[1154px] mt-12 bg-white rounded-lg">
