@@ -57,7 +57,7 @@
                 color: #333;
             }
             .container .tab input:checked ~ label::after{
-                transform: :rotate(135deg);
+                transform :rotate(135deg);
             }
         </style>
 
