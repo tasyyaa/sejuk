@@ -206,13 +206,15 @@
                 </a>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
+                        <form action="/">
                         <div
                             class="flex justify-center  w-[104px] absolute right-0 items-center h-[40px] bg-[#497174] rounded-md">
-                            <i class="fas fa-search text-xl font-medium text-white"></i>
+                            <button type="submit"><i class="fas fa-search text-xl font-medium text-white"></i></button>
                         </div>
-                        <input type="text"
-                            class="w-[508px] h-[40px] pl-3 rounded-lg  focus:ring-0 focus:border-transparent"
-                            placeholder="Search">
+                            <input type="text" name="q"
+                                class="w-[508px] h-[40px] pl-3 rounded-lg  focus:ring-0 focus:border-transparent"
+                                placeholder="Search" value="{{request()->query('q')}}">
+                        </form>
                     </div>
                 </div>
                 @if(auth()->guard('web')->check())

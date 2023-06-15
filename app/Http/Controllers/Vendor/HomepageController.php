@@ -13,7 +13,14 @@ class HomepageController extends Controller
     {
         $user = Auth::guard('rentals')->user();
         $categories = Category::all();
-        $products = Vendorcatalogs::with('category')->where('vendor_id', $user->id)->get();
+
+        if (is_string(request()->query('q'))) {
+            $query = request()->query('q');
+            $products = Vendorcatalogs::with('category')->where('vendor_id', $user->id)
+                ->where('item_name', 'like', '%'. $query . '%')->get();
+        } else {
+            $products = Vendorcatalogs::with('category')->where('vendor_id', $user->id)->get();
+        }
 
         return view('homepage-vendor.homepage', [
             'categories' => $categories,

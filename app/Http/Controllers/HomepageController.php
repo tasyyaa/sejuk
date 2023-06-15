@@ -13,8 +13,19 @@ class HomepageController extends Controller
             return redirect()->route('homepage.vendor');
         }
 
-        $clothProducts = Vendorcatalogs::with('category')->where('category_id', 'CLT')->get();
-        $costumeProducts = Vendorcatalogs::with('category')->where('category_id', 'CST')->get();
+        if (is_string(request()->query('q'))) {
+            $query = request()->query('q');
+            $clothProducts = Vendorcatalogs::with('category')->where('category_id', 'CLT')
+                ->where('item_name', 'like', '%'. $query . '%')
+                ->get();
+            $costumeProducts = Vendorcatalogs::with('category')->where('category_id', 'CST')
+                ->where('item_name', 'like', '%'. $query . '%')
+                ->get();
+        } else {
+            $clothProducts = Vendorcatalogs::with('category')->where('category_id', 'CLT')->get();
+            $costumeProducts = Vendorcatalogs::with('category')->where('category_id', 'CST')->get();
+        }
+
         return view('homepage.homepage', [
             'clothProducts' => $clothProducts,
             'costumeProducts' => $costumeProducts
