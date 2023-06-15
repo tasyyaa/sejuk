@@ -15,6 +15,11 @@ class CartController extends Controller
     public function showCartPage()
     {
         $user = auth()->guard('web')->user();
+
+        if ($user->cust_address === null || $user->cust_homephone === null) {
+            return redirect()->route('profile');
+        }
+
         $carts = Cart::with('catalog.vendor')->with('catalog.category')->where('user_id', $user->id)->get();
         $shippingMethods = ShippingMethod::all();
 
