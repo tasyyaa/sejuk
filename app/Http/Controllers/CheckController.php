@@ -17,7 +17,9 @@ class CheckController extends Controller
 
         return view('orders-vendor.orders', [
             'ordersPaid' => with(clone $query)->where('order_status', Order::PAID)->get(),
-            'ordersShipped' => with(clone $query)->where('order_status', Order::SHIPPED)->get(),
+            'ordersShipped' => with(clone $query)->where(function ($query) {
+                return $query->where('order_status', Order::SHIPPED)->orWhere('order_status', Order::RECEIVED);
+            })->get(),
             'ordersReturn' => with(clone $query)->where(function ($query) {
                 return $query->where('order_status', Order::SHIPPED_BACK_RETURN)->orWhere('order_status', Order::SHIPPED_BACK_APPLY_RETURN);
             })->get(),

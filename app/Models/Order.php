@@ -15,6 +15,8 @@ class Order extends Model
 
     public const SHIPPED_BACK_RETURN = 'SHIP_RETURN';
 
+    public const RECEIVED = 'RECEIVED';
+
     public const COMPETED_RETURN = 'COMPLETED_RETURN';
     public const COMPLETD_APPLY_RETURN = 'COMPLETED_APPLY_RETURN';
 

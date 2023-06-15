@@ -643,8 +643,13 @@
         </div>
     @endif
     <div class="flex justify-center gap-[50px] ml-[710px] mt-[75px] mb-[55px]">
-        @if($order->order_status === 'PAID')
-        @elseif($order->order_status === \App\Models\Order::SHIPPED)
+        @if($order->order_status === \App\Models\Order::SHIPPED)
+            <form action="{{route('order.confirm', ['id' => $order->id])}}" method="POST">
+                @csrf
+                <button type="submit"
+                   class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Confirm Received</button>
+            </form>
+        @elseif($order->order_status === \App\Models\Order::RECEIVED)
             <a href="{{route('order.apply-return', ['id' => $order->id])}}"
                class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Apply For Return</a>
 

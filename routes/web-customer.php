@@ -27,6 +27,7 @@ Route::controller(OrderController::class)->group(function() {
 Route::controller(ChooseController::class)->group(function(){
     Route::get('/mypurchases', 'mypurchases')->name('orders.user');
     Route::get('/mypurchases/order/{id}', 'view')->name('order');
+    Route::post('/confirmreceived/{id}', 'confirm')->name('order.confirm');
 });
 
 Route::controller(ReturnPackageController::class)->group(function() {

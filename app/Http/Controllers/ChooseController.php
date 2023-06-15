@@ -18,7 +18,9 @@ class ChooseController extends Controller
 
         return view('orders.orders', [
             'ordersPaid' => with(clone $query)->where('order_status', Order::PAID)->get(),
-            'ordersShipped' => with(clone $query)->where('order_status', Order::SHIPPED)->get(),
+            'ordersShipped' => with(clone $query)->where(function ($query) {
+                return $query->where('order_status', Order::SHIPPED)->orWhere('order_status', Order::RECEIVED);
+            })->get(),
             'ordersReturn' => with(clone $query)->where(function ($query) {
                 return $query->where('order_status', Order::SHIPPED_BACK_RETURN)->orWhere('order_status', Order::SHIPPED_BACK_APPLY_RETURN);
             })->get(),
@@ -43,6 +45,14 @@ class ChooseController extends Controller
         return view('orders.detail', [
             'order' => $order
         ]);
+    }
+
+    public function confirm($id) {
+        $order = Order::with('vendor')->with('user')->where('id', $id)->first();
+        $order->order_status = Order::RECEIVED;
+        $order->save();
+
+        return redirect()->route('orders.user');
     }
 
     public function preview($id)
