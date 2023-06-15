@@ -23,7 +23,7 @@
 {{--        </div>--}}
         <!-- Invalid -->
         @if($errors->any())
-            {{$errors}}
+           {{$errors}}
         @endif
 
         <div class="flex flex-col w-full pr-36 p-6">
