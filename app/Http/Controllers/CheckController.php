@@ -2,48 +2,62 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Models\addaddress;
-use Illuminate\Support\Facades\DB;
-use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Support\Facades\Auth;
 
 class CheckController extends Controller
 {
-
     public function myorderlist(){
+        $user = Auth::guard('rentals')->user();
 
-        return view ('myOrderList');
+        $query = Order::with('items.catalog.category')
+            ->with('user')
+            ->where('vendor_id', $user->id);
+
+        return view('orders-vendor.orders', [
+            'ordersPaid' => with(clone $query)->where('order_status', Order::PAID)->get(),
+            'ordersShipped' => with(clone $query)->where('order_status', Order::SHIPPED)->get(),
+            'ordersReturn' => with(clone $query)->where(function ($query) {
+                return $query->where('order_status', Order::SHIPPED_BACK_RETURN)->orWhere('order_status', Order::SHIPPED_BACK_APPLY_RETURN);
+            })->get(),
+            'ordersCompleted' => with(clone $query)->where(function ($query) {
+                return $query->where('order_status', Order::COMPETED_RETURN)->orWhere('order_status', Order::COMPLETD_APPLY_RETURN);
+            })->get(),
+        ]);
     }
 
-    public function complete()
-    {
-    	// mengambil data dari add address
-        $add_addresses = DB::table('add_addresses')->get();
+    public function detail($id) {
+        $user = Auth::guard('rentals')->user();
+        $query = Order::with('items.catalog.category')->with('vendor')->with('user');
+        $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
+        $query = $query->with('applyReturn.shippingMethod')->with('returnPackage.shippingMethod');
+        $query = $query->with('formReturnPayment.sejukBankAccountOutcome')->with('formAcceptPayment.sejukBankAccountOutcome');
+        $order = $query->where("id", $id)->first();
 
-        //mengirim data ke view address
-        return view('address', ['add_addresses' => $add_addresses]);
+        if ($user->id != $order->vendor_id) {
+            abort(403);
+        }
+        return view('orders-vendor.detail', ['order'=>$order]);
     }
 
-    public function create()
-    {
-        //memanggil view tambah
-        return view('addaddress');
-    }
+    public function ship(Request $request, $id) {
+        $order = Order::with('shipping')->where('id', $id)->first();
+        $vendor = auth()->guard('rentals')->user();
 
-    public function store(Request $request)
-    {
-        //insert data ke tabel add address
-        $id = IdGenerator::generate(['table' => 'add_addresses', 'field'=>'custaddress_id', 'length'=>5, 'prefix'=>'ADRS']);
-        $address = new addaddress();
-        $address->custaddress_id = $id;
-        $address->custaddress_name = $request -> custaddress_name;
-        $address->cust_address = $request -> cust_address;
-        $address->cust_city = $request -> cust_city;
-        $address->cust_province = $request -> cust_province;
-        $address->cust_phonenumber = $request -> cust_phonenumber;
-        $address->save();
+        $request->validate([
+            'no_resi' => ['required', 'string']
+        ]);
 
-        //alihkan halaman ke halaman address
-        return redirect('/address');
+        if ($order === null || $order->vendor_id !== $vendor->id) {
+            abort(400);
+        }
+
+        $order->shipping->no_resi = $request->no_resi;
+        $order->shipping->save();
+        $order->order_status = Order::SHIPPED;
+        $order->save();
+
+        return back();
     }
 }

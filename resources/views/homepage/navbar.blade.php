@@ -215,25 +215,24 @@
                             placeholder="Search">
                     </div>
                 </div>
-                @if (auth()->guard('web')->check())
-                    <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                        <a class="navbar-brand" href="/myPurchases">
-                            <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
-                        </a>
-                        <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/notifications.svg') }}" width="30" height="24">
-                        </a>
-                        <a class="navbar-brand" href="{{ route('profile') }}" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/3.png') }}" width="30" height="24">
-                        </a>
-                    </div>
-                @else
-                    <div class="absolute top-6 right-12">
-                        <a href="/signin" class="text-xl font-medium text-black mr-10">Sign in</a>
-                        <a href="/chooserole"
-                            class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">Sign up</a>
-                    </div>
-                @endif
+                @if(auth()->guard('web')->check())
+                        <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
+                            <a class="navbar-brand" href="{{route('orders.user')}}">
+                                <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
+                            </a>
+                            <a class="navbar-brand" href="{{route('cart')}}" style="margin:0px 0px 0px 20px;">
+                                <img src="{{ asset('/images/notifications.svg') }}" width="30" height="24">
+                            </a>
+                            <a class="navbar-brand" href="{{route('profile')}}" style="margin:0px 0px 0px 20px;">
+                                <img src="{{ asset('/images/3.png') }}" width="30" height="24">
+                            </a>
+                        </div>
+                    @else
+                        <div class="absolute top-6 right-12">
+                            <a href="{{route('choose-login')}}" class="text-xl font-medium text-black mr-10">Sign in</a>
+                            <a href="{{route('choose-register')}}" class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">Sign up</a>
+                        </div>
+                    @endif
 
 
                 <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
@@ -259,7 +258,7 @@
                                     </div>
                                     @if (auth()->guard('web')->check())
                                     <div>
-                                        <a style="font-weight: 600; color:#565656;" href="/myPurchases">My Purchases</a>
+                                        <a style="font-weight: 600; color:#565656;" href="/mypurchases">My Purchases</a>
                                     </div>
                                     <div>
                                         <a style="font-weight: 600; color:#565656;" href="/profile">My Account</a>

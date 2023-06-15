@@ -196,9 +196,9 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <div class="logo">
+                <a class="logo" href="{{route('homepage.vendor')}}">
                     <img class="w-12" src="/images/logo.png" alt="">
-                </div>
+                </a>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
                         <div
@@ -211,7 +211,7 @@
                 </div>
                 @if(auth()->guard('rentals')->check())
                     <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                        <a class="navbar-brand" href="/myOrderList">
+                        <a class="navbar-brand" href="{{route('orders.vendor')}}">
                             <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
                         </a>
                         <a class="navbar-brand" href="{{route('profile.vendor')}}" style="margin:0px 0px 0px 20px;">
@@ -251,7 +251,7 @@
                                     </div>
                                     @if(auth()->guard('rentals')->check())
                                     <div>
-                                        <a style="font-weight: 600; color:#565656;" href="/myOrderList">My Order List</a>
+                                        <a style="font-weight: 600; color:#565656;" href="{{route('orders.vendor')}}">My Order List</a>
                                     </div>
                                     <div>
                                         <a style="font-weight: 600; color:#565656;" href="/vendor/profile">My Account</a>
