@@ -514,7 +514,7 @@
                             <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Reguler</p>
                         </div>
                         @if($errors->any())
-                            {{$errors->all()}}
+                            {{implode(" ",$errors->all())}}
                         @endif
                         <div class="flex flex-row ml-[24px]">
                             <select class="w-[475px] rounded-md h-[33px] text-xs focus:outline-0 text-[14px] text-[#675959]"
