@@ -278,7 +278,7 @@
                                         </button>
                                     </form>
                                 @else
-                                    <a href="{{ route('login') }}"
+                                    <a href="/signin"
                                         class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
                                         SIGN IN
                                     </a>
