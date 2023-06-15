@@ -2,69 +2,55 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ReturnPackage;
 use App\Models\Order;
+use App\Models\ShippingMethod;
 use Illuminate\Http\Request;
-use App\Models\returnpackage;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class ReturnPackageController extends Controller
 {
-    public function complete()
+    public function create($id)
     {
-    	// mengambil data dari table pegawai
-    	$returnpackages = DB::table('returnpackages')->get();
-
-    	// mengirim data pegawai ke view index
-    	return view('returnpackagecomplete',['returnpackages' => $returnpackages]);
-    }
-
-    public function view($id) {
         $user = Auth::guard('web')->user();
-        $query = Order::with('items.catalog.category')->with('vendor');
+        $query = Order::with('items.catalog.category')->with('vendor')->with('user');
         $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
-        $query = $query->with('applyReturn.shippingMethod')->with('returnPackage.shippingMethod');
-        $query = $query->with('formReturnPayment.sejukBankAccountOutcome')->with('formAcceptPayment.sejukBankAccountOutcome');
         $order = $query->where("id", $id)->first();
 
-        if ($user->id != $order->user_id) {
+        if ($user->id != $order->vendor_id) {
             abort(403);
         }
 
-        return view('orders.detail', [
-            'order' => $order
+        $shippingMethods = ShippingMethod::all();
+
+        return view('return-package.apply', [
+            'order'=>$order,
+            'shippingMethods' => $shippingMethods
         ]);
     }
 
-    public function viewconf(){
-
-        return view('ordersummaryconfirmed');
-    }
-
-    public function create()
+    public function store(Request $request, $id)
     {
+        $request->validate([
+            'no_resi' => ['required', 'string'],
+            'shipping_method_id' => ['required', 'integer'],
+            'nama_kurir' => ['required', 'string'],
+        ]);
 
-	// memanggil view tambah
-	return view('returnpackage');
+        $order = Order::with('vendor')->with('user')->where('id', $id)->first();
 
-    }
+        ReturnPackage::create([
+            'no_resi' => $request->no_resi,
+            'shipping_method_id' => $request->shipping_method_id,
+            'nama_kurir' => $request->nama_kurir,
+            'order_id' => $id,
+            'vendor_address' => $order->vendor->vendor_address,
+            'customer_address' => $order->user->cust_address
+        ]);
 
-    public function store(Request $request)
-    {
-	// insert data ke table pegawai
-        $id = IdGenerator::generate(['table' => 'returnpackages','field'=>'return_id', 'length' => 5, 'prefix' =>'RTP']);
-        $return = new returnpackage();
-        $return->return_id = $id;
-        $return->shipping_methods = $request -> shipping_methods;
-        $return->name_kurir = $request->name_kurir;
-        $return->no_resi= $request->no_resi;
-        $return->vendor_storeaddress = $request->vendor_storeaddress;
-        $return->order_id = $request->order_id;
-        $return->save();
+        $order->order_status = Order::SHIPPED_BACK_RETURN;
+        $order->save();
 
-	// alihkan halaman ke halaman pegawai
-	return redirect('/returnpackagecomplete');
-
+        return redirect()->route('orders.user');
     }
 }

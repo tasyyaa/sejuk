@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FormReturnPayment;
+use App\Models\FormAcceptPayment;
 use App\Models\Order;
 use App\Models\SejukBankAccountOutcome;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ReturnPaymentController extends Controller
+
+class AcceptPaymentController extends Controller
 {
     public function create($id)
     {
         $query = Order::with('items.catalog.category')->with('vendor')->with('user');
         $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
-        $query = $query->with('applyReturn')->with('returnPackage');
+        $query = $query->with('applyReturn.shippingMethod')->with('returnPackage.shippingMethod');
         $order = $query->where("id", $id)->first();
 
         $user = Auth::guard('rentals')->user();
@@ -23,7 +24,7 @@ class ReturnPaymentController extends Controller
             abort(403);
         }
 
-        return view('return-payment.return', ['order' => $order]);
+        return view('accept-payment.accept', ['order' => $order]);
     }
 
     public function store(Request $request, $id)
@@ -45,7 +46,7 @@ class ReturnPaymentController extends Controller
             abort(403);
         }
 
-        if ($order->order_status != Order::SHIPPED_BACK_APPLY_RETURN) {
+        if ($order->order_status != Order::SHIPPED_BACK_RETURN) {
             abort(400);
         }
 
@@ -58,12 +59,12 @@ class ReturnPaymentController extends Controller
             'transfer_amount' => $transferAmount
         ]);
 
-        FormReturnPayment::create([
+        FormAcceptPayment::create([
             'order_id' => $order->id,
             'sejuk_bank_account_outcome_id' => $bankOutcome->id
         ]);
 
-        $order->order_status = Order::COMPLETD_APPLY_RETURN;
+        $order->order_status = Order::COMPETED_RETURN;
 
         foreach($order->items as $item) {
             $item->catalog->stock += $item->amount;

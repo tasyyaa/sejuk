@@ -490,6 +490,15 @@
                 <div class="flex flex-row">
                     <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->shipping->shippingMethod->name}}</p>
                 </div>
+                <div class="flex flex-row mt-4 font-semibold">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Shipment Address</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">From {{$order->shipping->customer_address}}</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">To {{$order->shipping->vendor_address}}</p>
+                </div>
             </div>
             <div class="flex flex-col ml-[725px]">
                 <div class="flex flex-row">
@@ -514,6 +523,15 @@
                     <div class="flex flex-row">
                         <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->applyReturn->shippingMethod->name}}</p>
                     </div>
+                    <div class="flex flex-row mt-4 font-semibold">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Shipment Address</p>
+                    </div>
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">From {{$order->applyReturn->customer_address}}</p>
+                    </div>
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">To {{$order->applyReturn->vendor_address}}</p>
+                    </div>
                 </div>
                 <div class="flex flex-col ml-[725px]">
                     <div class="flex flex-row">
@@ -536,6 +554,40 @@
             </div>
             <div class="flex flex-col ml-[28px] mt-8">
                 <img src="{{asset('storage/' . $order->applyReturn->product_image)}}">
+            </div>
+        </div>
+    @endif
+    @if($order->order_status === \App\Models\Order::SHIPPED_BACK_RETURN || $order->order_status === \App\Models\Order::COMPETED_RETURN)
+        <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
+            <div class="flex flex-row">
+                <div class="flex flex-col ml-[28px]">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Return Package Shipping Information</p>
+                    </div>
+                    <div class="flex flex-row mt-[12px]">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->returnPackage->shippingMethod->type}}</p>
+                    </div>
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->returnPackage->shippingMethod->name}}</p>
+                    </div>
+                    <div class="flex flex-row mt-4 font-semibold">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Shipment Address</p>
+                    </div>
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">From {{$order->returnPackage->customer_address}}</p>
+                    </div>
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">To {{$order->returnPackage->vendor_address}}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col ml-[725px]">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">No. Resi</p>
+                    </div>
+                    <div class="flex flex-row mt-[22px]">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->returnPackage->no_resi}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     @endif
@@ -593,11 +645,12 @@
     <div class="flex justify-center gap-[50px] ml-[710px] mt-[75px] mb-[55px]">
         @if($order->order_status === 'PAID')
         @elseif($order->order_status === \App\Models\Order::SHIPPED)
-            <a href="/applyforreturn"
+            <a href="{{route('order.apply-return', ['id' => $order->id])}}"
                class="bg-[#D6E4E5] text-[#497174] font-bold w-[196px] h-[51px] rounded-md flex justify-center items-center">Apply For Return</a>
 
-            <input type="Submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md "
-                   value="Confirm Package">
+            <a href="{{route('order.return-package', ['id' => $order->id])}}"
+                class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md flex justify-center items-center">
+                   Confirm Package</a>
         @endif
     </div>
 </div>

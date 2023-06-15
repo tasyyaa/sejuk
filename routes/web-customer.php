@@ -26,14 +26,15 @@ Route::controller(OrderController::class)->group(function() {
 
 Route::controller(ChooseController::class)->group(function(){
     Route::get('/mypurchases', 'mypurchases')->name('orders.user');
+    Route::get('/mypurchases/order/{id}', 'view')->name('order');
 });
 
 Route::controller(ReturnPackageController::class)->group(function() {
-    Route::get('/mypurchases/order/{id}', 'view')->name('order');
+    Route::get('/returnpackage/{id}', 'create')->name('order.return-package');
+    Route::post('/returnpackage/{id}', 'store');
 });
 
 Route::controller(ApplyForReturnController::class)->group(function(){
     Route::get('/applyforreturn/{id}','create')->name('order.apply-return');
     Route::post('/applyforreturn/{id}','store');
-    Route::get('/applyforreturncomplete', 'complete');
 });

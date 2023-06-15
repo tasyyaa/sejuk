@@ -142,6 +142,40 @@
                 </div>
             </div>
         @endif
+        @if($order->order_status === \App\Models\Order::SHIPPED_BACK_RETURN || $order->order_status === \App\Models\Order::COMPETED_RETURN)
+            <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
+                <h1 class="ml-4 font-bold">Return Package Details</h1>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Customer Address
+                    </h1>
+                    <h1>: {{$order->returnPackage->customer_address}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Vendor Address
+                    </h1>
+                    <h1>: {{$order->returnPackage->vendor_address}}</h1>
+                </div>
+                <div class="flex flex-row ">
+                    <h1 class="w-[215px]">
+                        Shipment Type </h1>
+                    <h1>: {{$order->returnPackage->shippingMethod->name}}</h1>
+                </div>
+
+                <div class="flex flex-row gap-4 items-center">
+                    <h1 class="w-[215px]">
+                        No Resi </h1>
+                    <h1>: {{$order->returnPackage->no_resi}}</h1>
+                </div>
+
+                <div class="flex flex-row gap-4 items-center">
+                    <h1 class="w-[215px]">
+                        Nama kurir </h1>
+                    <h1>: {{$order->returnPackage->nama_kurir}}</h1>
+                </div>
+            </div>
+        @endif
         @if($order->order_status === \App\Models\Order::COMPLETD_APPLY_RETURN)
             <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
                 <h1 class="ml-4 font-bold">Form Apply Return Payment Details</h1>
@@ -171,6 +205,35 @@
                 </div>
             </div>
         @endif
+        @if($order->order_status === \App\Models\Order::COMPETED_RETURN)
+            <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
+                <h1 class="ml-4 font-bold">Accept Payment Details</h1>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Bank Name
+                    </h1>
+                    <h1>: {{$order->formAcceptPayment->sejukBankAccountOutcome->bank_name}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Bank Account Name
+                    </h1>
+                    <h1>: {{$order->formAcceptPayment->sejukBankAccountOutcome->bank_account_name}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Bank Account Number
+                    </h1>
+                    <h1>: {{$order->formAcceptPayment->sejukBankAccountOutcome->bank_account_number}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Transfer Amount
+                    </h1>
+                    <h1>: Rp{{$order->formAcceptPayment->sejukBankAccountOutcome->transfer_amount}}</h1>
+                </div>
+            </div>
+        @endif
     </div>
     <div class="flex flex-row gap-16 mt-12 justify-center items-center">
         @if($order->order_status === \App\Models\Order::PAID)
@@ -188,6 +251,13 @@
                 <div
                     class="w-[196px] flex items-center justify-center text-xl font-semibold h-[51px] rounded-lg bg-gray-400 ">
                     <h1>Return Payment</h1>
+                </div>
+            </a>
+        @elseif($order->order_status === \App\Models\Order::SHIPPED_BACK_RETURN)
+            <a href="{{route('accept-payment', ['id' => $order->id])}}">
+                <div
+                    class="w-[196px] flex items-center justify-center text-xl font-semibold h-[51px] rounded-lg bg-gray-400 ">
+                    <h1>Accept Payment</h1>
                 </div>
             </a>
         @endif
