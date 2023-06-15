@@ -6,7 +6,8 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(#D6E4E5, #F9F5F2) fixed;
+            background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
+            background-attachment: fixed;
         }
 
         .container {

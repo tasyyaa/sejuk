@@ -1,12 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\acceptPaymentController;
-use App\Http\Controllers\ReturnPackageController;
-use App\Http\Controllers\returnPaymentController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\Auth\ChooseRoleController;
-
 use App\Http\Controllers\HomepageController;
 
 /*
@@ -29,23 +25,4 @@ Route::middleware('guest:web,rentals')->get('choose-register', [ChooseRoleContro
 
 Route::controller(ChooseController::class)->group(function(){
     Route::get('/preview/{id}', 'preview')->name('preview');
-});
-
-Route::controller(acceptPaymentController::class)->group(function(){
-    Route::get('/acceptpayment','create');
-    Route::post('/acceptpayment/store','store');
-    Route::get('/returncomplete', 'complete');
-    Route::get('/transferinprocess','tip');
-    Route::get('/transfersuccess','ts');
-    Route::get('/ordershippedvendor','confpack1');
-    Route::get('/orderreturnedvendor','confpack2');
-    Route::get('/ordercompletedvendor','completed');
-});
-
-Route::controller(returnPaymentController::class)->group(function(){
-    Route::get('/returnpayment','create');
-    Route::post('/returnpayment/store','store');
-    Route::get('/returncomplete', 'complete');
-    Route::get('/returnpaymentprocess/{id}', 'rip');
-    Route::get('/returnpaymentsuccess', 'rps');
 });

@@ -25,6 +25,7 @@ class ReturnPackageController extends Controller
         $query = Order::with('items.catalog.category')->with('vendor');
         $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
         $query = $query->with('applyReturn.shippingMethod')->with('returnPackage.shippingMethod');
+        $query = $query->with('formReturnPayment.sejukBankAccountOutcome')->with('formAcceptPayment.sejukBankAccountOutcome');
         $order = $query->where("id", $id)->first();
 
         if ($user->id != $order->user_id) {

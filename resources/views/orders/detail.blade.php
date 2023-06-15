@@ -539,6 +539,57 @@
             </div>
         </div>
     @endif
+    @if($order->order_status === \App\Models\Order::COMPLETD_APPLY_RETURN)
+        <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
+            <div class="flex flex-row">
+                <div class="flex flex-col ml-[28px]">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Form Apply Return Payment Information</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-[28px]">
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Bank Name</p>
+                    </div>
+                    <div class="flex flex-row mt-4">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->formReturnPayment->sejukBankAccountOutcome->bank_name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-[28px]">
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Bank Account Name</p>
+                    </div>
+                    <div class="flex flex-row mt-4">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->formReturnPayment->sejukBankAccountOutcome->bank_account_name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-[28px]">
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Bank Account Number</p>
+                    </div>
+                    <div class="flex flex-row mt-4">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">{{$order->formReturnPayment->sejukBankAccountOutcome->bank_account_number}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-[28px]">
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[18px]">Transfer Amount</p>
+                    </div>
+                    <div class="flex flex-row mt-4">
+                        <p class="d-inline-block align-text- text-bold text-[#675959] text-[14px]">Rp{{$order->formReturnPayment->sejukBankAccountOutcome->transfer_amount}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="flex justify-center gap-[50px] ml-[710px] mt-[75px] mb-[55px]">
         @if($order->order_status === 'PAID')
         @elseif($order->order_status === \App\Models\Order::SHIPPED)

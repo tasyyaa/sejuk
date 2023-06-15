@@ -45,6 +45,16 @@ class Order extends Model
         return $this->hasOne(ApplyForReturn::class, 'order_id', 'id')->latestOfMany();
     }
 
+    public function formReturnPayment()
+    {
+        return $this->hasOne(FormReturnPayment::class, 'order_id', 'id')->latestOfMany();
+    }
+
+    public function formAcceptPayment()
+    {
+        return $this->hasOne(FormAcceptPayment::class, 'order_id', 'id')->latestOfMany();
+    }
+
     public function returnPackage()
     {
         return $this->hasOne(ReturnPackage::class, 'order_id', 'id')->latestOfMany();

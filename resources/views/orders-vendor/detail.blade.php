@@ -74,7 +74,7 @@
 
         </div>
         <div class="flex flex-col mx-7 gap-10 text-xl">
-            <h1 class="ml-4 text-bold">Package Details</h1>
+            <h1 class="ml-4 font-bold">Package Details</h1>
             <div class="flex flex-row">
                 <h1 class="w-[215px]">
                     Customer Address
@@ -99,6 +99,78 @@
                 @endif
             </div>
         </div>
+        @if($order->order_status === \App\Models\Order::SHIPPED_BACK_APPLY_RETURN || $order->order_status === \App\Models\Order::COMPLETD_APPLY_RETURN)
+            <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
+                <h1 class="ml-4 font-bold">Apply Return Package Details</h1>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Reason
+                    </h1>
+                    <h1>: {{$order->applyReturn->reason}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <img class="max-w-[400px]" src="{{asset('storage/' . $order->applyReturn->product_image)}}"/>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Customer Address
+                    </h1>
+                    <h1>: {{$order->applyReturn->customer_address}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Vendor Address
+                    </h1>
+                    <h1>: {{$order->applyReturn->vendor_address}}</h1>
+                </div>
+                <div class="flex flex-row ">
+                    <h1 class="w-[215px]">
+                        Shipment Type </h1>
+                    <h1>: {{$order->applyReturn->shippingMethod->name}}</h1>
+                </div>
+
+                <div class="flex flex-row gap-4 items-center">
+                        <h1 class="w-[215px]">
+                            No Resi </h1>
+                        <h1>: {{$order->applyReturn->no_resi}}</h1>
+                </div>
+
+                <div class="flex flex-row gap-4 items-center">
+                    <h1 class="w-[215px]">
+                        Nama kurir </h1>
+                    <h1>: {{$order->applyReturn->nama_kurir}}</h1>
+                </div>
+            </div>
+        @endif
+        @if($order->order_status === \App\Models\Order::COMPLETD_APPLY_RETURN)
+            <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
+                <h1 class="ml-4 font-bold">Form Apply Return Payment Details</h1>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Bank Name
+                    </h1>
+                    <h1>: {{$order->formReturnPayment->sejukBankAccountOutcome->bank_name}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Bank Account Name
+                    </h1>
+                    <h1>: {{$order->formReturnPayment->sejukBankAccountOutcome->bank_account_name}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Bank Account Number
+                    </h1>
+                    <h1>: {{$order->formReturnPayment->sejukBankAccountOutcome->bank_account_number}}</h1>
+                </div>
+                <div class="flex flex-row">
+                    <h1 class="w-[215px]">
+                        Transfer Amount
+                    </h1>
+                    <h1>: Rp{{$order->formReturnPayment->sejukBankAccountOutcome->transfer_amount}}</h1>
+                </div>
+            </div>
+        @endif
     </div>
     <div class="flex flex-row gap-16 mt-12 justify-center items-center">
         @if($order->order_status === \App\Models\Order::PAID)
@@ -109,6 +181,13 @@
                 <div
                     class="w-[196px] flex items-center justify-center text-xl font-semibold h-[51px] rounded-lg bg-gray-400 ">
                     <h1>Cancel</h1>
+                </div>
+            </a>
+        @elseif($order->order_status === \App\Models\Order::SHIPPED_BACK_APPLY_RETURN)
+            <a href="{{route('return-payment', ['id' => $order->id])}}">
+                <div
+                    class="w-[196px] flex items-center justify-center text-xl font-semibold h-[51px] rounded-lg bg-gray-400 ">
+                    <h1>Return Payment</h1>
                 </div>
             </a>
         @endif

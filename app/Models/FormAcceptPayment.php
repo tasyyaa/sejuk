@@ -15,6 +15,6 @@ class FormAcceptPayment extends Model
     ];
 
     public function sejukBankAccountOutcome() {
-        return $this->hasOne(SejukBankAccountOutcome::class, 'sejuk_bank_account_outcome_id', 'id')->latestOfMany();
+        return $this->belongsTo(SejukBankAccountOutcome::class, 'sejuk_bank_account_outcome_id', 'id');
     }
 }

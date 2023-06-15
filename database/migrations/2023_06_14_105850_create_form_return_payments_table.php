@@ -15,9 +15,6 @@ class CreateFormReturnPaymentsTable extends Migration
     {
         Schema::create('form_return_payments', function (Blueprint $table) {
             $table->id();
-            $table->string('bank_name');
-            $table->string('bank_account_number');
-            $table->string('bank_account_name');
             $table->foreignId('order_id')->references('id')->on('orders');
             $table->foreignId('sejuk_bank_account_outcome_id')->references('id')->on('sejuk_bank_account_outcomes');
             $table->timestamps();

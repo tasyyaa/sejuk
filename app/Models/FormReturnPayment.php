@@ -12,12 +12,9 @@ class FormReturnPayment extends Model
     protected $fillable = [
         'order_id',
         'sejuk_bank_account_outcome_id',
-        'bank_name',
-        'bank_account_number',
-        'bank_account_name'
     ];
 
     public function sejukBankAccountOutcome() {
-        return $this->hasOne(SejukBankAccountOutcome::class, 'sejuk_bank_account_outcome_id', 'id')->latestOfMany();
+        return $this->belongsTo(SejukBankAccountOutcome::class, 'sejuk_bank_account_outcome_id', 'id');
     }
 }
