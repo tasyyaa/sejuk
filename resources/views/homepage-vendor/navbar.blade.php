@@ -196,12 +196,9 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <div class="logo">
-                    <a href="{{route('homepage.vendor')}}" class="logo">
+                <a class="logo" href="{{route('homepage.vendor')}}">
                     <img class="w-12" src="/images/logo.png" alt="">
-                    </a>
-                <div >
-                </div>
+                </a>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
                         <div
@@ -216,9 +213,6 @@
                     <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
                         <a class="navbar-brand" href="{{route('orders.vendor')}}">
                             <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
-                        </a>
-                        <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/notifications.svg') }}" width="30" height="24">
                         </a>
                         <a class="navbar-brand" href="{{route('profile.vendor')}}" style="margin:0px 0px 0px 20px;">
                             <img src="{{ asset('/images/3.png') }}" width="30" height="24">
@@ -291,7 +285,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </nav>
 @endsection
