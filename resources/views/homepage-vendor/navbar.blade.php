@@ -141,6 +141,12 @@
             font-weight: 500;
         }
 
+        .navbar .menu-items a {
+            font-size: 25px;
+            margin-left: -10px;
+            font-weight: 900;
+        }
+
 
         .logo {
             position: absolute;
@@ -244,10 +250,10 @@
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
                                 <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                     <div>
-                                        <h1>Home</h1>
+                                        <a style="font-weight: 600; color:#565656;" href="/">HOME</a>
                                     </div>
                                     <div>
-                                        <h1>FAQ</h1>
+                                        <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
                                     @if(auth()->guard('rentals')->check())
                                         <div>
@@ -268,7 +274,7 @@
                                         @csrf
                                         <button type="submit"
                                                 class="bg-[#497174] mt-[20px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                            Logout
+                                           SIGN OUT
                                         </button>
                                     </form>
                                 @else

@@ -1,188 +1,199 @@
 @extends('layouts.base')
 
 @section('precede-sheet')
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background: linear-gradient(#D6E4E5, #F9F5F2) fixed;
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(#D6E4E5, #F9F5F2) fixed;
+        }
 
-    .container {
-        max-width: 1050px;
-        width: 100%;
-    }
+        .container {
+            max-width: 1050px;
+            width: 100%;
+        }
 
-    .navbar {
-        position: absolute;
-        width: 100%;
-        background-color: transparent;
-    }
-
-
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 62px;
-    }
+        .navbar {
+            position: absolute;
+            width: 100%;
+            background-color: transparent;
+        }
 
 
-    .navbar .menu-items {
-        display: flex;
-        background-color: whitesmoke;
-        overflow-y: auto; /* Add this line to enable scrolling */
-    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 62px;
+        }
 
 
-    .navbar .nav-container li {
-        list-style: none;
-    }
+        .navbar .menu-items {
+            display: flex;
+            background-color: whitesmoke;
+            overflow-y: auto;
+            /* Add this line to enable scrolling */
+        }
 
 
-    .navbar .nav-container a {
-        text-decoration: none;
-        color: #0e2431;
-        font-weight: 500;
-        font-size: 1.2rem;
-        padding: 0.7rem;
-    }
+        .navbar .nav-container li {
+            list-style: none;
+        }
 
 
-    .navbar .nav-container a:hover {
-        font-weight: bolder;
-    }
+        .navbar .nav-container a {
+            text-decoration: none;
+            color: #0e2431;
+            font-weight: 500;
+            font-size: 1.2rem;
+            padding: 0.7rem;
+        }
 
 
-    .nav-container {
-        display: block;
-        position: relative;
-        height: 60px;
-    }
+        .navbar .nav-container a:hover {
+            font-weight: bolder;
+        }
 
 
-    .nav-container .checkbox {
-        position: absolute;
-        display: block;
-        height: 32px;
-        width: 32px;
-        top: 30px;
-        left: 30px;
-        z-index: 5;
-        opacity: 0;
-        cursor: pointer;
-    }
+        .nav-container {
+            display: block;
+            position: relative;
+            height: 60px;
+        }
 
 
-    .nav-container .hamburger-lines {
-        display: block;
-        height: 26px;
-        width: 32px;
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+        .nav-container .checkbox {
+            position: absolute;
+            display: block;
+            height: 32px;
+            width: 32px;
+            top: 30px;
+            left: 30px;
+            z-index: 5;
+            opacity: 0;
+            cursor: pointer;
+        }
 
 
-    .nav-container .hamburger-lines .line {
-        display: block;
-        z-index: 10;
-        height: 5px;
-        width: 100%;
-        border-radius: 10px;
-        background: black;
-    }
+        .nav-container .hamburger-lines {
+            display: block;
+            height: 26px;
+            width: 32px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
 
-    .nav-container .hamburger-lines .line1 {
-        transform-origin: 0% 0%;
-        transition: transform 0.4s ease-in-out;
-    }
+        .nav-container .hamburger-lines .line {
+            display: block;
+            z-index: 10;
+            height: 5px;
+            width: 100%;
+            border-radius: 10px;
+            background: black;
+        }
 
 
-    .nav-container .hamburger-lines .line2 {
-        transition: transform 0.2s ease-in-out;
-    }
+        .nav-container .hamburger-lines .line1 {
+            transform-origin: 0% 0%;
+            transition: transform 0.4s ease-in-out;
+        }
 
 
-    .nav-container .hamburger-lines .line3 {
-        transform-origin: 0% 100%;
-        transition: transform 0.4s ease-in-out;
-    }
+        .nav-container .hamburger-lines .line2 {
+            transition: transform 0.2s ease-in-out;
+        }
 
 
-    .navbar .menu-items {
-        position: absolute;
-        padding-top: 120px;
-        height: 100vh;
-        width: 100vw;
-        transform: translate(-150%);
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.5s ease-in-out;
-        text-align: center;
-        overflow: hidden;
-    }
-
-    .navbar-scrolled {
-        background-color: rgba(0, 0, 0, .25);
-        height: 80px;
-        z-index: 0;/* Replace with your desired background color */
-    }
-    .navbar .menu-items li {
-        margin-bottom: 1.2rem;
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
+        .nav-container .hamburger-lines .line3 {
+            transform-origin: 0% 100%;
+            transition: transform 0.4s ease-in-out;
+        }
 
 
-    .logo {
-        position: absolute;
-        top: 5px;
-        left: 90px;
-        font-size: 1.2rem;
-        width: 90px;
-        color: #0e2431;
-    }
+        .navbar .menu-items {
+            position: absolute;
+            padding-top: 120px;
+            height: 100vh;
+            width: 100vw;
+            transform: translate(-150%);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.5s ease-in-out;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .navbar-scrolled {
+            background-color: rgba(0, 0, 0, .25);
+            height: 80px;
+            z-index: 0;
+            /* Replace with your desired background color */
+        }
+
+        .navbar .menu-items li {
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .navbar .menu-items a {
+            font-size: 25px;
+            margin-left: -10px;
+            font-weight: 900;
+        }
 
 
-    .nav-container input[type="checkbox"]:checked~.menu-items {
-        transform: translateX(0);
-    }
-    .nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
-        transform: rotate(45deg);
-        background: #497174;
-    }
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 90px;
+            font-size: 1.2rem;
+            width: 90px;
+            color: #0e2431;
+        }
 
 
-    .nav-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
-        transform: scaleY(0);
-        background: #497174;
-    }
+        .nav-container input[type="checkbox"]:checked~.menu-items {
+            transform: translateX(0);
+        }
+
+        .nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
+            transform: rotate(45deg);
+            background: #497174;
+        }
+
+        .nav-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
+            transform: scaleY(0);
+            background: #497174;
+        }
+
+        .nav-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
+            transform: rotate(-45deg);
+            background: #497174;
+        }
+
+        [x-cloak] {
+            display: none;
+        }
+
+        .nav .menu-items a {
+  font-size: 100px; /* Adjust the font size as needed */
+}
 
 
-    .nav-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
-        transform: rotate(-45deg);
-        background: #497174;
-    }
-
-
-    .nav-container input[type="checkbox"]:checked~.logo {
-        display: none;
-    }
-
-
-</style>
+    </style>
 @endsection
 
 @section('navigation')
-<nav class="sticky top-0 z-50">
-    <div class="navbar relative z-10">
+    <nav class="sticky top-0 z-50">
+        <div class="navbar relative z-10">
             <div class="container nav-container">
                 <input class="checkbox" type="checkbox" name="" id="" />
                 <div class="hamburger-lines">
@@ -199,8 +210,9 @@
                             class="flex justify-center  w-[104px] absolute right-0 items-center h-[40px] bg-[#497174] rounded-md">
                             <i class="fas fa-search text-xl font-medium text-white"></i>
                         </div>
-                        <input type="text" class="w-[508px] h-[40px] pl-3 rounded-lg  focus:ring-0 focus:border-transparent"
-                               placeholder="Search">
+                        <input type="text"
+                            class="w-[508px] h-[40px] pl-3 rounded-lg  focus:ring-0 focus:border-transparent"
+                            placeholder="Search">
                     </div>
                 </div>
                 @if(auth()->guard('web')->check())
@@ -233,20 +245,18 @@
                                         placeholder="Search by product, category,  size, etc." type="text">
                                     <i class="fa fa-search fa-2x absolute right-5 bottom-5" aria-hidden="true"></i>
                                 </div>
-                                <div class="flex flex-col gap-[78px]">
-                                    <a class="text-semibold text-" href=""></a>
-                                </div>
+
                             </div>
                             <div
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
                                 <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                     <div>
-                                        <h1>HOME</h1>
+                                        <a style="font-weight: 600; color:#565656;" href="/">HOME</a>
                                     </div>
                                     <div>
-                                        <h1>FAQ</h1>
+                                        <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
-                                    @if(auth()->guard('web')->check())
+                                    @if (auth()->guard('web')->check())
                                         <div>
                                             <h1>My Purchases</h1>
                                         </div>
@@ -257,17 +267,17 @@
                                 </div>
                             </div>
                             <div class="mx-auto">
-                                @if(auth()->guard('web')->check())
-                                    <form action="{{route('logout')}}" method="POST">
+                                @if (auth()->guard('web')->check())
+                                    <form action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         <button type="submit"
-                                           class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                            Logout
+                                            class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
+                                            SIGN OUT
                                         </button>
                                     </form>
                                 @else
-                                    <a href="{{route('login')}}"
-                                       class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
+                                    <a href="{{ route('login') }}"
+                                        class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
                                         SIGN IN
                                     </a>
                                 @endif
@@ -282,21 +292,21 @@
                     </div>
                 </div>
             </div>
-    </div>
-</nav>
+        </div>
+    </nav>
 @endsection
 
 @section('child-script')
-<script>
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        const scrollDistance = 800; // Replace with your desired scroll distance in pixels
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const scrollDistance = 800; // Replace with your desired scroll distance in pixels
 
-        if (window.pageYOffset > scrollDistance) {
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-        }
-    });
-</script>
+            if (window.pageYOffset > scrollDistance) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
 @endsection
