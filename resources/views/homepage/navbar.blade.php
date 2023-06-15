@@ -257,12 +257,12 @@
                                         <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
                                     @if (auth()->guard('web')->check())
-                                        <div>
-                                            <h1>My Purchases</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/mypurchases">My Purchases</a>
+                                    </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/profile">My Account</a>
+                                    </div>
                                     @endif
                                 </div>
                             </div>

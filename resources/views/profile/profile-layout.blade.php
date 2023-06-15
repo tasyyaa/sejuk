@@ -220,12 +220,6 @@
                         <a class="navbar-brand" href="/mypurchases">
                             <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
                         </a>
-                        <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/notifications.svg') }}" width="30" height="24">
-                        </a>
-                        <a class="navbar-brand" href="{{ route('profile') }}" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/3.png') }}" width="30" height="24">
-                        </a>
                     </div>
                 @endif
                 <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
@@ -250,12 +244,12 @@
                                         <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
                                     @if (auth()->guard('web')->check())
-                                        <div>
-                                            <h1>My Purchases</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/mypurchases">My Purchases</a>
+                                    </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/profile">My Account</a>
+                                    </div>
                                     @endif
                                 </div>
                             </div>

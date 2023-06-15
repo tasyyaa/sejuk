@@ -6,8 +6,7 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
-            background-attachment: fixed;
+            background: linear-gradient(#D6E4E5, #F9F5F2) fixed;
         }
 
         .container {
@@ -96,7 +95,7 @@
             height: 5px;
             width: 100%;
             border-radius: 10px;
-            background: black;
+            background: white;
         }
 
 
@@ -197,10 +196,11 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <div >
+                <div class="logo">
                     <a href="{{route('homepage.vendor')}}" class="logo">
-                        <img class="w-12" src="/images/logo-side.svg" alt="">
+                    <img class="w-12" src="/images/logo.png" alt="">
                     </a>
+                <div >
                 </div>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
@@ -250,21 +250,18 @@
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
                                 <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                     <div>
-                                        <a style="font-weight: 600; color:#565656;" href="/">HOME</a>
+                                        <a style="font-weight: 600; color:#565656;" href="/vendor">HOME</a>
                                     </div>
                                     <div>
                                         <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
                                     @if(auth()->guard('rentals')->check())
-                                        <div>
-                                            <h1>Your Catalogue</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Order List</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="{{route('orders.vendor')}}">My Order List</a>
+                                    </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/vendor/profile">My Account</a>
+                                    </div>
                                     @endif
                                 </div>
                             </div>
@@ -294,6 +291,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </nav>
 @endsection
