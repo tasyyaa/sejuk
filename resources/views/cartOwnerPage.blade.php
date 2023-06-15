@@ -77,48 +77,20 @@
 
 <body>
     <!-- navbar -->
-    <nav class="">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <div class="leftitem" style="display: flex; justify-content: center;">
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;
-                    </a>
-                    <a href="#Home">Home</a>
-                    <a href="#Promotion">Promotion</a>
-                    <a href="#Our Service">Our Services</a>
-                    <a href="#Contact">Contact</a>
-                </div>
-                <div id="main" style="margin:0px 20px 0px 0px">
-                    <span style="font-size:20px;cursor:pointer" onclick="openNav()"> &#9776;
-                    </span>
-                </div>
-
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('storage/buatapp/sejuk1.png') }}" width="24" height="30"
-                        class="d-inline-block align-text-">
-                </a>
-            </div>
-            <div class="">
-                <div class="relative">
-                    <div
-                        class="flex justify-center  w-[104px] absolute right-0 items-center h-[40px] bg-[#497174] rounded-md">
-                        <i class="fas fa-search text-xl font-medium text-white"></i>
-                    </div>
-                    <input type="text" class="w-[508px] h-[40px] pl-3 rounded-lg  focus:outline-0"
-                        placeholder="Cari Baju">
-                </div>
-            </div>
-            <div class="sideitem" style="display: flex; justify-content: center;margin-left: 10px;">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('storage/buatapp/Cart owner.png') }}" width="30" height="24">
-                </a>
-                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
-                    <img src="{{ asset('storage/buatapp/Notifications owner.png') }}" width="30" height="24">
-                </a>
-                <a class="navbar-brand" href="#" style="margin:0px 0px 0px 10px;">
-                    <img src="{{ asset('storage/buatapp/3.png') }}" width="30" height="24">
-                </a>
-            </div>
+    <nav
+        class="relative flex flex-row w-full justify-between items-center h-24 mx-auto px-12 font-monserrat"
+    >
+        <div class="flex flex-row items-center gap-6">
+            <a href="/vendor">
+                <img
+                src="{{ asset('images/backarrowvendor.svg') }}"
+               alt="burger-logo"
+                    class="w-[60px] h-[65px]"
+                />
+            </a>
+            <a href="#">
+                <img src="images/logo.png" alt="logo" class="w-2/3" />
+            </a>
         </div>
     </nav>
 

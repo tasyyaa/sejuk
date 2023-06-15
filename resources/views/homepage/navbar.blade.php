@@ -217,7 +217,7 @@
                 </div>
                 @if (auth()->guard('web')->check())
                     <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                        <a class="navbar-brand" href="/mypurchases">
+                        <a class="navbar-brand" href="/myPurchases">
                             <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
                         </a>
                         <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
@@ -258,12 +258,12 @@
                                         <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
                                     @if (auth()->guard('web')->check())
-                                        <div>
-                                            <h1>My Purchases</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/myPurchases">My Purchases</a>
+                                    </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/profile">My Account</a>
+                                    </div>
                                     @endif
                                 </div>
                             </div>

@@ -95,7 +95,7 @@
             height: 5px;
             width: 100%;
             border-radius: 10px;
-            background: black;
+            background: white;
         }
 
 
@@ -197,7 +197,7 @@
                     <span class="line line3"></span>
                 </div>
                 <div class="logo">
-                    <img class="w-12" src="/images/logo-side.svg" alt="">
+                    <img class="w-12" src="/images/logo.png" alt="">
                 </div>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
@@ -211,11 +211,8 @@
                 </div>
                 @if(auth()->guard('rentals')->check())
                     <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                        <a class="navbar-brand" href="/mypurchases">
+                        <a class="navbar-brand" href="/myOrderList">
                             <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
-                        </a>
-                        <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/notifications.svg') }}" width="30" height="24">
                         </a>
                         <a class="navbar-brand" href="{{route('profile.vendor')}}" style="margin:0px 0px 0px 20px;">
                             <img src="{{ asset('/images/3.png') }}" width="30" height="24">
@@ -247,21 +244,18 @@
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
                                 <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                     <div>
-                                        <a style="font-weight: 600; color:#565656;" href="/">HOME</a>
+                                        <a style="font-weight: 600; color:#565656;" href="/vendor">HOME</a>
                                     </div>
                                     <div>
                                         <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
                                     @if(auth()->guard('rentals')->check())
-                                        <div>
-                                            <h1>Your Catalogue</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Order List</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/myOrderList">My Order List</a>
+                                    </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/vendor/profile">My Account</a>
+                                    </div>
                                     @endif
                                 </div>
                             </div>

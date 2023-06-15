@@ -6,7 +6,8 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(#D6E4E5, #F9F5F2) fixed;
+            background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
+            background-attachment: fixed;
         }
 
         .container {
@@ -32,8 +33,7 @@
         .navbar .menu-items {
             display: flex;
             background-color: whitesmoke;
-            overflow-y: auto;
-            /* Add this line to enable scrolling */
+            overflow-y: auto; /* Add this line to enable scrolling */
         }
 
 
@@ -96,7 +96,7 @@
             height: 5px;
             width: 100%;
             border-radius: 10px;
-            background: black;
+            background: white;
         }
 
 
@@ -133,10 +133,8 @@
         .navbar-scrolled {
             background-color: rgba(0, 0, 0, .25);
             height: 80px;
-            z-index: 0;
-            /* Replace with your desired background color */
+            z-index: 0;/* Replace with your desired background color */
         }
-
         .navbar .menu-items li {
             margin-bottom: 1.2rem;
             font-size: 1.5rem;
@@ -163,29 +161,27 @@
         .nav-container input[type="checkbox"]:checked~.menu-items {
             transform: translateX(0);
         }
-
         .nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
             transform: rotate(45deg);
             background: #497174;
         }
+
 
         .nav-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
             transform: scaleY(0);
             background: #497174;
         }
 
+
         .nav-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
             transform: rotate(-45deg);
             background: #497174;
         }
 
-        [x-cloak] {
+
+        .nav-container input[type="checkbox"]:checked~.logo {
             display: none;
         }
-
-        .nav .menu-items a {
-  font-size: 100px; /* Adjust the font size as needed */
-}
 
 
     </style>
@@ -201,8 +197,8 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <a class="logo" href="/">
-                    <img class="w-12" src="/images/logo-side.svg" alt="">
+                <a class="logo" href="/vendor">
+                    <img class="w-12" src="/images/logo.png" alt="">
                 </a>
                 <div class="absolute top-6 left-[40%]">
                     <div class="relative">
@@ -210,24 +206,24 @@
                             class="flex justify-center  w-[104px] absolute right-0 items-center h-[40px] bg-[#497174] rounded-md">
                             <i class="fas fa-search text-xl font-medium text-white"></i>
                         </div>
-                        <input type="text"
-                            class="w-[508px] h-[40px] pl-3 rounded-lg  focus:ring-0 focus:border-transparent"
-                            placeholder="Search">
+                        <input type="text" class="w-[508px] h-[40px] pl-3 rounded-lg  focus:ring-0 focus:border-transparent"
+                               placeholder="Search">
                     </div>
                 </div>
-                @if (auth()->guard('web')->check())
+                @if(auth()->guard('rentals')->check())
                     <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                        <a class="navbar-brand" href="/mypurchases">
+                        <a class="navbar-brand" href="/myOrderList">
                             <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
                         </a>
-                        <a class="navbar-brand" href="/notification" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/notifications.svg') }}" width="30" height="24">
-                        </a>
-                        <a class="navbar-brand" href="{{ route('profile') }}" style="margin:0px 0px 0px 20px;">
-                            <img src="{{ asset('/images/3.png') }}" width="30" height="24">
-                        </a>
+                    </div>
+                @else
+                    <div class="absolute top-6 right-12">
+                        <a href="{{route('loginvendor')}}" class="text-xl font-medium text-black mr-10">Sign in</a>
+                        <a href="{{route('registervendor')}}" class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">Sign up</a>
                     </div>
                 @endif
+
+
                 <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
                     <div class="flex flex-row ">
                         <div class=" relative w-full">
@@ -238,39 +234,41 @@
                                         placeholder="Search by product, category,  size, etc." type="text">
                                     <i class="fa fa-search fa-2x absolute right-5 bottom-5" aria-hidden="true"></i>
                                 </div>
-
+                                <div class="flex flex-col gap-[78px]">
+                                    <a class="text-semibold text-" href=""></a>
+                                </div>
                             </div>
                             <div
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
                                 <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
                                     <div>
-                                        <a style="font-weight: 600; color:#565656;" href="/">HOME</a>
+                                        <a style="font-weight: 600; color:#565656;" href="/vendor">HOME</a>
                                     </div>
                                     <div>
                                         <a style="font-weight: 600; color:#565656;" href="/FAQ">FAQ</a>
                                     </div>
-                                    @if (auth()->guard('web')->check())
-                                        <div>
-                                            <h1>My Purchases</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Account</h1>
-                                        </div>
+                                    @if(auth()->guard('rentals')->check())
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/myOrderList">My Order List</a>
+                                    </div>
+                                    <div>
+                                        <a style="font-weight: 600; color:#565656;" href="/vendor/profile">My Account</a>
+                                    </div>
                                     @endif
                                 </div>
                             </div>
                             <div class="mx-auto">
-                                @if (auth()->guard('web')->check())
-                                    <form action="{{ route('logout') }}" method="POST">
+                                @if(auth()->guard('rentals')->check())
+                                    <form action="{{route('logout.vendor')}}" method="POST">
                                         @csrf
                                         <button type="submit"
-                                            class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                            SIGN OUT
+                                                class="bg-[#497174] mt-[20px] w-[333px] text-white text-2xl font-semibold h-[55px]">
+                                           SIGN OUT
                                         </button>
                                     </form>
                                 @else
-                                    <a href="{{ route('login') }}"
-                                        class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
+                                    <a href="{{route('loginvendor')}}"
+                                       class="bg-[#497174] mt-[20px] w-[333px] text-white text-2xl font-semibold h-[55px]">
                                         SIGN IN
                                     </a>
                                 @endif
