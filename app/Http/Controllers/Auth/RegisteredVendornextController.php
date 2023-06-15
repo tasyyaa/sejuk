@@ -49,6 +49,6 @@ class RegisteredVendornextController extends Controller
 
         $rental->save();
 
-        return redirect()->route('dashboard.rental');
+        return redirect()->route('homepage.vendor');
     }
 }
