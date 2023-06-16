@@ -554,7 +554,7 @@
             <div class="ml-[28px] mt-[15px]">
                 <div class="flex flex-col">
                     <div class="flex flex-row">
-                        <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">Alasan</p>
+                        <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">Reason</p>
                     </div>
                     <div class="flex flex-row mt-4">
                         <p class="d-inline-block align-text- text-bold text-[#675959] text-[22px]">{{$order->applyReturn->reason}}</p>
