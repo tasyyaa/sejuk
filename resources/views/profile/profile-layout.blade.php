@@ -215,13 +215,16 @@
                             placeholder="Search">
                     </div>
                 </div>
-                @if (auth()->guard('web')->check())
-                    <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
-                        <a class="navbar-brand" href="/mypurchases">
-                            <img src="{{ asset('/images/cart.svg') }}" width="30" height="24">
-                        </a>
-                    </div>
-                @endif
+                @if(auth()->guard('web')->check())
+                <div class="absolute top-6 right-12" style="display: flex; justify-content: center;margin-left:10px;">
+                    <a class="navbar-brand" href="{{route('orders.user')}}">
+                        <img src="{{ asset('/images/bag.png') }}" width="40" height="24">
+                    </a>
+                    <a class="navbar-brand" href="{{route('cart')}}" style="margin:0px 0px 0px 20px;">
+                        <img src="{{ asset('/images/keranjang.png') }}" width="40" height="24">
+                    </a>
+                </div>
+            @endif
                 <div class="menu-items h-screen relative overflow-y-hidden overflow-visible">
                     <div class="flex flex-row ">
                         <div class=" relative w-full">

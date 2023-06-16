@@ -272,7 +272,7 @@
                                         </button>
                                     </form>
                                 @else
-                                    <a href="{{route('loginvendor')}}"
+                                    <a href="/signin"
                                        class="bg-[#497174] mt-[20px] w-[333px] text-white text-2xl font-semibold h-[55px]">
                                         SIGN IN
                                     </a>

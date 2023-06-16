@@ -256,7 +256,6 @@
                                         name="remember">
                                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                 </label>
-
                                 @if (Route::has('password.request'))
                                     <a class="underline text-sm text-gray-400 hover:text-black-900 text-[#000000] mr-16"
                                        href="{{ route('password.request') }}">
@@ -264,7 +263,7 @@
                                     </a>
                                 @endif
                             </div>
-                            <div class="flex justify-center">
+                            <div>
                                 <button type="submit" class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign In</button>
                             </div>
                             <a class="underline text-sm text-gray-600 hover:text-gray-900"
