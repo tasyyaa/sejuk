@@ -545,7 +545,7 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[196px] h-[51px] rounded-md ml-[1050px] mt-[50px] mb-[55px] text-[22px]"
+            <input type="submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[250px] h-[75px] rounded-md ml-[1050px] mt-[50px] mb-[55px] text-[20px]"
                    value="Submit">
         </form>
     </div>
