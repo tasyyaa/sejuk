@@ -1,4 +1,4 @@
-@extends('homepage.navbar')
+@extends('layouts.base')
 
 @section('child-sheet')
 <script src="https://cdn.tailwindcss.com"></script>
@@ -415,6 +415,28 @@
 @endsection
 
 @section('content')
+<nav class="">
+    <div class="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
+        <div class="leftitem" style="display: flex; justify-content: center;">
+            <a class="navbar-brand" href="/mypurchases">
+                <img src="{{ asset('images/backarrowcust.svg') }}" width="80" height="85"
+                    class="d-inline-block align-text-">
+            </a>
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('images/sejukcust.svg') }}" width="80" height="85"
+                    class="d-inline-block align-text-">
+            </a>
+            <a class="navbar-brand">
+                <h4 class="d-inline-block align-text- font-semibold mt-4 text-[26px] text-[#675959]">Return Package</h4>
+            </a>
+        </div>
+        <div class="sideitem" style="display: flex; justify-content: center;">
+            <a class="navbar-brand" href="/profile">
+                <h4 class="d-inline-block align-text- text-[#675959] mr-[40px] text-[26px]"> {{ auth()->user()->name }} </h4>
+            </a>
+        </div>
+    </div>
+</nav>
 @foreach($order->items as $item)
 <div class="mt-12 mx-8">
     <div class="bg-[#FFFFFF] ml-[15px] mr-[15px] rounded-md">
@@ -529,7 +551,7 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[250px] h-[75px] rounded-md ml-[1050px] mt-[50px] mb-[55px] text-[20px] "
+            <input type="submit" class="bg-[#497174] text-[#D6E4E5] font-semibold w-[250px] h-[75px] rounded-md ml-[950px] mt-[50px] mb-[55px] text-[20px] "
                    value="Submit">
         </form>
     </div>
