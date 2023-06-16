@@ -31,7 +31,7 @@ class AcceptPaymentController extends Controller
     {
         $request->validate([
             'bank_account_name' => ['required', 'string'],
-            'bank_account_number' => ['required', 'string'],
+            'bank_account_number' => ['required', 'numeric'],
             'bank_name' => ['required', 'string']
         ]);
 
