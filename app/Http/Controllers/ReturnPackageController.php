@@ -17,7 +17,7 @@ class ReturnPackageController extends Controller
         $query = $query->with('transaction.paymentMethod')->with('shipping.shippingMethod');
         $order = $query->where("id", $id)->first();
 
-        if ($user->id != $order->vendor_id) {
+        if ($user->id != $order->user_id) {
             abort(403);
         }
 
