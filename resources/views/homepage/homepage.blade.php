@@ -66,7 +66,7 @@
 
         <!-- Clothes -->
         <div class="flex flex-col justify-center gap-12 mt-20">
-            <h2 class="text-4xl text-left text-[#497174] font-bold uppercase tracking-wider">
+            <h2 class="text-4xl text-center text-[#497174] font-bold uppercase">
                 Clothes
             </h2>
             <div class="flex flex-row justify-between items-center gap-10 w-11/12 mx-auto">
@@ -95,7 +95,7 @@
 
         <!-- Costumes -->
         <div class="flex flex-col justify-center gap-12 mt-20">
-            <h2 class="text-4xl text-left text-[#497174] font-bold uppercase tracking-wider">
+            <h2 class="text-4xl text-center text-[#497174] font-bold uppercase">
                 Costumes
             </h2>
             <div class="flex flex-row justify-between items-center gap-10 w-11/12 mx-auto">
