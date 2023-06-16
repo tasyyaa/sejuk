@@ -5,6 +5,7 @@
 @endsection
 
 @section('additional-sheet')
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
     body {
         font-family: 'Plus Jakarta Sans', sans-serif;
@@ -21,8 +22,8 @@
         <h3>Add New Catalog</h3>
     </div>
     @if($errors->any())
-        <div class="text-xl text-white ml-[99px] mt-12 mb-[46px]">
-            {{implode(" ",$errors->all())}}
+        <div class="text-xl text-[#FE4A4A] text-extrabold ml-[99px] mt-12 mb-[46px]">
+            Data is Invalid
         </div>
     @endif
     <!-- Form  -->
@@ -34,18 +35,13 @@
                     <label for="item_name" class="text-2xl text-white font-bold ">Costume Name</label>
                     <div class="">
                         <input class="w-[475px] rounded-md h-[33px] focus:ring-0 focus:border-transparent form-control" type="text" id="item_name"
-                               aria-labelledby="required" name="item_name" value="{{old('item_name')}}" required>
+                               aria-labelledby="required" name="item_name" value="{{old('item_name')}}">
                     </div>
-                    @if($errors->has('item_name'))
-                    <div class="">
-                        <p class="text-red-700">{{$errors->first('item_name')}}</p>
-                    </div>
-                    @endif
                 </div>
                 <div class="flex flex-col gap-[10px] mb-2">
                     <h3 class="text-2xl text-white font-bold">Categories</h3>
                     <select class="w-[475px] rounded-md h-[33px] text-sm focus:ring-0 focus:border-transparent" aria-label="Default select example"
-                            id="category_id" name="category_id" required>
+                            id="category_id" name="category_id" >
                         @foreach($categories as $category)
                             <option value="{{$category->category_id}}" {{old('category_id') == $category->category_id ? 'selected' : ''}}>{{$category->category_type}}</option>
                         @endforeach
@@ -56,7 +52,7 @@
                     <label for="item_price" class="text-2xl text-white font-bold">Price</label>
                     <div class="col-sm-6">
                         <input type="number" id="item_price" class="w-[475px] rounded-md h-[33px] focus:ring-0 focus:border-transparent"
-                               aria-labelledby="required" name="item_price" min="0" value="{{old('item_price')}}" required>
+                               aria-labelledby="required" name="item_price" min="0" value="{{old('item_price')}}" >
                     </div>
                 </div>
 
@@ -64,7 +60,7 @@
 
                     <h3 class="text-2xl text-white font-bold">Size</h3>
                     <select class="w-[475px] rounded-md h-[33px] text-sm focus:ring-0 focus:border-transparent" aria-label="Default select example"
-                            for="size" id="size" name="size" required>
+                            for="size" id="size" name="size" >
                         @foreach(['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'All Size'] as $size)
                             <option value="{{$size}}" {{old('size') == $size ? 'selected' : ''}}>{{$size}}</option>
                         @endforeach
@@ -75,7 +71,7 @@
                     <label for="stock" class="text-2xl text-white font-bold">Stock</label>
                     <div class="col-sm-6">
                         <input type="number" id="stock" class="w-[475px] rounded-md h-[33px] focus:ring-0 focus:border-transparent "
-                               aria-labelledby="required" name="stock" min="0" value="{{old('stock')}}" required>
+                               aria-labelledby="required" name="stock" min="0" value="{{old('stock')}}" >
                     </div>
                 </div>
 
@@ -93,10 +89,10 @@
                 </div>
             </div>
 
-            <div class="w-[735px] mt-7 h-[455px] bg-white after:">
-                <img id="img-preview" class="h-[425px] w-[735px]" src="{{ asset('images/inputimg.svg') }}" alt="">
-                <input id='catalogimage' type='file' name='catalog_image' onchange="loadFile(event)" hidden required/>
-                <input class="text-black font-bold ml-[150px]" id='buttonid' type='button' value='Add your photos here' />
+            <div class="w-[500px] mt-7 h-[375px] bg-white after:">
+                <img id="img-preview" class="h-[350px] w-[500px]" src="{{ asset('images/inputimg.svg') }}" alt="">
+                <input id='catalogimage' type='file' name='catalog_image' onchange="loadFile(event)" hidden/>
+                <input class="text-black font-bold ml-[125px] " id='buttonid' type='button' value='Add your photo by clicking here' />
             </div>
         </div>
         <div class="flex justify-center gap-[119px] mt-12 mb-[85px]">

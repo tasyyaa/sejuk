@@ -23,11 +23,13 @@
         {{--            </div> --}}
         {{--        </div> --}}
         <!-- Invalid -->
+
         @if ($errors->any())
             <button
                 class="font-bold text-3xl text-[#FE4A4A] px-12 py-1 bg-[#FFFFFF] mx-auto mt-5 border-2 shadow-xl border-b-4 border-b-slate-300">
                 Data Is Invalid
             </button>
+
         @endif
 
         <div class="flex flex-col w-full pr-36 p-6">

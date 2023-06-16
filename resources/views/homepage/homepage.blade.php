@@ -73,7 +73,7 @@
                 @foreach($clothProducts as $product)
                     <a href="{{route('preview', ['id' => $product->catalog_id])}}">
                         <div class="flex flex-col items-center">
-                            <img src="{{asset('storage/'.$product->catalog_image)}}" alt="{{$product->item_name}}" class="bg-[#DCE2E7] w-[250px]"/>
+                            <img src="{{asset('storage/'.$product->catalog_image)}}" alt="{{$product->item_name}}" class="bg-[#DCE2E7] w-[250px] h-[300px]"/>
                             <div class="flex flex-col justify-between items-start bg-white px-2 pb-8 pt-2 w-full h-[198px]">
                                 <div>
                                     <h3 class="text-base font-semibold">
@@ -102,7 +102,7 @@
                 @foreach($costumeProducts as $product)
                     <a href="{{route('preview', ['id' => $product->catalog_id])}}">
                     <div class="flex flex-col items-center">
-                        <img src="{{asset('storage/'.$product->catalog_image)}}" alt="{{$product->item_name}}" class="bg-[#DCE2E7]  w-[250px]" />
+                        <img src="{{asset('storage/'.$product->catalog_image)}}" alt="{{$product->item_name}}" class="bg-[#DCE2E7]  w-[250px] h-[300px]" />
                         <div class="flex flex-col justify-between items-start bg-white px-2 pb-8 pt-2 w-full h-[198px]">
                             <div>
                                 <h3 class="text-base font-semibold">
