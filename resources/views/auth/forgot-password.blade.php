@@ -243,7 +243,7 @@
                                     class="mb-8 text-lg flex justify-start font-light text-[#023A15] ">Please re-enter
                                     your registered email to reset your password!</label>
                                 <div class=" w-[518px] h-[83px]">
-                                    <input type="text" id="email" name="email" :value="old('input_type')"
+                                    <input type="text" id="email" name="email" value="{{old('email') ?? ''}}"
                                         required autofocus id="helper-text" aria-describedby="helper-text-explanation"
                                         class="w-[594px] h-[55px] placeholder:text-black text-black pl-6 text-1xl font-light bg-white ring-1 ring-black focus:outline-0"
                                         placeholder="EMAIL">
