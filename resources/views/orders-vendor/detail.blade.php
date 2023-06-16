@@ -1,10 +1,11 @@
-@extends('homepage-vendor.navbar')
+@extends('layouts.base')
 
 @section('title')
     Order #{{$order->id}}
 @endsection
 
 @section('child-sheet')
+<script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             background: linear-gradient(rgba(73, 113, 116, 1), rgba(239, 245, 245, 1));
@@ -15,13 +16,34 @@
 @endsection
 
 @section('content')
+<nav class="">
+    <div class="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
+        <div class="leftitem" style="display: flex; justify-content: center;">
+            <a class="navbar-brand" href="/vendor/myorderlist">
+                <img src="{{ asset('images/backarrowvendor.svg') }}" width="60" height="65"
+                    class="d-inline-block align-text-">
+            </a>
+            <a class="navbar-brand" href="/vendor">
+                <img src="{{ asset('images/sejuk1.png') }}" width="40" height="45"
+                    class="d-inline-block align-text-">
+            </a>
+            <a class="navbar-brand">
+                <h4 class="d-inline-block align-text- mt-2 text-white ml-[8px] text-[26px]"> Order Summary</h4>
+            </a>
+        </div>
+        <div class="sideitem" style="display: flex; justify-content: center;margin-left:10px;">
+            <a class="navbar-brand mr-[60px]" href="/vendor/profile">
+                <img src="{{ asset('images/3.png') }}" width="60" height="65">
+            </a>
+        </div>
+    </div>
+</nav>
 <div class="flex flex-col my-12 mx-[88px]">
-    <h1 class="font-semibold text-5xl text-white">Order</h1>
     @if($order->order_status === \App\Models\Order::PAID)
     <form action="{{route('order.vendor.ship', ['id' => $order->id])}}" method="POST">
         @csrf
     @endif
-    <div class="w-full pt-8 pb-12 mt-12 bg-white rounded-lg">
+    <div class="w-full pt-4 pb-12 mt-12 bg-white rounded-lg">
         <div class="flex items-center gap-4  m-8">
             <div class="w-32 h-12 text-white rounded-2xl flex justify-center items-center bg-[#497174]">
                 <h1 class="font-semibold text-xl">Order #{{$order->id}}</h1>
