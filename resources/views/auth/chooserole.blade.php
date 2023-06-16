@@ -240,7 +240,7 @@
 
                     <!-- Faq Open -->
                     <div x-show="faqOpen==true"
-                        class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[500px] bg-white rounded-[10px] bottom-10 right-10"
+                        class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[900px] bg-white rounded-[10px] bottom-10 right-10"
                         x-data="{ tab: '' }">
                         <div class="flex flex-row items-center justify-between bg-[#497174] py-4 px-6 rounded-[10px]">
                             <img src="/images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
@@ -343,15 +343,10 @@
                                         options that SEJUK provide?
                                     </h3>
                                     <p class="text-base text-black">
-                                        SEJUK provides 4 regular and
-                                        economical shipping options,
-                                        as well as two instant
-                                        shipping options. Regular
-                                        and economical shipping can
+                                        SEJUK provides regular
+                                        and economical shipping which can
                                         be done using JNE, J&T,
-                                        SiCepat, and Anteraja. For
-                                        instant shipping we provide
-                                        GoSend and GrabExpress
+                                        SiCepat, and Anteraja. For instant shipping we provide GoSend.
                                     </p>
                                 </div>
                             </div>
@@ -367,9 +362,7 @@
                                     <p class="text-base text-black">
                                         Shipping options cannot be
                                         changed once the order has
-                                        been placed. Therefore, pay
-                                        close attention to the
-                                        chosen shipping option.
+                                        been placed.
                                     </p>
                                 </div>
                             </div>
@@ -396,11 +389,9 @@
                                     </h3>
                                     <p class="text-sm text-black">
                                         SEJUK supports 4 types of
-                                        payment methods, namely COD,
-                                        Bank Transfer (Virtual
-                                        Machine Account), Credit
-                                        Card, and
-                                        Alfamarat/Indomaret.
+                                        payment methods, Bank Transfer (Virtual
+                                        Machine Account), and Credit
+                                        Card.
                                     </p>
                                 </div>
                             </div>
@@ -417,11 +408,7 @@
                                         The payment method can be
                                         changed at any time before
                                         the payment is successfully
-                                        processed by SEJUK. To make
-                                        the change, you can go to
-                                        the payment options and
-                                        choose the payment method to
-                                        be used.
+                                        processed by SEJUK.
                                     </p>
                                 </div>
                             </div>
@@ -443,9 +430,7 @@
                                         paid the order beyond that
                                         time, the order will be
                                         automatically canceled by
-                                        the system and the buyer
-                                        must repeat the ordering
-                                        process from the beginning.
+                                        the system.
                                     </p>
                                 </div>
                             </div>
@@ -476,17 +461,8 @@
                                         requests can be made in the
                                         order status section by
                                         selecting the "submit a
-                                        return request" option,
-                                        where you can fill out the
-                                        return form with reasons and
-                                        photos of the product.
-                                        Returns can be processed
-                                        once the seller has
-                                        confirmed your return
-                                        request form. Your payment
-                                        will be returned after the
-                                        returned product is received
-                                        by the seller.
+                                        return request" option.
+
                                     </p>
                                 </div>
                             </div>
@@ -501,10 +477,7 @@
                                     </h3>
                                     <p class="text-base text-black">
                                         You can send the package
-                                        using the shipping option
-                                        that will appear if the
-                                        return form has been
-                                        approved. Return shipping
+                                        using the shipping option. Return shipping
                                         can only be done using JNE,
                                         J&T, SiCepat, and Anteraja,
                                         it must be done within 5
