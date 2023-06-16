@@ -32,7 +32,7 @@ class ReturnPackageController extends Controller
     public function store(Request $request, $id)
     {
         $request->validate([
-            'no_resi' => ['required', 'string'],
+            'no_resi' => ['required', 'numeric'],
             'shipping_method_id' => ['required', 'integer'],
             'nama_kurir' => ['required', 'string'],
         ]);
