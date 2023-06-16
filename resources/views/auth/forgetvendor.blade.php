@@ -255,7 +255,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex justify-center">
+                                <div class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">
                                     <button class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">
                                         NEXT
                                     </button>
