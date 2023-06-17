@@ -322,7 +322,7 @@ Register
             <button type="submit"
                 class="w-[310px] h-[62px] hover:bg-slate-200 bg-white ring-1 ring-black text-3xl flex justify-center text-black placeholder:text-[#BFB9B9] items-center"
                 x-bind:disabled="!isValidFullname || !isValidEmail || !isValidPhone || password !== confirmPassword">
-                SIGN UP
+                REGISTER
             </button>
         </div>
         <div>
