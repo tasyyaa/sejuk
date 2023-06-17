@@ -13,7 +13,7 @@
                     <img
                         src="{{asset('storage/'.$order->items[0]->catalog->catalog_image)}}"
                         alt="order-1"
-                        class="w-[85px]"
+                        class="w-[85px] w[100px]"
                     />
                     <div
                         class="flex flex-col items-start text-[#675959] w-96 text-start gap-4"
