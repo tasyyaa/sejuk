@@ -222,9 +222,9 @@
                         </a>
                     </div>
                 @else
-                    <div class="absolute top-6 right-12">
+                    <div class="absolute top-6 right-12 ">
                         <a href="{{route('loginvendor')}}" class="text-xl font-medium text-black mr-10">LOG IN</a>
-                        <a href="{{route('registervendor')}}" class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">REGISTER</a>
+                        <a href="{{route('registervendor')}}"  class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5 ml-[20px]">REGISTER</a>
                     </div>
                 @endif
 
