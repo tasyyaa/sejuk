@@ -231,7 +231,7 @@
                         </div>
                     @else
                         <div class="absolute top-6 right-12">
-                            <a href="{{route('choose-login')}}" class="text-xl font-medium text-black mr-10">LOG IN</a>
+                            <a href="{{route('choose-login')}}" class="text-xl font-medium text-black">LOG IN</a>
                             <a href="{{route('choose-register')}}" class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">REGISTER</a>
                         </div>
                     @endif
