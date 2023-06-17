@@ -173,34 +173,34 @@
             @if (
                 $order->order_status === \App\Models\Order::SHIPPED_BACK_RETURN ||
                     $order->order_status === \App\Models\Order::COMPETED_RETURN)
-                <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
-                    <h1 class="ml-4 font-bold">Return Package Details</h1>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                <div class="flex flex-col mx-7 text-[22px] mt-8">
+                    <h1 class="font-bold text-[26px]">Return Package Details</h1>
+                    <div class="flex flex-row mt-[20px]">
+                        <h1 class="w-[215px] font-semibold">
                             Customer Address
                         </h1>
                         <h1>: {{ $order->returnPackage->customer_address }}</h1>
                     </div>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Vendor Address
                         </h1>
                         <h1>: {{ $order->returnPackage->vendor_address }}</h1>
                     </div>
-                    <div class="flex flex-row ">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Shipment Type </h1>
                         <h1>: {{ $order->returnPackage->shippingMethod->name }}</h1>
                     </div>
 
-                    <div class="flex flex-row gap-4 items-center">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row items-center mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             No Resi </h1>
                         <h1>: {{ $order->returnPackage->no_resi }}</h1>
                     </div>
 
-                    <div class="flex flex-row gap-4 items-center">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row items-center mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Nama kurir </h1>
                         <h1>: {{ $order->returnPackage->nama_kurir }}</h1>
                     </div>
@@ -288,7 +288,7 @@
             @elseif($order->order_status === \App\Models\Order::SHIPPED_BACK_RETURN)
                 <a href="{{ route('accept-payment', ['id' => $order->id]) }}">
                     <div
-                        class="w-[196px] flex items-center justify-center text-xl font-semibold h-[51px] rounded-lg bg-gray-400 ">
+                        class="w-[250px] flex items-center justify-center text-[20px] font-semibold h-[75px] rounded-lg bg-[#497174] text-[#D6E4E5]  ">
                         <h1>Accept Payment</h1>
                     </div>
                 </a>
