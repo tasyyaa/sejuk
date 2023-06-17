@@ -9,7 +9,7 @@
         <div class="container mx-auto ">
             <div class="flex justify-between w-full  py-2 pb-8">
                 <div class="text-3xl font-black text-[#497174]">
-                    Order Keranjang
+                    Cart Order
                 </div>
 
             </div>
@@ -21,10 +21,10 @@
 {{--                                <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">--}}
 {{--                                <label for="default-checkbox" class="ml-2 text-sm font-semibold text-gray-900 dark:text-gray-300 ">Pilih Semua</label>--}}
                             </div></th>
-                        <th class=" font-semibold border-b-2 ">Toko</th>
-                        <th class="px-4 py-3 font-semibold border-b-2 ">Harga Satuan</th>
-                        <th class="px-4 py-3 font-semibold border-b-2 ">Jumlah Barang</th>
-                        <th class="px-2 font-semibold border-b-2 ">Total Harga</th>
+                        <th class=" font-semibold border-b-2 ">Shop</th>
+                        <th class="px-4 py-3 font-semibold border-b-2 ">Unit Price</th>
+                        <th class="px-4 py-3 font-semibold border-b-2 ">itemm Quantity</th>
+                        <th class="px-2 font-semibold border-b-2 ">Total Price</th>
                         <th class="px-4 py-3 font-semibold border-b-2 ">
 {{--                            <button type="submit" class=" text-white btn bg-[#D7306C] hover:bg-[#D7306C]-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">--}}
 {{--                                Hapus</button>--}}
@@ -48,7 +48,7 @@
                                         {{$cart->catalog->item_name}}
                                     </div>
                                     <div class="text-sm text-[#A89E9E] dark:text-gray-200 pt-2">
-                                        Varian: {{$cart->catalog->size}}
+                                        Variant: {{$cart->catalog->size}}
                                     </div>
                                 </div></div>
                         </td>
@@ -69,7 +69,7 @@
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="bg-transparent hover:bg-[#D7306C] text-[#D7306C] font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent flex rounded-full">
-                                    Hapus
+                                    Delete
                                 </button>
                             </form>
                         </td>
@@ -89,7 +89,7 @@
             <div class="bg-white rounded-lg shadow-lg mt-10 border-2 mb-10">
                 <div class="columns-2 mt-10  mx-auto  bg-white">
                     <div class="text-3xl font-bold text-[#497174] px-8 py-4">
-                        Pilih Metode Pengiriman
+                        Select Shipping Method
                     </div>
                     <table class="border-collapse table-fixed hover:table-fixed ">
 
@@ -102,7 +102,7 @@
                                         <label class="ml-4 text-m font-bold text-[#675959] pr-20">
                                             {{$shippingMethod->name}}</label>
                                         <div class="ml-4 text-sm font-medium text-[#675959] pr-20">
-                                            Estimasi: {{$shippingMethod->estimate_delivery}}</div>
+                                            Estimated: {{$shippingMethod->estimate_delivery}}</div>
                                     </div>
                                 </div>
                             </td>
@@ -120,7 +120,7 @@
                     <div class=" flex justify-center items-center pt-5 pl-10 pb-32 ">
                         <div class=" rounded overflow-hidden shadow-lg  bg-white">
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2">Ringkasan Belanja</div>
+                                <div class="font-bold text-xl mb-2">Order Summary</div>
                                 <table class= "border-separate border-spacing-2 border-slate-400 font-semibold text-md">
                                     <tbody>
                                     <tr>
@@ -162,7 +162,7 @@
                 <div class="columns-2 mx-auto bg-white">
                     <div class="rounded overflow-hidden">
                         <div class="text-3xl font-bold text-[#497174] px-8 py-4 mb-4">
-                            Pilih Metode Pembayaran
+                            Select Payment Method
                         </div>
 
                         @foreach($paymentGroups as $key => $paymentMethods)
