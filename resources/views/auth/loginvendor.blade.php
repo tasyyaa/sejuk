@@ -270,7 +270,7 @@
 
                                 </div>
                                 <div >
-                                    <button type="submit" class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign In</button>
+                                    <button type="submit" class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">LOG IN</button>
                                 </div>
                                 <a class="underline text-sm text-gray-600 hover:text-gray-900"
                                    href="{{ route('registervendor') }}">
