@@ -442,7 +442,7 @@
     <div class="bg-[#FFFFFF] ml-[15px] mr-[15px] rounded-md">
         <div class="flex flex-row ml-[28px]">
             <div class="flex flex-col gap-[20px] ml-[28px]">
-                <img src="{{ asset('storage/' . $order->items[0]->catalog->catalog_image) }}" class="object-left mt-3" width=306px>
+                <img src="{{ asset('storage/' . $item->catalog->catalog_image) }}" class="object-left mt-3" width=306px>
             </div>
             <div class="flex flex-col gap-x-[550px] ml-[28px]">
                 <div class="flex flex-row">
