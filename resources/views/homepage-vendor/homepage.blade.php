@@ -57,7 +57,7 @@
                         <form method="POST" action="{{route('delete-catalog', ['id' => $product->catalog_id])}}" >
                             @method('DELETE')
                             @csrf
-                            <button type="submit" class="bg-red-600 rounded py-1 px-3">Hapus</button>
+                            <button type="submit" class="bg-red-600 rounded py-1 px-3">Delete</button>
                         </form>
                     </div>
                     <img src="{{url('storage/'.$product->catalog_image)}}" alt="{{$product->item_name}}" class="bg-[#DCE2E7] w-[348px] h-[303px]" />
