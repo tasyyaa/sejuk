@@ -50,40 +50,45 @@
             </div>
 {{--            <h1 class="font-bold text-xl">Dracula Halloween Costume</h1>--}}
         </div>
-        <div class="flex flex-row mx-7 mt-16 mb-8 justify-between">
-            <div class="flex flex-col gap-1 text-xl">
+        <div class="flex flex-row mx-7 mt-8 mb-8 justify-between">
+            <div class="flex flex-col text-[22px]">
                 <div class="flex flex-row">
-                    <h1 class="w-[215px]">
+                <h1 class="font-bold text-[26px]">
+                    Order Detail
+                </h1>
+                </div>
+                <div class="flex flex-row mt-[20px]">
+                    <h1 class="w-[215px] font-semibold text-[22px]">
                         Customer Name
                     </h1>
                     <h1>: {{$order->user->name}}</h1>
                 </div>
-                <div class="flex flex-row ">
-                    <h1 class="w-[215px]">
+                <div class="flex flex-row mt-[5px]">
+                    <h1 class="w-[215px] font-semibold">
                         Customer Email
                     </h1>
-                    <h1>: {{$order->user->email}}</h1>
+                    <h1 >: {{$order->user->email}}</h1>
                 </div>
-                <div class="flex flex-row ">
-                    <h1 class="w-[215px]">
+                <div class="flex flex-row mt-[5px]">
+                    <h1 class="w-[215px] font-semibold">
                         Payment Method
                     </h1>
                     <h1>: {{$order->transaction->paymentMethod->type}}</h1>
                 </div>
-                <div class="flex flex-row">
-                    <h1 class="w-[215px]">
+                <div class="flex flex-row mt-[5px]">
+                    <h1 class="w-[215px] font-semibold">
                         Total Paid
                     </h1>
                     <h1>: Rp{{$order->total_price}}</h1>
                 </div>
-                <div class="flex flex-row">
-                    <h1 class="w-[215px]">
+                <div class="flex flex-row mt-[5px]">
+                    <h1 class="w-[215px] font-semibold">
                         Status
                     </h1>
                     <h1>: {{$order->order_status}}</h1>
                 </div>
             </div>
-            <div class="flex flex-col w-full ml-12">
+            {{-- <div class="flex flex-col w-full ml-12">
                 <h1 class="font-bold text-2xl">
                     Order Detail
                 </h1>
@@ -92,30 +97,30 @@
                     {{$item->catalog->item_name}} - {{$item->catalog->category->category_type}} - {{$item->amount}} pcs
                 </div>
                 @endforeach
-            </div>
+            </div> --}}
 
         </div>
-        <div class="flex flex-col mx-7 gap-10 text-xl">
-            <h1 class="ml-4 font-bold">Package Details</h1>
-            <div class="flex flex-row">
-                <h1 class="w-[215px]">
+        <div class="flex flex-col mx-7 text-[22px]">
+            <h1 class="font-bold text-[26px]">Package Details</h1>
+            <div class="flex flex-row mt-[20px]">
+                <h1 class="w-[215px] font-semibold">
                     Customer Address
                 </h1>
                 <h1>: {{$order->shipping->customer_address}}</h1>
             </div>
             <div class="flex flex-row ">
-                <h1 class="w-[215px]">
+                <h1 class="w-[215px] font-semibold">
                     Shipment Type </h1>
                 <h1>: {{$order->shipping->shippingMethod->name}}</h1>
             </div>
 
-            <div class="flex flex-row gap-4 items-center">
+            <div class="flex flex-row">
                 @if($order->order_status === \App\Models\Order::PAID)
                     <label class="w-[278px]" for="cust_res">No. Resi</label>
                     <input class="w-[400px] h-[47px] ring-1 ring-black text-xl px-2 placeholder:text-gray-700"
                            type="text" name="no_resi" required placeholder="no resi">
                 @else
-                    <h1 class="w-[215px]">
+                    <h1 class="w-[215px] font-semibold">
                         No Resi </h1>
                     <h1>: {{$order->shipping->no_resi}}</h1>
                 @endif
