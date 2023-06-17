@@ -262,7 +262,7 @@
                                     <div class="mr-0 2xl:mr-24">
                                         @if (Route::has('password.request.vendor'))
                                             <a class="underline text-sm text-gray-400 hover:text-black-900  text-[#000000] mr-16"
-                                               href="{{ route('password.request') }}">
+                                               href="{{ route('password.request.vendor') }}">
                                                 Forget Password
                                             </a>
                                         @endif
