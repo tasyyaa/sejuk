@@ -78,7 +78,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class ="w-auto h-32 mx-auto rounded-lg shadow-lg mt-10 border-2 bg-white">
+            <div class ="w-auto h-32 mx-auto rounded-lg shadow-lg mt-10 border-2 bg-white"> <a href="/profile/edit">
                 <div class="text-3xl font-bold text-[#497174] px-8 py-4">
                     Address
                 </div>
