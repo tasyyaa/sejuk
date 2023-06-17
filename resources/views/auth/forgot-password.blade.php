@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('title')
-    Forgot Password
+    Forget Password
 @endsection
 
 @section('additional-sheet')

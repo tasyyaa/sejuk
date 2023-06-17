@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('title')
-Sign Up
+Register
 @endsection
 
 @section('additional-sheet')

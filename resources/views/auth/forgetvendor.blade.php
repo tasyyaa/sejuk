@@ -203,7 +203,7 @@
                                     <div class="mx-auto">
                                         <button
                                             class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                            SIGN IN
+                                            Log In
                                         </button>
                                     </div>
                                 </div>

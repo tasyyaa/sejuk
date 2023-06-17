@@ -233,7 +233,7 @@
             </div>
         </div>
     </nav>
-<!--nav end--> 
+<!--nav end-->
 
     <form style="background: linear-gradient(180deg, #FFFFFF 0%, #F9F5F2 100%);" class="" action="{{route('registervendornext')}}"
       x-data="{
@@ -291,7 +291,7 @@
         <div class="flex flex-row gap-48 my-16">
             <button type="submit" class="w-[310px] h-[62px] hover:bg-slate-200 bg-white ring-1 ring-black text-3xl flex justify-center text-black placeholder:text-[#BFB9B9] items-center"
                 :disabled="!startTime || !endTime || !isValidVendorstoreaddress">
-                SIGN UP
+              REGISTER
             </button>
         </div>
         <div>
