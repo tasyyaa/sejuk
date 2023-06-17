@@ -266,19 +266,19 @@
             <h1 class="text-3xl font-semibold">COMPLETE YOUR ACCOUNT</h1>
             <p class="text-[#BFB9B9] text-2xl w-[460px]">Please fill in a few details below about your business!</p>
         </div>
-        <div>
+        <div class="mt-12">
             <label for="start_time" class="input-label">Start Time:</label>
             <div class="input-container">
-                <input type="time" id="start_time" x-model="startTime" class="custom-input" name="oprhours_open">
-            </div>
+            <input type="time" id="start_time" x-model="startTime" class="custom-input w-[600px] h-[102px] border-1 border-black" name="oprhours_open">
+        </div>
             <p class="text-red-500 mt-1" x-show="!startTime">Start time is required.</p>
         </div>
-        <div>
+        <div class="mt-12">
             <label for="end_time" class="input-label">End Time:</label>
             <div class="input-container">
-                <input type="time" id="end_time" x-model="endTime" class="custom-input" name="oprhours_close">
-            </div>
-            <p class="text-red-500 mt-1" x-show="!endTime">End time is required.</p>
+            <input type="time" id="end_time" x-model="endTime" class="custom-input w-[600px] h-[102px] border-1 border-black" name="oprhours_close">
+        </div>
+        <p class="text-red-500 mt-1" x-show="!endTime">End time is required.</p>
         </div>
         <div>
             <input x-model="vendorstoreaddress" x-on:input="isValidVendorstoreaddress = vendorstoreaddress.trim() !== ''"
