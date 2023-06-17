@@ -177,6 +177,7 @@
     </style>
 @endsection
 
+@section('child-layout')
 <div class="bg-blackoverflow-hidden h-screen overflow-x-hidden" x-data="{navOpen: false, faqOpen: false, faqNavOpen: false }">
     <!-- nav start -->
     <nav>
