@@ -114,9 +114,9 @@
                     <h1>: {{ $order->shipping->shippingMethod->name }}</h1>
                 </div>
 
-                <div class="flex flex-row">
+                <div class="flex flex-row mt-[5px]">
                     @if ($order->order_status === \App\Models\Order::PAID)
-                        <label class="w-[278px]" for="cust_res">No. Resi</label>
+                        <label class="w-[215px] font-semibold text-[22px]" for="cust_res">No. Resi</label>
                         <input class="w-[400px] h-[47px] ring-1 ring-black text-xl px-2 placeholder:text-gray-700"
                             type="text" name="no_resi" required placeholder="no resi">
                     @else
