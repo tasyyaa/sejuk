@@ -5,6 +5,7 @@
 @endsection
 
 @section('additional-sheet')
+<script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             width: 100%;
@@ -250,18 +251,22 @@
 
                             <!-- Remember Me -->
                             <div class="flex items-center mt-4 justify-between flex-row">
+                                <div>
                                 <label for="remember_me" class="inline-flex items-center">
                                     <input id="remember_me" type="checkbox"
                                         class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                         name="remember">
                                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                 </label>
+                            </div>
+                            <div class="mr-0 2xl:mr-24">
                                 @if (Route::has('password.request'))
-                                    <a class="underline text-sm text-gray-400 hover:text-black-900 text-[#000000] mr-16"
+                                    <a class="underline text-sm text-gray-400 hover:text-black-900  text-[#000000] mr-16"
                                        href="{{ route('password.request') }}">
                                         Forgot Password
                                     </a>
                                 @endif
+                            </div>
                             </div>
                             <div>
                                 <button type="submit" class="w-[594px] h-[49px] bg-black text-white font-bold mr-16 text-lg">Sign In</button>
@@ -280,7 +285,7 @@
 
                                 <!-- Faq Open -->
                                 <div x-show="faqOpen==true"
-                                    class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[900px] bg-white rounded-[10px] bottom-10 right-10"
+                                    class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[500px] bg-white rounded-[10px] 2xl:bottom-20 bottom-10 right-10"
                                     x-data="{ tab: '' }">
                                     <div class="flex flex-row items-center justify-between bg-[#497174] py-4 px-6 rounded-[10px]">
                                         <img src="/images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
