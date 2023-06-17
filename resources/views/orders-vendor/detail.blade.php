@@ -207,28 +207,28 @@
                 </div>
             @endif
             @if ($order->order_status === \App\Models\Order::COMPLETD_APPLY_RETURN)
-                <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
-                    <h1 class="ml-4 font-bold">Form Apply Return Payment Details</h1>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                <div class="flex flex-col mx-7 text-[22px] mt-8">
+                    <h1 class="font-bold text-[26px]">Form Apply Return Payment Details</h1>
+                    <div class="flex flex-row mt[20px]">
+                        <h1 class="w-[215px] font-semibold">
                             Bank Name
                         </h1>
                         <h1>: {{ $order->formReturnPayment->sejukBankAccountOutcome->bank_name }}</h1>
                     </div>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Bank Account Name
                         </h1>
                         <h1>: {{ $order->formReturnPayment->sejukBankAccountOutcome->bank_account_name }}</h1>
                     </div>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Bank Account Number
                         </h1>
                         <h1>: {{ $order->formReturnPayment->sejukBankAccountOutcome->bank_account_number }}</h1>
                     </div>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Transfer Amount
                         </h1>
                         <h1>: Rp{{ $order->formReturnPayment->sejukBankAccountOutcome->transfer_amount }}</h1>
@@ -236,28 +236,28 @@
                 </div>
             @endif
             @if ($order->order_status === \App\Models\Order::COMPETED_RETURN)
-                <div class="flex flex-col mx-7 gap-10 text-xl mt-8">
-                    <h1 class="ml-4 font-bold">Accept Payment Details</h1>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                <div class="flex flex-col mx-7 text-[22px] mt-8">
+                    <h1 class="font-bold text-[26px]">Accept Payment Details</h1>
+                    <div class="flex flex-row mt-[20px]">
+                        <h1 class="w-[215px] font-semibold">
                             Bank Name
                         </h1>
                         <h1>: {{ $order->formAcceptPayment->sejukBankAccountOutcome->bank_name }}</h1>
                     </div>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Bank Account Name
                         </h1>
                         <h1>: {{ $order->formAcceptPayment->sejukBankAccountOutcome->bank_account_name }}</h1>
                     </div>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Bank Account Number
                         </h1>
                         <h1>: {{ $order->formAcceptPayment->sejukBankAccountOutcome->bank_account_number }}</h1>
                     </div>
-                    <div class="flex flex-row">
-                        <h1 class="w-[215px]">
+                    <div class="flex flex-row mt-[5px]">
+                        <h1 class="w-[215px] font-semibold">
                             Transfer Amount
                         </h1>
                         <h1>: Rp{{ $order->formAcceptPayment->sejukBankAccountOutcome->transfer_amount }}</h1>
