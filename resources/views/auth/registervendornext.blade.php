@@ -304,7 +304,7 @@
 
             <!-- Faq Open -->
             <div x-show="faqOpen==true"
-                class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[900px] bg-white rounded-[10px] bottom-10 right-10"
+            class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[500px] bg-white rounded-[10px] 2xl:bottom-20 bottom-10 right-10"
                 x-data="{ tab: '' }">
                 <div class="flex flex-row items-center justify-between bg-[#497174] py-4 px-6 rounded-[10px]">
                     <img src="/images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
