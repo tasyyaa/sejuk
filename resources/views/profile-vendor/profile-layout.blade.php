@@ -263,13 +263,13 @@
                                         @csrf
                                         <button type="submit"
                                                 class="bg-[#497174] mt-[20px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                           SIGN OUT
+                                          LOG OUT
                                         </button>
                                     </form>
                                 @else
                                     <a href="{{route('loginvendor')}}"
                                        class="bg-[#497174] mt-[20px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                        SIGN IN
+                                        LOG IN
                                     </a>
                                 @endif
                             </div>

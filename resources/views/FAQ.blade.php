@@ -16,7 +16,7 @@
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <title>Sign In</title>
+    <title>LOG IN</title>
     <style>
         body {
             width: 100%;

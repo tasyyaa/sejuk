@@ -231,8 +231,8 @@
                         </div>
                     @else
                         <div class="absolute top-6 right-12">
-                            <a href="{{route('choose-login')}}" class="text-xl font-medium text-black mr-10">Sign in</a>
-                            <a href="{{route('choose-register')}}" class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">Sign up</a>
+                            <a href="{{route('choose-login')}}" class="text-xl font-medium text-black mr-10">LOG IN</a>
+                            <a href="{{route('choose-register')}}" class="text-xl font-medium text-white bg-[#3C9379] rounded-lg py-2 px-8 mr-5">REGISTER</a>
                         </div>
                     @endif
 
@@ -274,13 +274,13 @@
                                         @csrf
                                         <button type="submit"
                                             class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                            SIGN OUT
+                                           LOG OUT
                                         </button>
                                     </form>
                                 @else
                                     <a href="/signin"
                                         class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
-                                        SIGN IN
+                                       LOG IN
                                     </a>
                                 @endif
                             </div>
