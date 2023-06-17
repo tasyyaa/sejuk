@@ -241,13 +241,14 @@
                     <div class="flex flex-row ">
                         <div class=" relative w-full">
                             <div class=" mt-">
+                                <form>
                                 <div class="relative flex ml-12 justify-center">
                                     <input
                                         class="w-[700px]  text-2xl h-[70px] rounded-full bg-[#e4e4e4] text-[#565656] font-bold pl-4 focus:outline-0 placeholder:text-[#565656]"
-                                        placeholder="Search by product, category,  size, etc." type="text">
-                                    <i class="fa fa-search fa-2x absolute right-5 bottom-5" aria-hidden="true"></i>
+                                        placeholder="Search by product, category,  size, etc." type="text" name="q" value="{{request()->query('q')}}">
+                                    <i class="fa fa-search fa-2x absolute right-5 bottom-5" aria-hidden="true" ></i>
                                 </div>
-
+                                </form>
                             </div>
                             <div
                                 class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
