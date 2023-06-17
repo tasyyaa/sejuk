@@ -1610,6 +1610,9 @@ input:checked + .toggle-bg {
 .mb-\[20px\] {
   margin-bottom: 20px;
 }
+.ml-6 {
+  margin-left: 1.5rem;
+}
 .block {
   display: block;
 }
@@ -2229,6 +2232,12 @@ input:checked + .toggle-bg {
 .gap-\[78px\] {
   gap: 78px;
 }
+.gap-\[px\] {
+  gap: px;
+}
+.gap-\[67px\] {
+  gap: 67px;
+}
 .gap-x-\[550px\] {
   -moz-column-gap: 550px;
        column-gap: 550px;
@@ -2669,6 +2678,14 @@ input:checked + .toggle-bg {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
