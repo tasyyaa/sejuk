@@ -1607,6 +1607,9 @@ input:checked + .toggle-bg {
 .mr-\[60px\] {
   margin-right: 60px;
 }
+.mb-\[20px\] {
+  margin-bottom: 20px;
+}
 .block {
   display: block;
 }
@@ -1786,6 +1789,9 @@ input:checked + .toggle-bg {
 }
 .h-\[750px\] {
   height: 750px;
+}
+.h-\[480px\] {
+  height: 480px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -2769,6 +2775,12 @@ input:checked + .toggle-bg {
 .pt-\[20px\] {
   padding-top: 20px;
 }
+.pl-20 {
+  padding-left: 5rem;
+}
+.pt-\[36px\] {
+  padding-top: 36px;
+}
 .text-left {
   text-align: left;
 }
@@ -3226,6 +3238,10 @@ input:checked + .toggle-bg {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#497174\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(73 113 116 / var(--tw-bg-opacity));
 }
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
