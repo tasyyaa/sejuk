@@ -495,7 +495,7 @@
     </div>
     <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
         <div class="flex flex-row">
-            <div class="flex flex-col ml-[28px]">
+            <div class="flex flex-col w-[915px] ml-[28px]">
                 <div class="flex flex-row">
                     <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">Shipping Information</p>
                 </div>
@@ -512,7 +512,7 @@
                     <p class="d-inline-block align-text- text-bold text-[#675959] text-[22px]">{{$order->shipping->customer_address}}</p>
                 </div>
             </div>
-            <div class="flex flex-col ml-[650px]">
+            <div class="flex flex-col">
                 <div class="flex flex-row">
                     <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">No. Resi</p>
                 </div>
@@ -525,7 +525,7 @@
     @if($order->order_status === \App\Models\Order::SHIPPED_BACK_APPLY_RETURN || $order->order_status === \App\Models\Order::COMPLETD_APPLY_RETURN)
         <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
             <div class="flex flex-row">
-                <div class="flex flex-col ml-[28px]">
+                <div class="flex flex-col w-[915px] ml-[28px]">
                     <div class="flex flex-row">
                         <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">Apply Return Shipping Information</p>
                     </div>
@@ -542,7 +542,7 @@
                         <p class="d-inline-block align-text- text-bold text-[#675959] text-[22px]">{{$order->applyReturn->vendor_address}}</p>
                     </div>
                 </div>
-                <div class="flex flex-col ml-[600px]">
+                <div class="flex flex-col">
                     <div class="flex flex-row">
                         <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">No. Resi</p>
                     </div>
@@ -569,7 +569,7 @@
     @if($order->order_status === \App\Models\Order::SHIPPED_BACK_RETURN || $order->order_status === \App\Models\Order::COMPETED_RETURN)
         <div class="bg-[#FFFFFF] mt-[15px] ml-[15px] mr-[15px] pt-[20px] pb-[20px] rounded-sm">
             <div class="flex flex-row">
-                <div class="flex flex-col ml-[28px]">
+                <div class="flex flex-col w-[915px] ml-[28px]">
                     <div class="flex flex-row">
                         <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">Return Package Shipping Information</p>
                     </div>
@@ -586,7 +586,7 @@
                         <p class="d-inline-block align-text- text-bold text-[#675959] text-[22px]">{{$order->returnPackage->vendor_address}}</p>
                     </div>
                 </div>
-                <div class="flex flex-col ml-[550px]">
+                <div class="flex flex-col">
                     <div class="flex flex-row">
                         <p class="d-inline-block align-text- font-bold text-[#675959] text-[26px]">No. Resi</p>
                     </div>
