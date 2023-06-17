@@ -1,7 +1,7 @@
 @extends('homepage.navbar')
 
 @section('title')
-    My Orders
+    My Purchases
 @endsection
 
 @section('content')

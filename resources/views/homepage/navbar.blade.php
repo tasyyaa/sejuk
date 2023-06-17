@@ -209,10 +209,10 @@
                         <form action="/">
                         <div
                             class="flex justify-center  w-[104px] absolute right-0 items-center h-[40px] bg-[#497174] rounded-md">
-                            <button type="submit"><i class="fas fa-search text-xl font-medium text-white"></i></button>
+                            <button type="submit"><i class="fa fa-search text-xl font-medium text-white"></i></button>
                         </div>
                             <input type="text" name="q"
-                                class="w-[508px] h-[40px] pl-3 rounded-lg  focus:ring-0 focus:border-transparent"
+                                class="w-[508px] h-[40px] pl-5 rounded-lg  focus:ring-0 focus:border-transparent"
                                 placeholder="Search" value="{{request()->query('q')}}">
                         </form>
                     </div>
