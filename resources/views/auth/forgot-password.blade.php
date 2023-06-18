@@ -188,19 +188,16 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="flex font-bold text-left mt-10 items-start ml-20 justify-center text-[#565656] flex-col gap-[78px]">
-                                    <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
-                                        <div>
-                                            <h1>Home</h1>
-                                        </div>
-                                        <div>
-                                            <h1>My Purchases</h1>
-                                        </div>
-                                        <div @click="faqOpen=true" class="cursor-pointer">
-                                            <h1>FAQ</h1>
-                                        </div>
+                                class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
+                                <div class="flex flex-col gap-[30px] justify-start text-left text-2xl">
+                                    <div  style="font-weight: 600; color:#565656; text-[40px]">
+                                        <a href="/">HOME</a>
+                                    </div>
+                                    <div @click="faqOpen=true" class="cursor-pointer">
+                                        <a >FAQ</a>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                             <div class="w-full">
                                 <div class="logo flex ml-[780px] fill-[#4a7174]">
@@ -256,10 +253,11 @@
                                 </button>
                             </div>
                         </div>
+
                         <div>
                             <!-- Faq Toogle -->
                             <img x-show="navOpen===false" @click="faqOpen=true" x-transition x-cloak
-                                src="images/faq-logo-dark.png" id="faq-dark" alt="faq"
+                                src="/images/faq-logo-dark.png" id="faq-dark" alt="faq"
                                 x-bind:class="faqOpen == true ? 'hidden' :
                                     ''"
                                 class="w-[5%] absolute bottom-16 right-14 cursor-pointer" />
@@ -269,8 +267,8 @@
                             class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[500px] bg-white rounded-[10px] 2xl:bottom-20 bottom-10 right-10"
                                 x-data="{ tab: '' }">
                                 <div class="flex flex-row items-center justify-between bg-[#497174] py-4 px-6 rounded-[10px]">
-                                    <img src="images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
-                                    <img src="images/close-logo.png" alt="faq" class="w-[42px] h-[42px] cursor-pointer"
+                                    <img src="/images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
+                                    <img src="/images/close-logo.png" alt="faq" class="w-[42px] h-[42px] cursor-pointer"
                                         @click="faqOpen=false" />
                                 </div>
                                 <div class="flex flex-col" x-show="tab === ''" x-cloak x-transition>
@@ -280,7 +278,7 @@
                                     <hr class="w-full h-[1px] bg-black/10" />
                                     <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                         @click="tab='general'">
-                                        <img src="images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
+                                        <img src="/images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             General
                                         </p>
@@ -288,7 +286,7 @@
                                     <hr class="w-full h-[1px] bg-black/10" />
                                     <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                         @click="tab='shipping'">
-                                        <img src="images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                        <img src="/images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             Shipping
                                         </p>
@@ -296,7 +294,7 @@
                                     <hr class="w-full h-[1px] bg-black/10" />
                                     <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                         @click="tab='payment'">
-                                        <img src="images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                        <img src="/images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             Payment
                                         </p>
@@ -304,7 +302,7 @@
                                     <hr class="w-full h-[1px] bg-black/10" />
                                     <div class="flex flex-row items-center gap-5 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                         @click="tab='return'">
-                                        <img src="images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                        <img src="/images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             Return
                                         </p>
@@ -314,7 +312,7 @@
                                 <div x-show="tab === 'general'" class="flex flex-col" x-transition x-cloak>
                                     <div class="flex flex-row items-center gap-3 py-2 px-3 hover:bg-slate-200 cursor-pointer"
                                         @click="tab=''">
-                                        <img src="images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
+                                        <img src="/images/logo-dark.png" alt="logo" class="w-[64px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             General
                                         </p>
@@ -334,34 +332,15 @@
                                 <div x-show="tab === 'shipping'" class="flex flex-col" x-transition x-cloak>
                                     <div class="flex flex-row items-center gap-4 py-2 px-8 hover:bg-slate-200 cursor-pointer"
                                         @click="tab=''">
-                                        <img src="images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                        <img src="/images/shipping-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             Shipping
                                         </p>
                                     </div>
                                     <hr class="w-full h-[1px] bg-black/10" />
-                                    <div class="flex flex-row items-start px-8 pt-4 gap-2">
-                                        <h3 class="text-xl font-semibold text-black">
-                                            1.
-                                        </h3>
-                                        <div class="flex flex-col">
-                                            <h3 class="text-xl font-semibold text-black">
-                                                How to use free delivery
-                                                feature?
-                                            </h3>
-                                            <p class="text-base text-black">
-                                                Free delivery can be
-                                                obtained by entering a free
-                                                shipping voucher code in the
-                                                voucher column with a
-                                                maximum discount of
-                                                Rp30,000.00.
-                                            </p>
-                                        </div>
-                                    </div>
                                     <div class="flex flex-row items-start px-8 py-1 gap-2">
                                         <h3 class="text-xl font-semibold text-black">
-                                            2.
+                                            1.
                                         </h3>
                                         <div class="flex flex-col">
                                             <h3 class="text-xl font-semibold text-black">
@@ -369,21 +348,16 @@
                                                 options that SEJUK provide?
                                             </h3>
                                             <p class="text-base text-black">
-                                                SEJUK provides 4 regular and
-                                                economical shipping options,
-                                                as well as two instant
-                                                shipping options. Regular
-                                                and economical shipping can
+                                                SEJUK provides regular
+                                                and economical shipping which can
                                                 be done using JNE, J&T,
-                                                SiCepat, and Anteraja. For
-                                                instant shipping we provide
-                                                GoSend and GrabExpress
+                                                SiCepat, and for instant shipping we provide GoSend.
                                             </p>
                                         </div>
                                     </div>
                                     <div class="flex flex-row items-start px-8 pb-1 gap-2">
                                         <h3 class="text-xl font-semibold text-black">
-                                            3.
+                                            2.
                                         </h3>
                                         <div class="flex flex-col">
                                             <h3 class="text-xl font-semibold text-black">
@@ -393,9 +367,7 @@
                                             <p class="text-base text-black">
                                                 Shipping options cannot be
                                                 changed once the order has
-                                                been placed. Therefore, pay
-                                                close attention to the
-                                                chosen shipping option.
+                                                been placed.
                                             </p>
                                         </div>
                                     </div>
@@ -405,7 +377,7 @@
                                 <div x-show="tab === 'payment'" class="flex flex-col" x-transition x-cloak>
                                     <div class="flex flex-row items-center gap-2 py-2 px-8 hover:bg-slate-200 cursor-pointer"
                                         @click="tab=''">
-                                        <img src="images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                        <img src="/images/payment-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             Payment
                                         </p>
@@ -422,11 +394,9 @@
                                             </h3>
                                             <p class="text-sm text-black">
                                                 SEJUK supports 4 types of
-                                                payment methods, namely COD,
-                                                Bank Transfer (Virtual
-                                                Machine Account), Credit
-                                                Card, and
-                                                Alfamarat/Indomaret.
+                                                payment methods, Bank Transfer (Virtual
+                                                Machine Account), and Credit
+                                                Card.
                                             </p>
                                         </div>
                                     </div>
@@ -443,11 +413,7 @@
                                                 The payment method can be
                                                 changed at any time before
                                                 the payment is successfully
-                                                processed by SEJUK. To make
-                                                the change, you can go to
-                                                the payment options and
-                                                choose the payment method to
-                                                be used.
+                                                processed by SEJUK.
                                             </p>
                                         </div>
                                     </div>
@@ -465,13 +431,7 @@
                                                 The payment deadline for
                                                 each payment method is 24
                                                 hours after the order is
-                                                placed. If the buyer has not
-                                                paid the order beyond that
-                                                time, the order will be
-                                                automatically canceled by
-                                                the system and the buyer
-                                                must repeat the ordering
-                                                process from the beginning.
+                                                placed.
                                             </p>
                                         </div>
                                     </div>
@@ -481,7 +441,7 @@
                                 <div x-show="tab === 'return'" class="flex flex-col" x-transition x-cloak>
                                     <div class="flex flex-row items-center gap-4 py-2 px-8 hover:bg-slate-200 cursor-pointer"
                                         @click="tab=''">
-                                        <img src="images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
+                                        <img src="/images/return-logo.png" alt="logo" class="w-[58px] h-[57px]" />
                                         <p class="text-[#050505] text-[28px] font-medium">
                                             Return
                                         </p>
@@ -502,17 +462,8 @@
                                                 requests can be made in the
                                                 order status section by
                                                 selecting the "submit a
-                                                return request" option,
-                                                where you can fill out the
-                                                return form with reasons and
-                                                photos of the product.
-                                                Returns can be processed
-                                                once the seller has
-                                                confirmed your return
-                                                request form. Your payment
-                                                will be returned after the
-                                                returned product is received
-                                                by the seller.
+                                                return request" option.
+
                                             </p>
                                         </div>
                                     </div>
@@ -527,10 +478,7 @@
                                             </h3>
                                             <p class="text-base text-black">
                                                 You can send the package
-                                                using the shipping option
-                                                that will appear if the
-                                                return form has been
-                                                approved. Return shipping
+                                                using the shipping option. Return shipping
                                                 can only be done using JNE,
                                                 J&T, SiCepat, and Anteraja,
                                                 it must be done within 5
@@ -541,6 +489,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
 
                         </div>
                 </form>

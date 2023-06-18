@@ -264,6 +264,7 @@
                                     @endif
                                 </div>
                             </div>
+                            <br> <br> <br>  <br> <br> <br>
                             <div class="mx-auto">
                                 @if(auth()->guard('rentals')->check())
                                     <form action="{{route('logout.vendor')}}" method="POST">

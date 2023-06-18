@@ -113,30 +113,18 @@
                         </div>
                         <div class="dropdown-content">
                             <h3 class="text-xl font-semibold text-black">
-                                1. How to use free delivery feature?
-                            </h3>
-                            <p class="text-sm text-black">
-                                Free delivery can be
-                                obtained by entering a free
-                                shipping voucher code in the
-                                voucher column with a
-                                maximum discount of
-                                Rp30,000.00.
-                            </p>
-                            <br>
-                            <h3 class="text-xl font-semibold text-black">
-                                2. What are the shipping
+                                1. What are the shipping
                                 options that SEJUK provide?
                             </h3>
                             <p class="text-sm text-black">
                                 SEJUK provides regular
                                 and economical shipping which can
                                 be done using JNE, J&T,
-                                SiCepat, and Anteraja. For instant shipping we provide GoSend.
+                                SiCepat, and for instant shipping we provide GoSend.
                             </p>
                             <br>
                             <h3 class="text-xl font-semibold text-black">
-                                3. Can the shipping option be
+                                2. Can the shipping option be
                                 changed?
                             </h3>
                             <p class="text-sm text-black">
@@ -188,11 +176,7 @@
                                 The payment deadline for
                                 each payment method is 24
                                 hours after the order is
-                                placed. If the buyer has not
-                                paid the order beyond that
-                                time, the order will be
-                                automatically canceled by
-                                the system.
+                                placed.
                             </p>
                         </div>
                     </div>

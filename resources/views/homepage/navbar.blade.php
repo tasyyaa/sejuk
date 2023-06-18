@@ -269,6 +269,7 @@
                                     @endif
                                 </div>
                             </div>
+                            <br> <br> <br>   <br> <br> <br>   
                             <div class="mx-auto">
                                 @if (auth()->guard('web')->check())
                                     <form action="{{ route('logout') }}" method="POST">
@@ -279,7 +280,7 @@
                                         </button>
                                     </form>
                                 @else
-                                    <a href="/signin"
+                                    <a href="/choose-login"
                                         class="bg-[#497174] mt-[100px] w-[333px] text-white text-2xl font-semibold h-[55px]">
                                        LOG IN
                                     </a>
