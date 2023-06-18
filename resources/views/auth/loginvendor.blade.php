@@ -188,19 +188,16 @@
                                         </div>
                                     </div>
                                     <div
-                                        class="flex font-bold text-left mt-10 items-start ml-20 justify-center text-[#565656] flex-col gap-[78px]">
-                                        <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
-                                            <div>
-                                                <h1>Home</h1>
-                                            </div>
-                                            <div>
-                                                <h1>My Purchases</h1>
-                                            </div>
-                                            <div @click="faqOpen=true" class="cursor-pointer">
-                                                <h1>FAQ</h1>
-                                            </div>
+                                    class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
+                                    <div class="flex flex-col gap-[30px] justify-start text-left text-2xl">
+                                        <div  style="font-weight: 600; color:#565656; text-[40px]">
+                                            <a href="/">HOME</a>
+                                        </div>
+                                        <div @click="faqOpen=true" class="cursor-pointer">
+                                            <a >FAQ</a>
                                         </div>
                                     </div>
+                                </div>
                                 </div>
                                 <div class="w-full">
                                     <div class="logo flex ml-[780px] fill-[#4a7174] lg:ml-[700px]">
@@ -361,28 +358,9 @@
                                                 </p>
                                             </div>
                                             <hr class="w-full h-[1px] bg-black/10" />
-                                            <div class="flex flex-row items-start px-8 pt-4 gap-2">
-                                                <h3 class="text-xl font-semibold text-black">
-                                                    1.
-                                                </h3>
-                                                <div class="flex flex-col">
-                                                    <h3 class="text-xl font-semibold text-black">
-                                                        How to use free delivery
-                                                        feature?
-                                                    </h3>
-                                                    <p class="text-base text-black">
-                                                        Free delivery can be
-                                                        obtained by entering a free
-                                                        shipping voucher code in the
-                                                        voucher column with a
-                                                        maximum discount of
-                                                        Rp30,000.00.
-                                                    </p>
-                                                </div>
-                                            </div>
                                             <div class="flex flex-row items-start px-8 py-1 gap-2">
                                                 <h3 class="text-xl font-semibold text-black">
-                                                    2.
+                                                    1.
                                                 </h3>
                                                 <div class="flex flex-col">
                                                     <h3 class="text-xl font-semibold text-black">
@@ -393,13 +371,13 @@
                                                         SEJUK provides regular
                                                         and economical shipping which can
                                                         be done using JNE, J&T,
-                                                        SiCepat, and Anteraja. For instant shipping we provide GoSend.
+                                                        SiCepat, and for instant shipping we provide GoSend.
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="flex flex-row items-start px-8 pb-1 gap-2">
                                                 <h3 class="text-xl font-semibold text-black">
-                                                    3.
+                                                    2.
                                                 </h3>
                                                 <div class="flex flex-col">
                                                     <h3 class="text-xl font-semibold text-black">
@@ -473,11 +451,7 @@
                                                         The payment deadline for
                                                         each payment method is 24
                                                         hours after the order is
-                                                        placed. If the buyer has not
-                                                        paid the order beyond that
-                                                        time, the order will be
-                                                        automatically canceled by
-                                                        the system.
+                                                        placed.
                                                     </p>
                                                 </div>
                                             </div>

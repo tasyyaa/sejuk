@@ -186,34 +186,31 @@
                                         </div>
                                     </div>
                                     <div
-                                        class="flex font-bold text-left mt-10 items-start ml-20 justify-center text-[#565656] flex-col gap-[78px]">
-                                        <div class="flex flex-col gap-[30px] justify-start text-left text-3xl">
-                                            <div>
-                                                <h1>Home</h1>
-                                            </div>
-                                            <div>
-                                                <h1>My Purchases</h1>
+                                        class="flex font-bold text-left mt-10  items-start ml-20  justify-center text-[#565656] flex-col gap-[78px]">
+                                        <div class="flex flex-col gap-[30px] justify-start text-left text-2xl">
+                                            <div  style="font-weight: 600; color:#565656; text-[40px]">
+                                                <a href="/">HOME</a>
                                             </div>
                                             <div @click="faqOpen=true" class="cursor-pointer">
-                                                <h1>FAQ</h1>
+                                                <a >FAQ</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="w-full">
-                                    <div class="logo flex ml-[780px] fill-[#4a7174]">
-                                        <img class="w-20" src="/images/logo-side.svg" alt="" />
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="logo flex ml-[780px] fill-[#4a7174]">
+                                                <img class="w-20" src="/images/logo-side.svg" alt="" />
+                                            </div>
+                                            <img class="absolute top-0 right-0 w-[40%]" src="/images/sidebar.jpg"
+                                                alt="" />
+                                        </div>
                                     </div>
-                                    <img class="absolute top-0 right-0 w-[40%]" src="/images/sidebar.jpg" alt="" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </nav>
         <div class="flex  flex-row">
-
             <div class="w-full h-screen bg-[#fbf8f6] flex justify-center items-center">
                 <div>
                     <div class="flex gap-[30px] z-0 h-screen justify-center items-center flex-col pb-1">
@@ -224,23 +221,23 @@
                             Before Start the Journey, Please Assign your Roles First!
                         </label>
                         <button class="w-[450px] h-[50px] bg-black text-white font-bold mb-4 text-lg"
-                                onclick="window.location.href = '{{ $type == 'login' ? route('login') : route('register') }}'">Customer</button>
+                            onclick="window.location.href = '{{ $type == 'login' ? route('login') : route('register') }}'">Customer</button>
 
                         <button class="w-[450px] h-[50px] bg-black text-white font-bold text-lg"
-                                onclick="window.location.href = '{{ $type == 'login' ? route('loginvendor') : route('registervendor') }}'">Vendor</button>
+                            onclick="window.location.href = '{{ $type == 'login' ? route('loginvendor') : route('registervendor') }}'">Vendor</button>
                     </div>
                 </div>
                 <div>
                     <!-- Faq Toogle -->
-                    <img x-show="navOpen===false" @click="faqOpen=true" x-transition x-cloak
-                        src="/images/faq-logo-dark.png" id="faq-dark" alt="faq"
+                    <img x-show="navOpen===false" @click="faqOpen=true" x-transition x-cloak src="/images/faq-logo-dark.png"
+                        id="faq-dark" alt="faq"
                         x-bind:class="faqOpen == true ? 'hidden' :
                             ''"
                         class="w-[5%] absolute bottom-16 right-14 cursor-pointer" />
 
                     <!-- Faq Open -->
                     <div x-show="faqOpen==true"
-                    class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[500px] bg-white rounded-[10px] 2xl:bottom-20 bottom-10 right-10"
+                        class="absolute flex flex-col w-[500px] 2xl:w-[400px] h-[550px] 2xl:h-[500px] bg-white rounded-[10px] 2xl:bottom-20 bottom-10 right-10"
                         x-data="{ tab: '' }">
                         <div class="flex flex-row items-center justify-between bg-[#497174] py-4 px-6 rounded-[10px]">
                             <img src="/images/faq-logo.png" alt="faq" class="w-[57px] h-[62px]" />
@@ -299,7 +296,11 @@
                                     What is SEJUK?
                                 </h3>
                                 <p class="text-sm text-black mt-2">
-                                    SEJUK is a web application software that offers a clothing rental feature. The Sejuk application providers a platform for vendors to list their rental products such as clothes, customes, and other types of clothing. For application users, they can use the SEJUK application as a medium to search for clothing rental and various types of clothing they want.
+                                    SEJUK is a web application software that offers a clothing rental feature. The Sejuk
+                                    application providers a platform for vendors to list their rental products such as
+                                    clothes, customes, and other types of clothing. For application users, they can use the
+                                    SEJUK application as a medium to search for clothing rental and various types of
+                                    clothing they want.
                                 </p>
                             </div>
                         </div>
@@ -314,25 +315,6 @@
                                 </p>
                             </div>
                             <hr class="w-full h-[1px] bg-black/10" />
-                            <div class="flex flex-row items-start px-8 pt-4 gap-2">
-                                <h3 class="text-xl font-semibold text-black">
-                                    1.
-                                </h3>
-                                <div class="flex flex-col">
-                                    <h3 class="text-xl font-semibold text-black">
-                                        How to use free delivery
-                                        feature?
-                                    </h3>
-                                    <p class="text-base text-black">
-                                        Free delivery can be
-                                        obtained by entering a free
-                                        shipping voucher code in the
-                                        voucher column with a
-                                        maximum discount of
-                                        Rp30,000.00.
-                                    </p>
-                                </div>
-                            </div>
                             <div class="flex flex-row items-start px-8 py-1 gap-2">
                                 <h3 class="text-xl font-semibold text-black">
                                     2.
@@ -346,7 +328,7 @@
                                         SEJUK provides regular
                                         and economical shipping which can
                                         be done using JNE, J&T,
-                                        SiCepat, and Anteraja. For instant shipping we provide GoSend.
+                                        SiCepat, and for instant shipping we provide GoSend.
                                     </p>
                                 </div>
                             </div>
@@ -426,11 +408,7 @@
                                         The payment deadline for
                                         each payment method is 24
                                         hours after the order is
-                                        placed. If the buyer has not
-                                        paid the order beyond that
-                                        time, the order will be
-                                        automatically canceled by
-                                        the system.
+                                        placed.
                                     </p>
                                 </div>
                             </div>
